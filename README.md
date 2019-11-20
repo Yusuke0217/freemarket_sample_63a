@@ -48,18 +48,20 @@ Things you may want to cover:
 |exhibit-product|string|null: false|出品した商品
 |exhibit-number|string|null: false|出品数
 |exhibit-now|string|null: false|出品中
-|exhibit-trading|string|null: false|取引中
+|exhibit-trading|string|null: false|取引中(出品)
 |exhibit-sold|string|null: false|売却済み
 |like|integer|null: false|いいね！
 |points|integer|null: false|ポイント
 |earnings|integer|null: false|売上金
 |past transaction|string|null: false|過去の取引
 |purchase-product|string|null: false|購入した商品
-|purchase-trading|string|null: false|取引中
-|purchase-past|string|null: false|過去の
+|purchase-trading|string|null: false|取引中(購入)
+|purchase-past|string|null: false|過去の購入品
 ### Association
 - has_many :products
 - has_many :comments
-- has_many :
-- has_many :
-- has_many :
+- has_many :like-product 商品へのいいね
+- has_many :report-product 商品の報告
+- has_many :report-comment コメントの報告
+- has_many :products, through: :like-product
+- has_many :products, through: :report-product
