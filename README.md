@@ -60,8 +60,6 @@ Things you may want to cover:
 ### Association
 - has_many :products
 - has_many :comments
-- has_many :like-product 商品へのいいね
-- has_many :report-product 商品の報告
 - has_many :report-comment コメントの報告
-- has_many :products, through: :like-product
-- has_many :products, through: :report-product
+- has_many :products, through: :like-product商品へのいいね
+- has_many :products, through: :report-product商品の報告
