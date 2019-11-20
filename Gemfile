@@ -73,6 +73,7 @@ gem 'erb2haml'
 
 gem 'devise'
 
-gem 'carrierwave'
+gem 'carrierwave' 
 
 gem 'mini_magick'
+gem 'bundler'
