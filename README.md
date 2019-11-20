@@ -127,4 +127,3 @@ olumn |タイプ|オプション|
 ### 協会
 - belongs_toの：ユーザー
 - belongs_toの：コメント
-
