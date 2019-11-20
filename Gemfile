@@ -73,4 +73,6 @@ gem 'factory-bot'
 gem 'jquery-rails'
 gem 'carrier-wave'
 gem 'mini-magick'
+gem 'haml-rails'
+gem 'erb2haml'
 
