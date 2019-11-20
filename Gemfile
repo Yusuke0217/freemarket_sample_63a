@@ -73,3 +73,4 @@ gem 'factory-bot'
 gem 'jquery-rails'
 gem 'carrier-wave'
 gem 'mini-magick'
+
