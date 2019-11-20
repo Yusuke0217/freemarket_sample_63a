@@ -65,3 +65,66 @@ Things you may want to cover:
 - has_many :products, through: :product-report商品の報告
 - has_many :comments, through: :comment-report
 
+＃  Mercri DB設計
+
+## 製品（商品）テーブル
+|列|タイプ|オプション|
+| ------ | ---- | ----------- |
+| name | string ||| null：false | （商品名）
+|ブランド||文字列| （ブランド）
+| user_id | integer | null：false、foreign_key：true |
+|サイズ||整数|| null：false | （サイズ）
+|条件||文字列|| null：false | （状態）
+| shipping_charge || string || null：false | （配送料の負担）
+| shipping_how || string || null：false | （配送方法）
+| shipping_place || stringext || null：false | （配送元地域）
+| shipping_date || integer || null：false | （発送日の目安）
+|価格||整数|| null：false、foreign_key：true | （値段）
+| text || text | （テキスト）
+### 協会
+- has_manyの：：、産物様：製品レポートを通じてユーザー、
+- belongs_toの：製品レポート
+- belongs_toの：製品のような
+-にhas_many：コメント
+##  comments（コメント）テーブル
+|列|タイプ|オプション|
+| ------ | ---- | ----------- |
+| user_id | integer | null：false、foreign_key：true |
+| product_id | integer | null：false、foreign_key：true |
+| text | text | null：false || null：false | （コメント文）
+
+### 協会
+- belongs_toの：ユーザー
+- belongs_toの：製品
+-にhas_many：コメント-レポート
+
+##  product-like（いいね）テーブル
+|列|タイプ|オプション|
+| ------ | ---- | ----------- |
+| user_id | integer | null：false、foreign_key：true |
+| product_id | integer | null：false、foreign_key：true |
+
+### 協会
+- belongs_toの：ユーザー
+- belongs_toの：製品
+
+##  product-report（不適切商品報告）テーブル
+列|タイプ|オプション|
+| ------ | ---- | ----------- |
+| user_id | integer | null：false、foreign_key：true |
+| product_id | integer | null：false、foreign_key：true |
+
+### 協会
+- belongs_toの：ユーザー
+- belongs_toの：製品
+
+##  comment-report（不適切コメント報告）テーブル
+olumn |タイプ|オプション|
+| ------ | ---- | ----------- |
+| user_id | integer | null：false、foreign_key：true |
+| comment_id | integer | null：false、foreign_key：true |
+
+### 協会
+- belongs_toの：ユーザー
+- belongs_toの：コメント
+
