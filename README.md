@@ -40,8 +40,9 @@ Things you may want to cover:
 |text||text|　(テキスト)
 ### Association
 - has_many :users, through: :product-like, :product-report
-- has_many :comments, through: :comment-report
 - belongs_to :product-report
+- belongs_to :product-like
+- has_many :comments
 ## comments(コメント)テーブル
 |Column|Type|Options|
 |------|----|-------|
