@@ -41,12 +41,12 @@ Things you may want to cover:
 |birthday-year|integer|null: false|  誕生年
 |birthday-month|integer|null: false|  月
 |birthday-day|integer|null: false|  日
-|first-name|string|null: false|  姓（漢字）
-|first-name-kana|string|null: false|  姓（仮名）
-|last-name|string|null: false|  名（漢字）
-|last-name-kana|string|null: false|  名（仮名）
+|first-name|string|null: false, foreign_key: true|  姓（漢字）
+|first-name-kana|string|null: false, foreign_key: true|  姓（仮名）
+|last-name|string|null: false, foreign_key: true|  名（漢字）
+|last-name-kana|string|null: false, foreign_key: true|  名（仮名）
 |exhibit-product|string||  出品した商品
-|exhibit-number|string||  出品数
+|exhibit-number|integer||  出品数
 |exhibit-now|string||  出品中
 |exhibit-trading|string||  取引中(出品)
 |exhibit-sold|string||  売却済み
