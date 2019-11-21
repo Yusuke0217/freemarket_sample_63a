@@ -29,6 +29,17 @@ set :keep_releases, 5
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    invoke 'unicorn:restart'
+    # invoke 'unicorn:restart' # unicorn:restartの罠：削除した
+    invoke 'unicorn:stop'　
+    invoke 'unicorn:start' #環境変数変更のため
   end
 end
+
+# 環境変数をcapistranoでの自動デプロイで利用する
+# 今はsecret.ymlがなくなった為、パスワード等はcredentials.yml.encに暗号化で記載
+set :default_env, {
+  rbenv_root: "/usr/local/rbenv",
+  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
+  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+  AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
+}
