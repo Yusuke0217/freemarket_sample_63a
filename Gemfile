@@ -42,6 +42,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  # gem 'capistrano/deploy'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'spring'
 end
