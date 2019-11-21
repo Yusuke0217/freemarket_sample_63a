@@ -29,9 +29,9 @@ set :keep_releases, 5
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    # invoke 'unicorn:restart' # unicorn:restartの罠：削除した
-    invoke 'unicorn:stop'　
-    invoke 'unicorn:start' #環境変数変更のため
+    invoke 'unicorn:restart' # unicorn:restartの罠：削除した
+    # invoke 'unicorn:stop'　
+    # invoke 'unicorn:start' #環境変数変更のため
   end
 end
 
