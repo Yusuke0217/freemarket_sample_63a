@@ -29,23 +29,21 @@ set :keep_releases, 5
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    invoke 'unicorn:restart' # unicorn:restartの罠：削除した
-    # invoke 'unicorn:stop'　
-    # invoke 'unicorn:start' #環境変数変更のため
+    invoke 'unicorn:restart'
+        # invoke 'unicorn:restart' # unicorn:restartの罠
   end
-end
 
-desc 'upload secrets.yml'
-task :upload do
-  on roles(:app) do |host|
-    if test "[ ! -d #{shared_path}/config ]"
-      execute "mkdir -p #{shared_path}/config"
+  desc 'upload secrets.yml'
+  task :upload do
+    on roles(:app) do |host|
+      if test "[ ! -d #{shared_path}/config ]"
+        execute "mkdir -p #{shared_path}/config"
+      end
+      upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
     end
-    upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
   end
-end
-before :starting, 'deploy:upload'
-after :finishing, 'deploy:cleanup'
+  before :starting, 'deploy:upload'
+  after :finishing, 'deploy:cleanup'
 end
 
 # 環境変数をcapistranoでの自動デプロイで利用する
@@ -56,3 +54,4 @@ set :default_env, {
   AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
   AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
 }
+
