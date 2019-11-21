@@ -26,4 +26,4 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 # 消さないで
-config/secrets.yml
+# config/secrets.yml

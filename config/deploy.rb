@@ -35,8 +35,21 @@ namespace :deploy do
   end
 end
 
+desc 'upload secrets.yml'
+task :upload do
+  on roles(:app) do |host|
+    if test "[ ! -d #{shared_path}/config ]"
+      execute "mkdir -p #{shared_path}/config"
+    end
+    upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
+  end
+end
+before :starting, 'deploy:upload'
+after :finishing, 'deploy:cleanup'
+end
+
 # 環境変数をcapistranoでの自動デプロイで利用する
-# 今はsecret.ymlがなくなった為、パスワード等はcredentials.yml.encに暗号化で記載
+# 今はsecret.ymlがなくなった為、パスワードはcredentials.yml.encに記載
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
