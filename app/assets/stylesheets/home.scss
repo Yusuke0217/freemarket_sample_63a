@@ -6,7 +6,7 @@
   width: 100%;
   .slide {
     height: 390px;
-    background-image: url("006mamechire.jpg");
+    background-image: url("test.jpeg");
     background-size: cover;
   }
 }
@@ -78,6 +78,7 @@
       ul {
         width: 100%;
         display: flex;
+        list-style: none;
       }
       li {
         width: 20%;

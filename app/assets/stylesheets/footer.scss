@@ -13,13 +13,12 @@
   // display: flex;
   // position: relative;
   &__middle-upper {
-    // position: relative;
+    //position: relative;
     width: 750px;
     height: 260px;
     margin: 0 auto;
     color: #fff;
     justify-content: space-between;
-    flex-direction: column;
     display: flex;
     &--content {
       padding-top: 40px;
@@ -40,6 +39,8 @@
     .download-icons {
       display: flex;
       line-height: 68px;
+      list-style: none;
+      padding: 0;
       .mercari-download {
         margin-right: 20px;
         .mercarilogo {
@@ -69,12 +70,16 @@
   }
 .upper-footer__right-photo {
   display: block;
+  height: 260px;
+  width: 300px;
+  float: right;
   .right-photo {
   height: 260px;
   width: 300px;
-  position: absolute;
+  //position: absolute;
   display: block;
   vertical-align: middle;
+
   }
 }
 
@@ -100,8 +105,18 @@
   }
   .social-icons {
     display: flex;
-  i {
-    font-family: "Font Awesome 5 Free";
+    margin-top: 30px;
+  i.fab.fa-twitter {
+    content: "\f099";
+    font: normal 14px/1 FontAwesome;
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+    margin-right: 20px;
+  }
+  i.fab.fa-facebook-square {
+    content: "\f082";
+    font: normal 14px/1 FontAwesome;
     color: white;
     font-size: 30px;
     font-weight: 900;
@@ -115,6 +130,7 @@
   }
   .links {
     list-style: none;
+    padding: 0;
   }
   li {
     margin: 14px 0 0;
