@@ -1,0 +1,55 @@
+.main
+  %section.main__user
+    %a{ href: "#" }
+    %img.main__user__icon{ href: "#", src: "assets/106_h_24.png" }
+      %h2 SRB
+    .main__user__records 
+      %span 評価 0 出品数 0
+
+  .main__info
+    %ul.main__info__tabs
+      %li.main__info__tabs__active1
+        %h3
+          %a{ href: "#" }
+            お知らせ
+      %li.main__info__tabs__active2
+        %h3
+          %a{ href: "#" }
+            やることリスト
+
+    .main__info__messages
+      %ul.main__info__messages__notification
+        %li.main__info__messages__notification__list
+          %figure
+            %img.main__info__messages__notification__list__box{ href: "#", src: "assets/logo_red.svg" }
+          .main__info__messages__notification__list__text
+            <お買い物応援!> ¥1000の商品を実質1円でご購入頂けます!
+          %i.fa.fa-clock-o 22時間前
+          %i.fa.fa-arrow-right
+        %li.main__info__messages__notification__all
+          一覧を見る
+
+      %ul.main__info__messages__todo
+        %li.main__info__messages__todo__list
+          %img.main__info__messages__todo__list__box{ href: "#", src: "assets/logo_red.svg" }
+          .main__info__messages__todo__list__text
+            ご登録のメールアドレスに認証メールを送りました。メールに記載のURLをクリックして、メールアドレスを認証してください。
+          %i.fa.fa-clock-o 2日前
+          %i.fa.fa-arrow-right
+        %li.main__info__messages__todo__all
+          一覧を見る
+
+  .main__product
+    .main__product__header
+      %h2 購入した商品
+    %ul.main__product__tabs
+      %li
+        %h3 取引中
+        %h3 過去の取引
+    .main__product__messages
+      %ul.main__product__messages__trade-now
+        %li
+          %h3 取引中の商品がありません
+      %ul.main__product__messages__trade-past
+        %li
+          %h3 過去に取引した商品がありません
