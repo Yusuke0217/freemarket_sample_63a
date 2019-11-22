@@ -29,17 +29,18 @@ set :keep_releases, 5
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    invoke 'unicorn:restart'
-        # invoke 'unicorn:restart' # unicorn:restartの罠
+    invoke 'unicorn:restart' # unicorn:restartの罠
+    # invoke 'unicorn:stop'
+    # invoke 'unicorn:start' #環境変数変更のため
   end
 
-  desc 'upload secrets.yml'
+  desc 'upload master.key'
   task :upload do
     on roles(:app) do |host|
       if test "[ ! -d #{shared_path}/config ]"
         execute "mkdir -p #{shared_path}/config"
       end
-      upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
+      upload!('config/master.key', "#{shared_path}/config/master.key")
     end
   end
   before :starting, 'deploy:upload'
