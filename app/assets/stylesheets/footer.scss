@@ -106,25 +106,22 @@
   .social-icons {
     display: flex;
     margin-top: 30px;
-    a {
-      text-decoration: none;
-    }
-    i.fab.fa-twitter {
-      content: "\f099";
-      font: normal 14px/1 FontAwesome;
-      color: white;
-      font-size: 30px;
-      font-weight: 900;
-      margin-right: 20px;
-    }
-    i.fab.fa-facebook-square {
-      content: "\f082";
-      font: normal 14px/1 FontAwesome;
-      color: white;
-      font-size: 30px;
-      font-weight: 900;
+  i.fab.fa-twitter {
+    content: "\f099";
+    font: normal 14px/1 FontAwesome;
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+    margin-right: 20px;
   }
-}
+  i.fab.fa-facebook-square {
+    content: "\f082";
+    font: normal 14px/1 FontAwesome;
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+  }
+  }
   h2 {
     line-height: 1.4;
     color: #ffffff;
@@ -141,14 +138,15 @@
   li:first-child {
     margin: 16px 0 0;
   }
-  a:hover {
-    text-decoration: underline;
-  }
   a {
     font-size: 12px;
     // margin: 14px 0 0;
+    text-decoration: none;
     color: #ffffff;
     opacity: 0.7;
+  }
+  a:hover {
+    text-decoration: underline;
   }
 
 .bottom-footer__guide {

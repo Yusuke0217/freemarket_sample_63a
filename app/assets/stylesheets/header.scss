@@ -187,7 +187,6 @@ body {
           display: flex;
           ul.user-nav {
             list-style: none;
-            margin: 0;
             a {
               touch-action: manipulation;
               text-decoration: none;
@@ -206,7 +205,7 @@ body {
                 border-color: rgb(234, 53, 45);
                 border-image: initial;
                 border-radius: 4px;
-                padding: 6px 8px;
+                padding: 8px 10px;
               }
               a.login-acount {
                 background-color: rgb(255, 255, 255);
@@ -218,7 +217,7 @@ body {
                 border-color: rgb(0, 149, 238);
                 border-image: initial;
                 border-radius: 4px;
-                padding: 6px 8px;
+                padding: 8px 10px;
                 transition: all 0.3s ease-out 0s;
                 text-decoration: none;
               }
