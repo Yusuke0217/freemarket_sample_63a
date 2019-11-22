@@ -29,9 +29,7 @@ set :keep_releases, 5
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    # invoke 'unicorn:restart' # unicorn:restartの罠
-    invoke 'unicorn:stop'
-    invoke 'unicorn:start' #環境変数変更のため
+    invoke 'unicorn:restart'
   end
 
   desc 'upload master.key'
