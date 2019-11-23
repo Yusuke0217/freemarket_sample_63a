@@ -4,6 +4,7 @@
     overflow: scroll;
     height: auto;
     background: #f5f5f5;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     .main{
       background-color: #f5f5f5;
       font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
@@ -134,25 +135,26 @@
     right:10px;
   }
 }
+
+
 @media screen and (max-width: 768px){
   .z{
     overflow: scroll;
+    height: 100%;
+    background: #f5f5f5;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     .main{
-      position: fixed;
-      z-index: 5;
-      min-width:100%;
-      position: relative;
+      background-color: #f5f5f5;
       font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
-        font-size: 14px;
+      font-size: 14px;
+      min-height: 306;
+      height: 306px;
         .main-box{
-          display: block;
-          margin:0 auto;
-          max-width:100%;
-          
+          margin:0 auto 55px;
+          min-width:306;
           background-color: white;
           height:306px;
           .main-box-block{
-            
             text-align: center;
             .main-top-text{
               line-height: 59px;
@@ -164,89 +166,84 @@
               min-width: 100%;
             }
             .main-bottom{
-              display: block;
-              position: relative;
-              
               .main-bottom-box{
                 margin: 0 auto;
-                width: 343px;
-                ul.main-bottom-box__textBox-mail{
+                width: 100%;
+                padding: 0 16px 40px;
+              ul.main-bottom-box__textBox-mail{
+                line-height:50px;
+                
+                display: flex;
+                max-width: 343px;
+                a:-webkit-any-link{
+                  display: flex;
                   margin: 0 auto;
+                  text-decoration: none ;
+                  width:343px;
                   color: white;
-                  height: 50px;
-                  line-height:50px;
                   background-color: #ea352d;
                   border-radius: 4px;
-                  display: flex;
-                  width: 343px;
-                  a:-webkit-any-link{
-                    display: flex;
+
+                  li.text{
                     margin: 0 auto;
-                    text-decoration: none ;
-                    min-width:350px;
-                    color: white;
-                    li.text{
-                      margin: 0 auto;
-                    }
-                    i{
-                      position: relative;
-                      line-height: 50px;
-                      left: 25px;
-                      font-size:1.3em;
-                      
-                    }
+                  }
+                  i{
+                    position: relative;
+                    line-height: 50px;
+                    left: 25px;
+                    font-size:1.3em;
                     
                   }
+                  
                 }
+              }
               ul.main-bottom-box__textBox-mail:hover{
                 opacity:0.7;
                 transition: 0.5s;
               }
-              ul.main-bottom-box__textBox-facebook{
-                margin: 16px auto 0;
-                text-align: center;
-                color: white;
-                height: 50px;
-                line-height:50px;
-                border-radius: 4px;
-                background: #385185;
-                width: 343px;
-              
-               
-                a:-webkit-any-link{
-                  display: flex;
-                  color: white;
-                  text-decoration: none ;
-                  min-width:360px;
-                  i{
-                    position: relative;
-                    left: 25px;
-                    font-size:26px;
+                  ul.main-bottom-box__textBox-facebook{
+                    margin: 16px auto 0;
+                    
                     line-height:50px;
+                    a:-webkit-any-link{
+                      display: flex;
+                      color: white;
+                      text-decoration: none ;
+                      width:343px;
+                      background: #385185;
+                      border-radius: 4px;
+                      margin: 0 auto;
+                      i{
+                        position: relative;
+                        left: 25px;
+                        font-size:26px;
+                        line-height:50px;
+                      }
+                      li.text{
+                        margin: 0 auto;
+                        position: relative;
+                        right:10px
+                      }
+                    }
                   }
-                  li.text{
-                    margin: 0 auto;
-                    position: relative;
-                    right: 15px;
-                  }
-                }
-              }
+              
               ul.main-bottom-box__textBox-google{
                 margin: 16px auto;
                 text-align: center;
                 height: 50px;
                 
                 color: #333;
-                max-width: 348px;
+                max-width: 343px;
                 a:-webkit-any-link{
                   display: flex;
                   color: black;
                   opacity: 0.8;
                   text-decoration: none ;
-                  width:360px;
+                  width:343px;
                   border-radius: 4px;
                   border: #979797 solid 1px;
                   line-height:48px;
+                  margin: 0 auto;
                   i{
                     position: relative;
                     left: 25px;
@@ -258,12 +255,12 @@
                   }
                 }
               }
+              }
             }
           }
         }
-      }
     }
-  
+  }
   ul{
     display: flex;
     min-width: 100%;
@@ -274,6 +271,5 @@
   li.text{
     position: relative;
     right:10px;
-  }
   }
 }
