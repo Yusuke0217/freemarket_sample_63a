@@ -4,6 +4,87 @@
     -# adding main content
   .main 
     .info-container
+      %h2.content-header 
+      商品の情報を入力
+      .sell-forms
+        .product-image
+          %h3.product-image-header 出品画像
+            %span.require 必須
+          %p 最大10枚までアップロードできます
+          .dropbox
+            %input{type: "file"}>/, class= "input-box">
+            %pre.texts ドロッグアンドドロップ
+            またはクリックしてファイルをアップロード
+        .product-contents
+          .product-name 
+            %label 商品名
+              %span.require 必須
+            .input__product-name
+              %input.product-name__defauld{name: "product-name", placeholder: "商品名（必須40文字まで）", type: "product-name", value: ""}/
+          .product-description
+            %label 商品の説明
+              %span.require 必須
+            %textarea.description{placeholder: "商品の説明（必須1,000字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+          .product-details
+            %h3.sub-header 商品の詳細
+            .product-detail
+              .category
+                %label カテゴリー
+                  %span.require 必須
+                  .select-box
+                    %i.fas.fa-republican
+                    %select.select-default{name: "category"}
+                      %option{selected: "selected"} --
+              .condition
+                %label 商品の状態
+                  %span.require 必須
+                    %i.fas.fa-republican
+                    %select.select-default{name: "condition"}
+                      %option{selected: "selected"} --
+                    .product-details
+            %h3.sub-header 配送について
+            = link_to "?", "https://www.mercari.com/jp/help_center/article/68/", class: "link"
+            .transportation-detail
+              .transportation-fee
+                %label 配送料の負担
+                  %span.require 必須
+                  .select-box
+                    %i.fas.fa-republican
+                    %select.select-default{name: "scope"}
+                      %option{selected: "selected"} --
+              .region
+                %label 発送元の地域
+                  %span.require 必須
+                    %i.fas.fa-republican
+                    %select.select-default{name: "region"}
+                      %option{selected: "selected"} --
+              .delivery
+                %label 発送までの日数
+                  %span.require 必須
+                    %i.fas.fa-republican
+                    %select.select-default{name: "delivery time"}
+                      %option{selected: "selected"} --
+              %h3.sub-header 販売価格(300〜9,999,999)
+              = link_to "?", "https://www.mercari.com/jp/help_center/article/64/", class: "link"
+              .transportation-detail
+                .product-price
+                  %label.left 価格
+                    %span.require 必須
+                  %label.right ¥
+                  .input__product-price
+                    %input.product-price__default{name: "product-price", placeholder: "例）300", type: "product-price", value: ""}/
+                  .comission
+                    .left 販売手数料 (10%)
+                    .right -
+                  .profit
+                    .left 販売利益
+                    .right -
+
+                    .select-box
+                      %i.fas.fa-republican
+                      %select.select-default{name: "scope"}
+                        %option{selected: "selected"} --
+
   .footer 
     .links
       %ul
