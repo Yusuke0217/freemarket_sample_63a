@@ -26,53 +26,54 @@
           flex-direction: column;
           // position: absolute;
         
-          .upper-text {
+          h1.upper-text {
             font-size: 24px;
             font-weight: 600;
-            // margin-bottom: 15px;
+            // margin: 0px 0px 15px 0px;
           }
-          .bottom-text {
+          h1.bottom-text {
             font-size:35px;
-            margin-bottom: 20px;
-            .download-icons {
-              display: flex;
-              line-height: 68px;
-              list-style: none;
-              padding: 0;
-              .mercari-download {
-                margin-right: 20px;
-                .mercarilogo {
-                  width: 68px;
-                  height: 68px;
-                }
-              }
-
-              .appstore {
-                width: 152px;
-                height: 16px;
+            margin: 0px 0px 20px 0px;
+          }
+          .upper-footer__middle-bottom {
+            height: 68px;
+            // この直下にimg.mercarilogo
+            img.mercarilogo {
+              width: 68px;
+              height: 68px;
+              margin-right: 20px;
+              vertical-align: middle;
+            }
+            a.appstore {
+              width: 152px;
+              height: 16px;
+              // vertical-align: middle;
+              img.gotoappstore {
+                margin-right: 8px;
+                width:144px;
+                height: 40px;
                 vertical-align: middle;
-                .gotoapplestore {
-                  margin-right: 8px;
-                  width:144px;
-                  height: 40px;
-                }
               }
-            
-              .googleplay {
-                height: 16px;
-                width: 144px;
-                .gotogoogleplay {
-                  width:144px;
-                  height: 40px;
-                }
+              img.gotoappstore:hover {
+                opacity: 0.7;
+              }
+            }
+            a.googleplay {
+              height: 16px;
+              width: 144px;
+              img.gotogoogleplay {
+                width:144px;
+                height: 40px;
+                vertical-align: middle;
+              }
+              img.gotogoogleplay:hover {
+                opacity: 0.7;
               }
             }
           }
         }
       }
     }
-  
-
         .upper-footer__right-photo {
           display: block;
           height: 260px;
@@ -84,48 +85,75 @@
             //position: absolute;
             display: block;
             vertical-align: middle;
-
           }
         }
-
     .bottom-footer {
       // width: 100vw;
-      height: 379px;
-      padding: 0 20px 10px 20px;
+      padding: 0 20px 10px;
       background-color: rgb(33, 33, 33);
+      color: #fff;
       &__content {
         margin: 0 190px;
         display: flex;
         justify-content: center;
         // align-items: center;
         // width: 1020px;
-        &__about {
-          width: 20%;
+        .bottom-footer__about {
+          // width: 20%;
           // padding: 0 10px 0 0;
           margin-top: 18px;
           float: left;
           // display: block;
           min-width: 150px;
-          .social-icons {
-            display: flex;
-            margin-top: 30px;
-            a {
-              text-decoration: none;
+          width: 23%;
+          min-width: 200px;
+          h2.title {
+            line-height: 1.4;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+          }
+          ul.links {
+            list-style: none;
+            padding: 0;
+            li.outer-links {
+              margin: 16px 0 0;
+              line-height: 1.4rem;
+              a {
+                text-decoration: none;
+                font-size: 12px;
+                color: #ffffff;
+                opacity: 0.7;
+              }
+              a:hover {
+                text-decoration: underline;
+              }
             }
-            i.fab.fa-twitter {
-              content: "\f099";
-              font: normal 14px/1 FontAwesome;
-              color: white;
-              font-size: 30px;
-              font-weight: 900;
-              margin-right: 20px;
-            }
-            i.fab.fa-facebook-square {
-              content: "\f082";
-              font: normal 14px/1 FontAwesome;
-              color: white;
-              font-size: 30px;
-              font-weight: 900;
+            .social-icons {
+              display: flex;
+              margin-top: 30px;
+              a {
+                text-decoration: none;
+                i.fab.fa-twitter {
+                  content: "\f099";
+                  font: normal 14px/1 FontAwesome;
+                  color: white;
+                  font-size: 30px;
+                  font-weight: 900;
+                  margin-right: 20px;
+                  // display: inline-block;
+                  margin-top: 30px;
+                }
+                i.fab.fa-facebook-square {
+                  content: "\f082";
+                  font: normal 14px/1 FontAwesome;
+                  color: white;
+                  font-size: 30px;
+                  font-weight: 900;
+                  margin-top: 30px;
+                }
+              }
             }
           }
         }
@@ -138,28 +166,32 @@
           float: left;
           // display: block;
           min-width: 200px;
-          h2 {
+          h2.title {
             line-height: 1.4;
             color: #ffffff;
             font-size: 16px;
             font-weight: bold;
+            margin: 0;
+            // どこに配置するか？llllllllllllllllllllllllllllll
           }
-          .links {
+          ul.links {
             list-style: none;
             padding: 0;
-            li:first-child {
+            li.outer-links {
               margin: 16px 0 0;
+              line-height: 1.4rem;
+              a:hover {
+                text-decoration: underline;
+              }
+              a {
+                text-decoration: none;
+                font-size: 12px;
+                // margin: 14px 0 0;
+                color: #ffffff;
+                opacity: 0.7;
+              }
             }
           }
-            a:hover {
-              text-decoration: underline;
-            }
-            a {
-              font-size: 12px;
-              // margin: 14px 0 0;
-              color: #ffffff;
-              opacity: 0.7;
-            }
         }
 
         .bottom-footer__privacy {
@@ -168,15 +200,58 @@
           margin-top: 18px;
           float: left;
           // display: block;
+          h2.title {
+            line-height: 1.4;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+          }
           .left-side {
             width:43%;
             float: left;
             padding-right: 10px;
+            ul.links {
+              list-style: none;
+              padding: 0;
+              li.outer-links {
+                margin: 16px 0 0;
+                line-height: 1.4rem;
+                a:hover {
+                  text-decoration: underline;
+                }
+                a {
+                  text-decoration: none;
+                  font-size: 12px;
+                  // margin: 14px 0 0;
+                  color: #ffffff;
+                  opacity: 0.7;
+                }
+              }
+            }
           }
           .right-side {
             width: 47%;
             float: right;
             padding-left: 10px;
+            ul.links {
+              list-style: none;
+              padding: 0;
+              li.outer-links {
+                margin: 16px 0 0;
+                line-height: 1.4rem;
+                a:hover {
+                  text-decoration: underline;
+                }
+                a {
+                  text-decoration: none;
+                  font-size: 12px;
+                  // margin: 14px 0 0;
+                  color: #ffffff;
+                  opacity: 0.7;
+                }
+              }
+            }
           }
         }
         .bottom-footer__country {
@@ -184,29 +259,55 @@
           float: left;
           // display: block;
           width: auto;
+          h2.title {
+            line-height: 1.4;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+          }
+          ul.links {
+            list-style: none;
+            padding: 0;
+            li.outer-links {
+              margin: 16px 0 0;
+              line-height: 1.4rem;
+              a:hover {
+                text-decoration: underline;
+              }
+              a {
+                text-decoration: none;
+                font-size: 12px;
+                // margin: 14px 0 0;
+                color: #ffffff;
+                opacity: 0.7;
+              }
+            }
+          }
         }
       .bottom-footer__copyright {
         display: flex;
-        margin: 30px 190px 20px;
+        margin: 30px auto 20px;
         width: 1020px;
         height: 33px;
         // text-align: center;
         // justify-content: center;
         align-items: center;
-        .mercari-space {
-          height: 33px;
+        a.logo {
+          text-decoration: none;
+          color: inherit;
+          text-align: center;
+          font-size: 12px;
+          // margin: 14px 0 0;
+          color: #ffffff;
+          opacity: 0.7;
+          font-size: 25px;
+          height: 40px;
           width: 124px;
-          display: flex;
-          .mercari__white-logo {
-            height: 60px;
-            width: 50px;
-          }
-          .mercari__name {
-            font-size: 33px;
-            color: white;
-          }
         }
-
+        .logo:hover {
+          opacity: 0.7;
+        }
         .mercari__copyright {
           // margin: 8px 0 0;
           font-size: 12px;
@@ -220,4 +321,5 @@
         }
       }
 }
+
 
