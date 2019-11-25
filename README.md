@@ -63,8 +63,6 @@ Things you may want to cover:
 - has_many :products, through: :like-product商品へのいいね
 - has_many :products, through: :product-report商品の報告
 - has_many :comments, through: :comment-report
-- has_one :buyer
-- has_one :seller
 - belongs_to :credit
 
 
@@ -73,7 +71,6 @@ Things you may want to cover:
 | ------ | ---- | ----------- |
 | user_id | integer | null：false、foreign_key：true |
 | name | string| null：false | （商品名）
-|brand|string|null: true| （ブランド）
 |size|integer| null：true | （サイズ）
 |condition|string| null：false | （状態）
 | shipping_charge |string | null：false | （配送料の負担）
@@ -86,6 +83,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_many :comments
+- has_many :photos
 - has_many :users, through: :product_like
 - has_many :users, through: :product_report
 - has_many :users, through: :purchase-history
@@ -137,7 +135,7 @@ Things you may want to cover:
 ## credit テーブル
 |Column|Type|Options|
 |------|----|-------|
-|buyer_id|integer|null: false, foreign_key: true| ユーザー情報を外部キーとして所有
+|user_id|integer|null: false, foreign_key: true| ユーザー情報を外部キーとして所有
 |payjp_id|integer|null: false, foreign_key: true| payjpのid
 
 - belongs_to :user
@@ -164,3 +162,34 @@ Things you may want to cover:
 
 - belongs_to :product
 - belongs_to :user
+
+
+
+### photo
+|Column|Type|Options|
+|------|----|-------|
+|product_id|integer|null: false, foreign_key :true|
+|url|integer|null: false|
+|user_id|integer|null: false|
+
+- belongs_to product
+
+
+### category
+|Column|Type|Options|
+|------|----|-------|
+|ancestry|string||
+|product_id|integer|null: false, foreign_key :true|
+|category-name|string|null: false|
+
+- has_many products
+
+
+### brand
+|Column|Type|Options|
+|------|----|-------|
+|brand-name|string|null: true| （ブランド）
+|category_id|integer|null: false, foreign_key :true|
+|product_id|integer|null: false, foreign_key :true|
+
+- has_many products
