@@ -18,7 +18,7 @@ set :rbenv_ruby, '2.5.1' #カリキュラム通りに進めた場合、2.5.1か2
 set :ssh_options, auth_methods: ['publickey'],
                   keys: ['~/.ssh/Tsue19910215.pem']
 
-# プロセス番号を記載したファイルの場所
+# プロセス番号を記載したファイルの場所、自動pd失敗する毎にrm必要
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 
 # Unicornの設定ファイルの場所
@@ -32,7 +32,9 @@ set :linked_files, %w{ config/master.key }
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    invoke 'unicorn:restart'
+    # invoke 'unicorn:restart' 環境変数を変更・追加しても更新されない為
+    invoke 'unicorn:stop'
+    invoke 'unicorn:start'
   end
 
   desc 'upload master.key'
@@ -49,7 +51,7 @@ namespace :deploy do
 end
 
 # 環境変数をcapistranoでの自動デプロイで利用する
-# 今はsecret.ymlがなくなった為、パスワードはcredentials.yml.encに記載
+# 今はsecret.ymlがなくなった為、パスワードはcredentials.yml.encに記載、インデント注意
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
