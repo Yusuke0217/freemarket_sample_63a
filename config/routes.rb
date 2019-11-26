@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-root to: "home#top"
+# root to: "home#top"
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+#view確認用ルーティング
+root to: "mypage#user_info_register"
+
+# root to: "mypage#mypage_profile"
+
 end
