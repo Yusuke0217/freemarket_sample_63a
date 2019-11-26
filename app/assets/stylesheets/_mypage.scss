@@ -23,13 +23,17 @@
       display: flex;
       justify-content: center;
       height: 74px;
+      border-top: 2px solid #ea352d;
       &__active1 {
         margin-top: 26px;
       }
         a {
           text-decoration: none;
-          color: black;
+          color: #333;
           font-weight: bold;
+        }
+        a:hover {
+          color: #888;
         }
       &__active2 {
         margin-top: 26px;
@@ -38,37 +42,104 @@
     }
     &__messages {
       &__notification {
-        border-style: solid;
+        display: block;
         &__list {
+          //min-height: 80px;
+          //display: block;
+          border-bottom: 1px solid #eee;
+          //padding: 16px;
+          //color: #333;
+          position: relative;
+        &__list:hover {
+          background-color: #fafafa;
+        }
+        a {
           display: block;
           min-height: 80px;
           padding: 16px;
           color: #333;
-          figure {          
-            //overflow: hidden;
-            //float: left;
+        }
+          &__box {
+            background-color: #eee;
             width: 48px;
             height: 48px;
-            background-color: #eee;
-            &__box {
-              //position: absolute;
+            float: left;
+            //top: 0;
+            //right: 0;
+            //bottom: 0;
+            //left: 0;
+            //z-index: 1;
+            //width: 100%;
+            //position: absolute;
+          }
+          &__form {
+            //margin: 0 40px 0 68px;
+            &__text {
               float: left;
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              //z-index: 1;
-              //width: 100%;
+              margin: 0 40px 0 28px
+            }
+            .fa.fa-clock-o {
+              color: #888;
+            }
+            .fa.fa-chevron-right {
+              position: absolute;
+              top: 50%;
+              right: 16px;
+              transform: translate(0, -50%);
             }
           }
-          &__text {
-            float: right;
-            overflow: hidden;
-            max-height: 4.4em;
-            text-overflow: ellipsis;
-            line-height: 1.5;
-          }      
         }
+        &__all {
+          margin: 16px;
+          background-color: #eee;
+        }
+        &__all:hover{
+          background-color: #fafafa;
+        }
+        a {
+          display: block;
+          height: 56px;
+          line-height: 56px;
+          color: #333;
+          text-decoration: none;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &__product {
+    margin: 40px 0 0;
+    background-color: #fff;
+    &__header {
+      padding: 0 16px;
+      background-color: #fafafa;
+      font-size: 16px;
+      line-height: 72px;
+    }
+    &__tabs {
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      height: 74px;
+      border-top: 2px solid #ea352d;
+      &__active1 {
+        margin-top: 26px;
+        width: 50%;
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+      a:hover {
+        color: #888;
+      }
+      &__active2 {
+        //position: relative;
+        margin-top: 26px;
+        width: 50%;
+        text-align: center;
       }
     }
   }
