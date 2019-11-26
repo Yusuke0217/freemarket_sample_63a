@@ -2,7 +2,7 @@
   margin: 40px;
   width: 700px;
   float: right;
-  &__user {
+  .user {
     padding: 20px;
     height: 200px;
     text-align: center;
@@ -16,98 +16,77 @@
       margin-top: 8px;
     }
   }
-  &__info {
+  .info {
     background-color: #fff;
     &__tabs {
       background-color: #eee;
       display: flex;
-      justify-content: center;
-      height: 74px;
-      border-top: 2px solid #ea352d;
-      &__active1 {
-        margin-top: 26px;
+      width: 100%;
+      li {
+        text-align: center;
+        width: 50%;
+        height: 74px;
+        line-height: 74px;
       }
-        a {
-          text-decoration: none;
-          color: #333;
-          font-weight: bold;
-        }
-        a:hover {
-          color: #888;
-        }
-      &__active2 {
-        margin-top: 26px;
-        padding-left: 300px;
+      li:first-child {
+        background-color: #fff;
+        border-top: 2px solid #ea352d;
       }
-    }
-    &__messages {
-      &__notification {
-        display: block;
-        &__list {
-          //min-height: 80px;
-          //display: block;
-          border-bottom: 1px solid #eee;
-          //padding: 16px;
-          //color: #333;
-          position: relative;
-        &__list:hover {
-          background-color: #fafafa;
-        }
-        a {
-          display: block;
-          min-height: 80px;
-          padding: 16px;
-          color: #333;
-        }
-          &__box {
-            background-color: #eee;
-            width: 48px;
-            height: 48px;
-            float: left;
-            //top: 0;
-            //right: 0;
-            //bottom: 0;
-            //left: 0;
-            //z-index: 1;
-            //width: 100%;
-            //position: absolute;
-          }
-          &__form {
-            //margin: 0 40px 0 68px;
-            &__text {
-              float: left;
-              margin: 0 40px 0 28px
-            }
-            .fa.fa-clock-o {
-              color: #888;
-            }
-            .fa.fa-chevron-right {
-              position: absolute;
-              top: 50%;
-              right: 16px;
-              transform: translate(0, -50%);
-            }
-          }
-        }
-        &__all {
-          margin: 16px;
-          background-color: #eee;
-        }
-        &__all:hover{
-          background-color: #fafafa;
-        }
-        a {
-          display: block;
-          height: 56px;
-          line-height: 56px;
-          color: #333;
-          text-decoration: none;
-          text-align: center;
-        }
+      a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+      a:hover {
+        color: #888;
       }
     }
   }
-  &__product {
+  .message {
+    .messages {
+      //display: block;
+      li {
+        position: relative;
+        border-bottom: 1px solid #eee;
+        padding: 16px;
+      li:hover {
+        background-color: #fafafa;
+      }
+        a {
+          min-height: 80px;
+          color: #333;
+          text-decoration: none;
+          .form {
+            margin: 0 40px 0 68px;
+            &__text {
+              text-decoration: none;
+              color: #333;
+            }
+            &__time {
+              display: inline-block;
+              color: #888;
+            }
+          }
+          .chevron {
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translate(0, -50%);
+          }
+        }
+      }
+    }
+    .all {
+      margin: 16px;
+      background-color: #eee;
+      text-align: center;
+      font-size: 14px;
+    }
+    .all:hover{
+      background-color: #fafafa;
+    }
+  }
+  .product {
     margin: 40px 0 0;
     background-color: #fff;
     &__header {
@@ -119,13 +98,16 @@
     &__tabs {
       background-color: #eee;
       display: flex;
-      justify-content: center;
-      height: 74px;
-      border-top: 2px solid #ea352d;
-      &__active1 {
-        margin-top: 26px;
-        width: 50%;
+      width: 100%;
+      li {
         text-align: center;
+        width: 50%;
+        height: 74px;
+        line-height: 74px;
+      }
+      li:first-child {
+        background-color: #fff;
+        border-top: 2px solid #ea352d;
       }
       a {
         text-decoration: none;
@@ -135,12 +117,32 @@
       a:hover {
         color: #888;
       }
-      &__active2 {
-        //position: relative;
-        margin-top: 26px;
-        width: 50%;
-        text-align: center;
+    }
+    &__messages {
+      .trades {
+        li {
+          color: #ccc;
+          font-size: 16px;
+          text-align: center;
+          padding: 160px 0 60px;
+          background-image: url("/logo_gray.svg");
+          background-repeat: no-repeat;
+          background-position: center 40px;
+          background-size: 78px 85px;
+        }
       }
     }
+  }
+}
+.figure {
+  background-color: #eee;
+  width: 48px;
+  height: 48px;
+  float: left;
+  overflow: hidden;
+  .box{
+    width: 70%;
+    margin-top: 5px;
+    margin-left: 6px;
   }
 }

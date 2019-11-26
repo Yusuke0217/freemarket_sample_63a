@@ -1,52 +1,62 @@
 .main
-  %section.main__user
+  %section.user
     %a{ href: "#" }
-    %img.main__user__icon{ href: "#", src: "assets/106_h_24.png" }
+    %img.user__icon{ href: "#", src: "assets/106_h_24.png" }
       %h2 SRB
-    .main__user__records
+    .user__records
       %span 評価 0 出品数 0
 
-  .main__info
-    %ul.main__info__tabs
-      %li.main__info__tabs__active1
+  .info
+    %ul.info__tabs
+      %li
         %h3
           %a{ href: "#" }
             お知らせ
-      %li.main__info__tabs__active2
+      %li
         %h3
           %a{ href: "#" }
             やることリスト
-    .main__info__messages
-      %ul.main__info__messages__notification
-        %li.main__info__messages__notification__list
+    .message
+      %ul.messages
+        %li
           %a{ href: "#" }
-            %figure
-            %img.main__info__messages__notification__list__box{ src: "assets/logo_red.svg" }
-            .main__info__messages__notification__list__form
-              .main__info__messages__notification__list__form__text
+            .figure
+              %img.box{ src: "assets/logo_red.svg" }
+            .form
+              .form__text
                 <お買い物応援!> ¥1,000の商品を実質1円でご購入いただけます！
-              %i.fa.fa-clock-o 22時間前
+              .form__time
+                %i.fa.fa-clock-o 22時間前
+            .chevron
               %i.fa.fa-chevron-right
-        .main__info__messages__notification__all
+        %li
+          %a{ href: "#" }
+            .figure
+              %img.box{ src: "assets/logo_red.svg" }
+            .form
+              .form__text
+                <お買い物応援!> ¥1,000の商品を実質1円でご購入いただけます！
+              .form__time
+                %i.fa.fa-clock-o 22時間前
+            .chevron
+              %i.fa.fa-chevron-right
+        %li.all
           %a{ href: "#" }
             一覧を見る
 
-  .main__product
-    .main__product__header
+  .product
+    .product__header
       %h2 購入した商品
-    %ul.main__product__tabs
-      %li.main__product__tabs__active1
+    %ul.product__tabs
+      %li
         %h3
           %a{ href: "#" }
             取引中
-      %li.main__product__tabs__active2
+      %li
         %h3
           %a{ href: "#" }
             過去の取引
-    .main__product__messages
-      %ul.main__product__messages__trade-now
+    .product__messages
+      %ul.trades
         %li
-          %h3 取引中の商品がありません
-      %ul.main__product__messages__trade-past
-        %li
-          %h3 過去に取引した商品がありません
+          取引中の商品がありません
