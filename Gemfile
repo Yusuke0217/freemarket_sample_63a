@@ -45,6 +45,8 @@ group :development, :test do
   # gem 'capistrano/deploy'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'spring'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
