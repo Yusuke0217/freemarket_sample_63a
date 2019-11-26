@@ -43,9 +43,11 @@
           .top-main-leg__right
             %ul.user-nav
               %li
-                %a.new-acount{href: "https://www.mercari.com/jp/signup/"}  新規会員登録
+                = link_to href: "https://www.mercari.com/jp/signup/", class: "new-acount"
+                  新規会員登録
               %li
-                %a.login-acount{href: "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Ffeatured%2Fcamp%2F"} ログイン
+                = link_to href: "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Ffeatured%2Fcamp%2F", class: "login-acount"
+                  ログイン
     = yield
     .footer
       .upper-footer
@@ -55,10 +57,10 @@
             %h1.bottom-text 今すぐ無料ダウンロード！
             .upper-footer__middle-bottom
               = image_tag "/logo_red.svg", alt: "", class: "mercarilogo"
-              %a.appstore{href: "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", target: "_blank"}
-                %img{alt: "", height: "40", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2177740229", class: "gotoappstore"}/
-              %a.googleplay{href: "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank"}
-                %img{alt: "", height: "40", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2177740229", class: "gotogoogleplay"}/
+              = link_to href: "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", target: "_blank", class: "appstore"
+                = image_tag height: "40", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2177740229", alt: "", class: "gotoappstore"
+              = link_to href: "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank", class: "googleplay"
+                = image_tag height: "40", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2177740229", alt: "", class: "gotogoogleplay"
           .upper-footer__right-photo 
             = image_tag "phoneman.jpg", alt: "", class: "right-photo"
       .bottom-footer
