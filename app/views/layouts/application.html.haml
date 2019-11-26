@@ -13,7 +13,7 @@
         .top-main-face
           .top-main-face__logo
             %a.mercaribox{href: ""}
-              = image_tag "public/logo_red.svg", alt: "Mercari"
+              = image_tag "/logo_red.svg", alt: ""
           
           %form.searchbox{action: ""}
             %input.texts{type: "search", name: "keyword", placeholder: "Do you look for anything?", value: ""}
@@ -43,11 +43,9 @@
           .top-main-leg__right
             %ul.user-nav
               %li
-                = link_to href: "https://www.mercari.com/jp/signup/", class: "new-acount"
-                  新規会員登録
+                = link_to "新規会員登録", "https://www.mercari.com/jp/signup/", class: "new-acount"
               %li
-                = link_to href: "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Ffeatured%2Fcamp%2F", class: "login-acount"
-                  ログイン
+                = link_to "ログイン", "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2Ffeatured%2Fcamp%2F", class: "login-acount"
     = yield
     .footer
       .upper-footer
@@ -56,11 +54,11 @@
             %h1.upper-text スマホでかんたんフリマアプリ
             %h1.bottom-text 今すぐ無料ダウンロード！
             .upper-footer__middle-bottom
-              = image_tag "public/logo_red.svg", alt: "", class: "mercarilogo"
+              = image_tag "/logo_red.svg", alt: "", class: "mercarilogo"
               = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2177740229", height: "40", class: "gotoappstore"), "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
               = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2177740229", height: "40", class: "gotogoogleplay"),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
           .upper-footer__right-photo 
-            = image_tag "app/assets/images/phoneman.jpeg", alt: "", class: "right-photo"
+            = image_tag "/phoneman.jpeg", alt: "", class: "right-photo"
       .bottom-footer
         .bottom-footer__content
           .bottom-footer__about
