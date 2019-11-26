@@ -56,13 +56,12 @@
             %h1.upper-text スマホでかんたんフリマアプリ
             %h1.bottom-text 今すぐ無料ダウンロード！
             .upper-footer__middle-bottom
-              = image_tag "/logo_red.svg", alt: "", class: "mercarilogo"
-              = link_to href: "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", target: "_blank", class: "appstore"
-                = image_tag height: "40", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2177740229", alt: "", class: "gotoappstore"
-              = link_to href: "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank", class: "googleplay"
-                = image_tag height: "40", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2177740229", alt: "", class: "gotogoogleplay"
+              = image_tag "SVG/logo_red.svg", alt: "", class: "mercarilogo"
+              = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2177740229", height: "40", class: "gotoappstore"), "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
+              = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2177740229", height: "40", class: "gotogoogleplay"),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
           .upper-footer__right-photo 
-            = image_tag "phoneman.jpg", alt: "", class: "right-photo"
+            -# = image_tag "phoneman.jpeg", alt: "", class: "right-photo"
+            = image_tag "SVG/fmarket_logo_red.svg", alt: "", class: "right-photo"
       .bottom-footer
         .bottom-footer__content
           .bottom-footer__about
@@ -134,5 +133,3 @@
         .bottom-footer__copyright
           = link_to "◆ mercari", "https://www.mercari.com/jp/", class: "logo"
           .mercari__copyright © 2019 Mercari
-
-
