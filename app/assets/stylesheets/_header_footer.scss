@@ -7,7 +7,7 @@
     overflow: scroll;
     .header{
       height: 130px;
-      .header-logo{
+      &__logo{
         margin: 0 auto;
         width:182px;
         padding: 40px 0 0;
