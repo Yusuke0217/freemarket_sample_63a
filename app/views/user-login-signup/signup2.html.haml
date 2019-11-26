@@ -11,22 +11,22 @@
             ニックネーム
           %span.must-content
             必須
-          %input.nickname-info{placeholder:"例) メルカリ太郎", value: ""}/
+          %input.nickname-info{placeholder: "例) メルカリ太郎", value: ""}/
         .form-group
           %label.mailAddless-new
             メールアドレス
           %span.must-content
             必須
-          %input.mailAddless-info{placeholder:"PC・携帯どちらでも可", value: ""}/
+          %input.mailAddless-info{placeholder: "PC・携帯どちらでも可", value: ""}/
         .form-group
           %label.password-new
             パスワード
           %span.must-content
             必須
-          %input.password-info{placeholder:"7文字以上", value: ""}/
+          %input.password-info{placeholder: "7文字以上", value: ""}/
           .check-box
             %label.checkbox
-              %input.password-check{type:"checkbox"}
+              %input.password-check{type: "checkbox"}
                 パスワードを表示する
         .form-group
           %h3.check-person
@@ -39,16 +39,16 @@
           %span.must-content
             必須
           .input-parrent
-            %input.kanji1stName-info{placeholder:"例) 山田", value: ""}
-            %input.kanji2ndName-info{placeholder:"例) 彩", value: ""}
+            %input.kanji1stName-info{placeholder: "例) 山田", value: ""}
+            %input.kanji2ndName-info{placeholder: "例) 彩", value: ""}
         .form-group
           %label.kanaName-new
             お名前(全角) 
           %span.must-content
             必須
           .input-parrent
-            %input.kana1stName-info{placeholder:"例) ヤマダ", value: ""}
-            %input.kana2ndName-info{placeholder:"例) アヤ", value: ""}
+            %input.kana1stName-info{placeholder: "例) ヤマダ", value: ""}
+            %input.kana2ndName-info{placeholder: "例) アヤ", value: ""}
         .form-group
           %label.birthday-new
             お名前(全角) 
@@ -62,11 +62,11 @@
         .form-group
           .center-contents
             「次へ進む」のボタンを押すことにより、
-            =link_to "利用規約","", class:"link-for-user"
+            =link_to "利用規約", "", class: "link-for-user"
             に同意したものとみなします
         =link_to"" do
-          =f.button "次へ進む", class:"go-ahead"
-        =link_to "", class:"link-for-user-info" do
+          =f.button "次へ進む", class: "go-ahead"
+        =link_to "", class: "link-for-user-info" do
           本人情報の登録について
           =fa_icon'chevron-right'
   =render "footer-login"
