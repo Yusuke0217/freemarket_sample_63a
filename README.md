@@ -172,7 +172,7 @@ Things you may want to cover:
 |url|integer|null: false|
 |user_id|integer|null: false|
 
-- belongs_to product
+- belongs_to :product
 
 
 ### category
@@ -182,7 +182,7 @@ Things you may want to cover:
 |product_id|integer|null: false, foreign_key :true|
 |category-name|string|null: false|
 
-- has_many products
+- has_many :products
 
 
 ### brand
@@ -192,4 +192,4 @@ Things you may want to cover:
 |category_id|integer|null: false, foreign_key :true|
 |product_id|integer|null: false, foreign_key :true|
 
-- has_many products
+- has_many :products
