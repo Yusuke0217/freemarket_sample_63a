@@ -13,7 +13,7 @@
         .top-main-face
           .top-main-face__logo
             %a.mercaribox{href: ""}
-              = image_tag "/logo_red.svg", alt: "Mercari"
+              = image_tag "public/logo_red.svg", alt: "Mercari"
           
           %form.searchbox{action: ""}
             %input.texts{type: "search", name: "keyword", placeholder: "Do you look for anything?", value: ""}
@@ -56,12 +56,11 @@
             %h1.upper-text スマホでかんたんフリマアプリ
             %h1.bottom-text 今すぐ無料ダウンロード！
             .upper-footer__middle-bottom
-              = image_tag "SVG/logo_red.svg", alt: "", class: "mercarilogo"
+              = image_tag "public/logo_red.svg", alt: "", class: "mercarilogo"
               = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2177740229", height: "40", class: "gotoappstore"), "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
               = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2177740229", height: "40", class: "gotogoogleplay"),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
-              .upper-footer__right-photo 
-            -# = image_tag "phoneman.jpeg", alt: "", class: "right-photo"
-            = image_tag "SVG/fmarket_logo_red.svg", alt: "", class: "right-photo"
+          .upper-footer__right-photo 
+            = image_tag "app/assets/images/phoneman.jpeg", alt: "", class: "right-photo"
       .bottom-footer
         .bottom-footer__content
           .bottom-footer__about
