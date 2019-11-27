@@ -24,42 +24,42 @@
                 %input.kana1stName-info{placeholder: "例) ヤマダ", value: ""}
                 %input.kana2ndName-info{placeholder: "例) アヤ", value: ""}
             .form-group
-              %label.nickname-new
+              %label.yubinNum-new
                 郵便番号
               %span.must-content
                 必須
-              %input.nickname-info{placeholder: "例) 123-4567", value: ""}/
+              %input.yubinNum-info{placeholder: "例) 123-4567", value: ""}/
             .form-group
-              %label.mailAddless-new
+              %label.prefecture-new
                 都道府県
               %span.must-content
                 必須
-              .select-prefecture
+              .select-prefectures
                 =render "option-prefectures"
             .form-group
-              %label.password-new
+              %label.municipality-new
                 市町村
               %span.must-content
                 必須
               %input.password-info{placeholder: "例) 横浜市緑区", value: ""}/
             .form-group
-              %label.password-new
+              %label.banchi-new
                 番地
               %span.must-content
                 必須
               %input.password-info{placeholder: "例) 青山市1-1-1", value: ""}/
             .form-group
-              %label.password-new
+              %label.billding-new
                 建物名
               %span.nini-content
                 任意
               %input.password-info{placeholder: "例) 柳ビル103", value: ""}/
             .form-group
-              %label.password-new
+              %label.tellNum-new
                 電話
               %span.nini-content
                 任意
-              %input.password-info{placeholder: "09012345678", value: ""}/
+              %input.tellNum-info{placeholder: "09012345678", value: ""}/
             =link_to"" do
               =f.button "次へ進む", class: "go-ahead"
   =render "footer-login"
