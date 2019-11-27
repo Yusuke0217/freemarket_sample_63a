@@ -1,12 +1,6 @@
 @media screen and (min-width: 768px){
   .body{
-    position: relative;
-    min-height: 100%;
-    background: #f5f5f5;
-    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-    font-size: 14px;
-    color: #333;
-    line-height: 1.5;
+    @include bodyTemp;
     .addless-box{
       width: 700px;
       max-width: 100%;
@@ -38,52 +32,23 @@
                   font-weight: 600;
                 }
                 span.must-content{
-                  background: #ea352d;
-                  color: white;
-                  padding: 2px;
-                  border-radius: 2px;
+                  @include mustDesign;
                 }
                 span.nini-content{
-                  background: #ccc;
-                  color: white;
-                  padding: 2px;
-                  border-radius: 2px;
+                  @include mustDesign(#ccc);
                 }
                 p{
                   padding: 10px 0;
                   line-height: 1.5;
                 }
                 input{
-                  box-sizing: border-box;
-                  padding: 10px 16px 8px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  background: #fff;
-                  line-height: 1.5;
-                  font-size: 16px;
-                  width: 343px;
-                  margin: 8px 0 0;
+                  @include inputTemp;
                 }
                 select.prefectures{
-                  box-sizing: border-box;
                   padding: 10px 16px 8px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  line-height: 1.5;
-                  font-size: 16px;
                   width: 343px;
                   margin: 8px 0 0;
-                  cursor: pointer;
-                  -webkit-appearance: none;
-                  -moz-appearance: none;
-                  appearance: none;
-                  padding-left: 15px;
-                  height: 48px;
-                  background-image:url("SVG/chevron-down-solid.svg");
-                  background-repeat: no-repeat;
-                  background-size: 16px 30px;
-                  background-position: right 10px center;
-                  background-color: white;
+                  @include selectType;
                 }
                 .input-parrent{
                   display: flex;
@@ -93,31 +58,16 @@
                   }
                 }
               }
-              .go-ahead{
+              .go-ahead4{
                 margin-top: 30px;
-                background-color: #ea352d;
-                color: white;
-                width: 343px;
-                height: 50px;
-                font-size: 14px;
-                cursor: pointer;
-              }
-              .go-ahead:hover{
-                background-color: rgb(221, 16, 16);
-                transition: 1.0s;
+                @include submit-btn;
               }
               p{
                 padding: 10px 0;
                 line-height: 1.5;
               }
               .link-for-user-info{
-                color: rgb(0, 162, 255);
-                text-decoration:none;
-                float: right;
-                margin-top:20px;
-              }
-              .link-for-user-info:hover{
-                text-decoration:underline;
+                @include blue-line;
               }
             }
           }
@@ -130,13 +80,7 @@
 
 @media screen and (max-width: 768px){
   .body{
-    position: relative;
-    min-height: 100%;
-    background: #f5f5f5;
-    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-    font-size: 14px;
-    color: #333;
-    line-height: 1.5;
+    @include bodyTemp;
     .addless-box{
       max-width: 100%;
       margin: 0 auto;
@@ -165,52 +109,23 @@
                   font-weight: 600;
                 }
                 span.must-content{
-                  background: #ea352d;
-                  color: white;
-                  padding: 2px;
-                  border-radius: 2px;
+                  @include mustDesign;
                 }
                 span.nini-content{
-                  background: #ccc;
-                  color: white;
-                  padding: 2px;
-                  border-radius: 2px;
+                  @include mustDesign(#ccc);
                 }
                 p{
                   padding: 5px 0;
                   line-height: 1.5;
                 }
                 input{
-                  box-sizing: border-box;
-                  padding: 10px 16px 8px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  background: #fff;
-                  line-height: 1.5;
-                  font-size: 16px;
-                  width: 343px;
-                  margin: 8px 0 0;
+                  @include inputTemp;
                 }
                 select.prefectures{
-                  box-sizing: border-box;
                   padding: 10px 16px 8px;
-                  border-radius: 4px;
-                  border: 1px solid #ccc;
-                  line-height: 1.5;
-                  font-size: 16px;
                   width: 343px;
                   margin: 8px 0 0;
-                  cursor: pointer;
-                  -webkit-appearance: none;
-                  -moz-appearance: none;
-                  appearance: none;
-                  padding-left: 15px;
-                  height: 48px;
-                  background-image:url("SVG/chevron-down-solid.svg");
-                  background-repeat: no-repeat;
-                  background-size: 16px 30px;
-                  background-position: right 10px center;
-                  background-color: white;
+                  @include selectType;
                 }
                 .input-parrent{
                   display: flex;
@@ -220,31 +135,16 @@
                   }
                 }
               }
-              .go-ahead{
+              .go-ahead4{
                 margin-top: 10px;
-                background-color: #ea352d;
-                color: white;
-                width: 343px;
-                height: 50px;
-                font-size: 14px;
-                cursor: pointer;
-              }
-              .go-ahead:hover{
-                background-color: rgb(221, 16, 16);
-                transition: 1.0s;
+                @include submit-btn;
               }
               p{
                 padding: 5px 0;
                 line-height: 1.5;
               }
               .link-for-user-info{
-                color: rgb(0, 162, 255);
-                text-decoration:none;
-                float: right;
-                margin-top:20px;
-              }
-              .link-for-user-info:hover{
-                text-decoration:underline;
+                @include blue-line;
               }
             }
           }
