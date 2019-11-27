@@ -1,0 +1,21 @@
+.body
+  =render "header-signupBar"
+  .tell-box
+    .tell-box__title
+      %h1 電話番号の確認
+    .tell-box__body
+      .push-box
+        =form_with model: @post, local: true do |f| 
+          .formbox
+            .form-group
+              %label.tellNumber-new
+                携帯電話の番号
+              %input.tellNumber-info{placeholder: "携帯電話の番号を入力", value: ""}/
+              %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+            =link_to"" do
+              =f.button "SMSを送信する", class: "go-ahead"
+            %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+            =link_to "", class: "link-for-user-info" do
+              電話番号の確認が必要な理由
+              =fa_icon'chevron-right'
+  =render "footer-login"
