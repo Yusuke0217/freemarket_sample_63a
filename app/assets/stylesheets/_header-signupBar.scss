@@ -35,10 +35,23 @@
             display: flex;
             padding-top:40px;
             margin: 0;
+            li.now-point{
+              color: #ea352d;
+              font-weight: bold;
+            }
+            li.marker{
+              .mark{
+                background-color: #ea352d;
+              }
+              .mark::after{
+                background-color: #ea352d;
+              }
+            }
             li{
               padding: 0 52px 0 0;
               color:gray;
               font-size: 12px;
+
             }
             li.signupInfo{
               .mark::after{
@@ -123,6 +136,18 @@
           margin:10px auto 0;
           ol.signupList{
             display: flex;
+            li.now-point{
+              color: #ea352d;
+              font-weight: bold;
+            }
+            li.marker{
+              .mark{
+                background-color: #ea352d;
+              }
+              .mark::after{
+                background-color: #ea352d;
+              }
+            }
             li{
               color:gray;
               font-size: 12px;
