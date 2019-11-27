@@ -1,0 +1,82 @@
+.profile-main{
+  height: 700px;
+  margin: 40px;
+  .both-content{
+    display:inline-block;
+    position: relative;
+    .profile-main__contents{
+      width: 700px;
+      float:right;
+      padding: 40px 16px;
+      background-color: #fff;
+      &__head{
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        padding: 8px 0 8px;
+      }
+    .setting-profile-icon{
+      background-color: lightgreen;
+      padding: 72px 0 24px;
+      text-align: center;
+      .wrapper{
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        .icon-image{
+          .prof-photo{
+            border-radius: 50%;
+          }
+        }
+        .input-default{
+          width: 220px;
+          margin: 0 0 0 8px;
+          vertical-align: middle;
+          height: 32px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          font-size: 16px;
+          margin-top:5px
+        }
+      }
+    }
+    .profile-content{
+      padding: 40px 16px 40px;
+      .textarea-default{
+        padding: 10px;
+        border: 1px solid #ccc;
+        height: 216px;
+        width: 643px;
+        background: #fff;
+        font-size: 16px;
+    }
+    button{
+      margin: 16px 0 0;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      background: #ea352d;
+      color: #fff;
+      text-align: center;
+    }
+    }
+    }
+  }
+}
+@media screen and (max-width:1140px){
+  .profile-main{
+    height: 568px;
+    margin: 40px;
+  }
+  .profile-main__contents{
+    width: 700px;
+    float:left;
+    padding: 40px 16px;
+    background-color: #fff;
+  }
+}
+.body{
+  text-align: center;
+}
