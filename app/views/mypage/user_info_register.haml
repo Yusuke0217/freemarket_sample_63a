@@ -1,6 +1,5 @@
 .user_info_register
   .both-content
-    =render 'side-barMypage'
     .info_contents
       %h2.chapter-head 本人情報の登録
       %form.single-inner{action: "https://www.mercari.com/jp/mypage/identification/save/", method: "POST", novalidate: ""}
@@ -254,5 +253,6 @@
         %button.btn-default.btn-red{type: "submit"} 登録する
         .text-right
           %p
-            =link_to "本人情報の登録について","register",{class: "link"}
+            =link_to "本人情報の登録について","https://www.mercari.com/jp/help_center/article/423/",class: "info_link"
             %i.icon-arrow-right
+    =render 'side-barMypage'
