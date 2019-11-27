@@ -1,0 +1,14 @@
+.body
+  =render "header-signupBar"
+  .last-box
+    .last-box__title
+      %h2 会員登録完了
+    .last-box__body
+      =form_with model: @post, local: true do |f|
+        %p ありがとうございます。
+        %p 会員登録が完了しました。
+        .formbox
+          =link_to "" do
+            =f.button "メルカリをはじめる", class: "go-ahead"
+      =image_tag "background/tech.jpg", class: "tech-image"
+  =render "footer-login"
