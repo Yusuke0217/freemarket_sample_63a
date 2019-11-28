@@ -21,13 +21,13 @@
                 = link_to "user-nmae", root_path
                 .user-evaluation
                   .item-user-ratings
-                    %i.icon-good 😃
+                    %i.fa.fa-smile-o
                     %span 23
                   .item-user-ratings
-                    %i.icon-normal 🙂
+                    %i.fa.fa-meh-o
                     %span 0
                   .item-user-ratings
-                    %i.icon-bad 😩
+                    %i.fa.fa-frown-o
                     %span 0
             .tr
               .th
@@ -79,12 +79,16 @@
       .item__botton
         .botton-left
           %button.botton-left__icon
-            %i.icon-like-border
+            %i.far.fa-heart
             %span いいね!
             %span.fade-in-down 0
-          %button.botton-left__icon 不適切な商品の報告
+          %button.botton-left__icon
+            %i.far.fa-flag
+            %span 報告
         .botton-right
-          =link_to "あんしん・あんぜんへの取り組み", root_path
+          =link_to  root_path do
+            %i.fas.fa-key
+            %span 安心・安全への取り組み
     .message
       .message__contents
         .message-items
@@ -127,7 +131,7 @@
                 .box-info__price
                   ¥500
                 .box-info__action
-                  .icon ♡
+                  %i.far.fa-heart
                   .span 1
           .content-box
           .content-box

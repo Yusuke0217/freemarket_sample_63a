@@ -74,6 +74,30 @@
               .item-user-ratings {
                 margin-top: 8px;
                 margin-left: 16px;
+                i.fa.fa-smile-o {
+                  font-weight: bold;
+                  display: inline-block;
+                  font: normal 14px/1 FontAwesome;
+                  font-size: 16px;
+                  text-rendering: auto;
+                  color: red;
+                }
+                i.fa.fa-meh-o {
+                  font-weight: bold;
+                  display: inline-block;
+                  font: normal 14px/1 FontAwesome;
+                  font-size: 16px;
+                  text-rendering: auto;
+                  color: yellow;
+                }
+                i.fa.fa-frown-o {
+                  font-weight: bold;
+                  display: inline-block;
+                  font: normal 14px/1 FontAwesome;
+                  font-size: 16px;
+                  text-rendering: auto;
+                  color: blue;
+                }
               }
               .item-user-ratings:first-child {
                 margin-left: 0;
@@ -142,6 +166,22 @@
         outline: 0;
         cursor: pointer;
         font-size: 14px;
+        i.far.fa-heart {
+          font-weight: bold;
+          display: inline-block;
+          font: normal 14px/1 FontAwesome;
+          font-size: 16px;
+          text-rendering: auto;
+          color: gray;
+        }
+        i.far.fa-flag {
+          font-weight: bold;
+          display: inline-block;
+          font: normal 14px/1 FontAwesome;
+          font-size: 16px;
+          text-rendering: auto;
+          color: gray;
+        }
       }
     }
     .botton-right {
@@ -149,6 +189,13 @@
         text-decoration: none;
         color: #0099e8;
         font-size: 14px;
+        i.fas.fa-key {
+          font-weight: bold;
+          display: inline-block;
+          font: normal 14px/1 FontAwesome;
+          font-size: 16px;
+          text-rendering: auto;
+        }
       }
     }
   }
@@ -289,6 +336,15 @@
             justify-content: space-between;
             &__action {
               display: flex;
+              i.far.fa-heart {
+                font-weight: bold;
+                display: inline-block;
+                font: normal 14px/1 FontAwesome;
+                font-size: 16px;
+                text-rendering: auto;
+                color: gray;
+                line-height: 1.5;
+              }
             }
           }
         }
