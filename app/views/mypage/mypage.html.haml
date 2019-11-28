@@ -1,55 +1,67 @@
-.main
-  %section.main__user
-    %a{ href: "#" }
-    %img.main__user__icon{ href: "#", src: "assets/106_h_24.png" }
-      %h2 SRB
-    .main__user__records 
-      %span 評価 0 出品数 0
+.bodyMypage.clearfix
+  .main
+    .user
+      .thumbnail
+        = link_to ""
+        .icon
+          =image_tag "/ramen.jpg"
+        %h2 SRB
+        .records
+          %div
+            評価
+            %span 0
+          %div
+            出品数
+            %span 0
 
-  .main__info
-    %ul.main__info__tabs
-      %li.main__info__tabs__active1
-        %h3
-          %a{ href: "#" }
+    .info
+      %ul.info__tabs
+        %li
+          %h3
             お知らせ
-      %li.main__info__tabs__active2
-        %h3
-          %a{ href: "#" }
+        %li
+          %h3
             やることリスト
+      .message
+        %ul.messages
+          %li
+            = link_to "", class: "link" do
+              .figure
+                = image_tag "/logo_red.svg", class: "box"
+              .form
+                .form__text
+                  <お買い物応援!> ¥1,000の商品を実質1円でご購入いただけます！
+                .form__time
+                  %i.fa.fa-clock-o 3日前
+              .chevron
+                %i.fa.fa-chevron-right
+          %li
+            = link_to "", class: "link" do
+              .figure
+                = image_tag "/logo_red.svg", class: "box"
+              .form
+                .form__text
+                  明日、P999還元クーポンの有効期限が切れます！タップして詳細を確認しましょう。
+                .form__time
+                  %i.fa.fa-clock-o 5日前
+              .chevron
+                %i.fa.fa-chevron-right
+          .all
+            = link_to "一覧を見る", "", class: "detail"
 
-    .main__info__messages
-      %ul.main__info__messages__notification
-        %li.main__info__messages__notification__list
-          %figure
-            %img.main__info__messages__notification__list__box{ href: "#", src: "assets/logo_red.svg" }
-          .main__info__messages__notification__list__text
-            <お買い物応援!> ¥1000の商品を実質1円でご購入頂けます!
-          %i.fa.fa-clock-o 22時間前
-          %i.fa.fa-arrow-right
-        %li.main__info__messages__notification__all
-          一覧を見る
-
-      %ul.main__info__messages__todo
-        %li.main__info__messages__todo__list
-          %img.main__info__messages__todo__list__box{ href: "#", src: "assets/logo_red.svg" }
-          .main__info__messages__todo__list__text
-            ご登録のメールアドレスに認証メールを送りました。メールに記載のURLをクリックして、メールアドレスを認証してください。
-          %i.fa.fa-clock-o 2日前
-          %i.fa.fa-arrow-right
-        %li.main__info__messages__todo__all
-          一覧を見る
-
-  .main__product
-    .main__product__header
-      %h2 購入した商品
-    %ul.main__product__tabs
-      %li
-        %h3 取引中
-        %h3 過去の取引
-    .main__product__messages
-      %ul.main__product__messages__trade-now
+    .product
+      .product__header
+        %h2 購入した商品
+      %ul.product__tabs
         %li
-          %h3 取引中の商品がありません
-      %ul.main__product__messages__trade-past
+          %h3
+            取引中
         %li
-          %h3 過去に取引した商品がありません
+          %h3
+            過去の取引
+      .product__messages
+        %ul.trades
+          %li
+            取引中の商品がありません
+
+  = render "side-barMypage"
