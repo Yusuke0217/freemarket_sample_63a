@@ -1,19 +1,15 @@
 @import "reset";
 @import "font-awesome";
+@import "font-awesome-sprockets";
+@import "mixin-signup";
+@import "clearfix";
 @import "header";
 @import "footer";
-
-@import "home";
-
-
-@import "mixin-signup";
-
-
-@import "profile";
 @import "side-barMypage";
+@import "home";
+@import "profile";
 @import "user_info_register";
-@import "clearfix";
-
+@import "header-login";
+@import "footer-login";
+@import "header-signupBar";
 @import "login-header";
-
-
