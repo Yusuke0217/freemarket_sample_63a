@@ -25,21 +25,27 @@
     .main {
       margin: 0 auto;
       width: 700px;
+      background: #fff;
+      height: 548px;
       .upper-header {
-        width: 100%;
+        text-align: center;
         font-size: 22px;
         padding: 32px 16px;
         font-weight: bold;
         border-bottom: 1px solid #eee;
       }
       .resetting-box {
+        padding: 64px;
+        margin: 0 auto;
+        width: 320px;
         .email {
           width: 320px;
           height: 114px;
           label {
             height: 48px;
-            width: 328px;
+            // width: 328px;
             margin-bottom: 24px;
+            font-weight: none;
           }
           .email-address {
             height: 48px;
@@ -50,6 +56,12 @@
             line-height: 1.5;
             background-color: #fff;
             padding-left: 10px;
+            margin-top: 8px;
+          }
+          .reset-info {
+            font-size: 12px;
+            color: #888;
+            margin-top: 8px;
           }
         }
         .robot {
@@ -58,7 +70,7 @@
             height: 78px;
             background: azure;
             border-radius: 2px;
-            float: left;
+            margin-top: 40px;
             .left-side {
               float: left;
               display: flex;
@@ -99,12 +111,12 @@
           }
         }
         .submit {
-          width: 328px;
+          width: 320px;
           height: 50px;
           background: #ea352d;
           color: #fff;
           border: 1px solid #ea352d;
-          margin: 24px 0 40px;
+          margin-top: 40px;
           font-size: 14px;
         }
       }
