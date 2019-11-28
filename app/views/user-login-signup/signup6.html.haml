@@ -1,0 +1,35 @@
+.body
+  .signup-header
+    .signup-header__box
+      .signup-header-logo
+        =link_to '' do
+          =image_tag 'SVG/fmarket_logo_red.svg'
+      %nav.signupBar
+        %ol.signupList
+          %li.signupInfo.marker
+            会員情報
+            .mark
+          %li.signupTell.marker
+            電話番号認証
+            .mark
+          %li.signupAdd.marker
+            お届け先住所入力
+            .mark
+          %li.signupHowToPay.marker
+            支払い方法
+            .mark
+          %li.signupComplete.marker.now-point
+            完了
+            .mark
+  .last-box
+    .last-box__title
+      %h2 会員登録完了
+    .last-box__body
+      =form_with model: @post, local: true do |f|
+        %p ありがとうございます。
+        %p 会員登録が完了しました。
+        .formbox
+          =link_to "" do
+            =f.button "メルカリをはじめる", class: "go-ahead"
+      =image_tag "background/tech.jpg", class: "tech-image"
+  =render "footer-login"
