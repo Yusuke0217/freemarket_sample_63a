@@ -1,0 +1,210 @@
+.main-content {
+  width: 100%;
+  height: 1000px;
+  padding-bottom: 220px;
+  background-color: #f5f5f5;
+  header.main-header {
+    height: 128px;
+    text-align: center;
+    h1 {
+      display: inline-block;
+      margin-top: 40px;
+      .mercari-logo {
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+      }
+    }
+  }
+  main.pay-main {
+    display: block;
+    section.pay-item-content {
+      width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      h2.pay-head {
+        padding: 16px;
+        font-size: 22px;
+        text-align: center;
+        line-height: 1.5;
+      }
+      section.pay-item {
+        text-align: center;
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+        margin: 0;
+        .pay-content-info {
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 320px;
+          margin: 0 auto;
+          h3.pay-item__image {
+            font-size: 22px;
+            display: block;
+            font-weight: bold;
+            img.item-gyazo {
+              width: 64px;
+              width: auto;
+              max-height: 148px;
+              opacity: 1;
+              transition: opacity .3s;
+              vertical-align: middle;
+            }
+          }
+          p.item-text {
+            text-align: justify;
+            width: 185px;
+            margin-left: 15px;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+          form.pay-form {
+            width: 100%;
+            p.pay-price {
+              margin-top: 8px;
+              line-height: 1.5;
+              font-size: 22px;
+              span.mop {
+                margin-left: 8px;
+                font-size: 12px;
+                font-weight: bold;
+                display: inline-block;
+              }
+              // span.method-of-payment {
+              // }これは必要なコメントです
+            }
+            ul.pay-point {
+              background-color: gray;
+              text-align: center;
+              margin-top: 16px;
+              list-style: none;
+              width: 320px;
+              li.point-many {
+                display: list-item;
+                .point-text {
+                  cursor: default;
+                  padding: 16px;
+                  border: 1px solid #ccc;
+                  position: relative;
+                }
+              }
+            }
+            ul.price-table {
+              display: table;
+              border-collapse: collapse;
+              width: 100%;
+              list-style-type: disc;
+              margin-block-start: 15px;
+              margin-block-end: 15px;
+              li.price-breakdown {
+                border: 0;
+                font-size: 18px;
+                display: table-row;
+                .breakdown:first-child {
+                  text-align: left;
+                }
+                .breakdown {
+                  display: table-cell;
+                  padding: 16px 0;
+                  span.value {
+                    font-size: 28px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      section.pay-user-info {
+        transition: all ease-out .3s;
+        margin-top: 40px;
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+        .pay-content-info {
+          max-width: 320px;
+          margin: 0 auto;
+          h3 {
+            margin: 0;
+            font-size: 14px;
+          }
+          address.user-info-text {
+            margin-top: 8px;
+            font-size: 14px;
+            line-height: 1.4;
+            font-style: normal;
+            height: 42px;
+          }
+          br {
+          }
+          p.user-info-text {
+            margin: 8px 0 0;
+            font-size: 14px;
+            line-height: 1.4;
+          }
+          a.user-info-fix {
+            display: block;
+            text-align: right;
+            color: #0099e8;
+            text-decoration: none;
+            touch-action: manipulation;
+            font-size: 13px;
+          }
+          .dammy {
+            display: flex;
+          }
+
+          p.user-info-text {
+            margin: 8px 0 0;
+            font-size: 14px;
+            line-height: 1.4;
+          }
+          figure {
+            img {
+            }
+          }
+          p {
+            a.user-info-fix {
+              span {
+              }
+            }
+          }
+        }
+      }
+      section.pay-user-info:last-of-type {
+        padding: 40px 12.5%;
+      }
+    }
+  }
+  footer.pain-footer {
+    width: 456px;
+    margin: 0 auto;
+    padding-top: 40px;
+    text-align: center;
+    z-index: 1;
+    nav {
+      text-align: center;
+      ul.script {
+        li {
+          font-size: 12px;
+          display: inline-block;
+          margin: 0 0 0 16px;
+          a {
+            color: black;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .footer-logo {
+      width: 80px;
+      height: 65px;
+      margin: 40px 188px 0;
+      vertical-align: middle;
+    }
+    p.copyright {
+      margin-top: 8px;
+      font-size: 13px;
+    }
+  }
+}
