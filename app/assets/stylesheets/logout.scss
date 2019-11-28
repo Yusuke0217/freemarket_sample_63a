@@ -1,8 +1,12 @@
 .content {
-  height: 179px;
-  width: 700px;
+  margin: 40px auto 0;
+  display:inline-block;
   .logout {
+    float: right;
+    width: calc(700px - 128px);
     padding: 64px;
+    background-color: #fff;
+    text-align: center;
     .logout-btn {
       height: 50px;
       width: 320px;
@@ -12,4 +16,20 @@
       margin: 0 auto;
     }
   }
+}
+
+@media screen and (max-width:1060px){
+.content{
+  padding-left: 40px;
+  .logout{
+    float: left;
+    width: calc(700px - 128px);
+  }
+  .body{
+    padding: 40px 0  0;
+    .side-bar-box{
+      width: 700px;
+    }
+  }
+}
 }
