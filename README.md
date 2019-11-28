@@ -46,14 +46,14 @@ Things you may want to cover:
 |last-name-kana|string|null: false, foreign_key: true|  名（仮名）
 |exhibit-product|string||  出品した商品
 |exhibit-number|integer||  出品数
-|exhibit-now|string||  出品中
-|exhibit-trading|string||  取引中(出品)
-|exhibit-sold|string||  売却済み
+<!-- |exhibit-now|string||  出品中  -->
+<!-- |exhibit-trading|string||  取引中(出品) -->
+<!-- |exhibit-sold|string||  売却済み -->
 |points|integer||  ポイント
 |like|integer||  いいね！
 |earnings|integer||  売上金
-|buyer_id|integer|null: false|買い手id
-|seller_id|integer|null: false|売り手id
+|purchase_history_id|integer|null: false|  買い手id
+|sales_history_id|integer|null: false|  売り手id
 
 ### Association
 - has_many :products, through: :purchase-history
