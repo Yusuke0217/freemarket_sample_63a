@@ -2,16 +2,9 @@
 @import "font-awesome";
 @import "header";
 @import "footer";
-
 @import "home";
-
-
-@import "mixin-signup";
-
-
-@import "profile";
 @import "side-barMypage";
+@import "logout";
+@import "profile";
 @import "user_info_register";
 @import "clearfix";
-@import "product-details";
-@import "login-header";

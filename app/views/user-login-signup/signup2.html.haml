@@ -1,0 +1,95 @@
+/headerは、js導入時に追加するクラス名と場所をわかりやすくするために現時点では部分テンプレートにしていません。
+.body
+  .signup-header
+    .signup-header__box
+      .signup-header-logo
+        =link_to '' do
+          =image_tag 'SVG/fmarket_logo_red.svg'
+      %nav.signupBar
+        %ol.signupList
+          %li.signupInfo.marker.now-point
+          
+            会員情報
+            .mark
+          %li.signupTell
+            電話番号認証
+            .mark
+          %li.signupAdd
+            お届け先住所入力
+            .mark
+          %li.signupHowToPay
+            支払い方法
+            .mark
+          %li.signupComplete
+            完了
+            .mark
+  .push-info
+    .info-top
+      %h2
+        会員情報入力
+    =form_with model: @post, local: true do |f| 
+      .formbox
+        .form-group
+          %label.nickname-new
+            ニックネーム
+          %span.must-content
+            必須
+          %input.nickname-info{placeholder: "例) メルカリ太郎", value: ""}/
+        .form-group
+          %label.mailAddless-new
+            メールアドレス
+          %span.must-content
+            必須
+          %input.mailAddless-info{placeholder: "PC・携帯どちらでも可", value: ""}/
+        .form-group
+          %label.password-new
+            パスワード
+          %span.must-content
+            必須
+          %input.password-info{placeholder: "7文字以上", value: ""}/
+          .check-box
+            %label.checkbox
+              %input.password-check{type: "checkbox"}
+                パスワードを表示する
+        .form-group
+          %h3.check-person
+            本人確認
+          %p
+            安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .form-group
+          %label.kanjiName-new
+            お名前(全角) 
+          %span.must-content
+            必須
+          .input-parrent
+            %input.kanji1stName-info{placeholder: "例) 山田", value: ""}
+            %input.kanji2ndName-info{placeholder: "例) 彩", value: ""}
+        .form-group
+          %label.kanaName-new
+            お名前(全角) 
+          %span.must-content
+            必須
+          .input-parrent
+            %input.kana1stName-info{placeholder: "例) ヤマダ", value: ""}
+            %input.kana2ndName-info{placeholder: "例) アヤ", value: ""}
+        .form-group
+          %label.birthday-new
+            お名前(全角) 
+          %span.must-content
+            必須
+          .select-parrent
+            =render "option-birthYear"
+          %p.must-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        .robot
+          私はロボットではありません
+        .form-group
+          .center-contents
+            「次へ進む」のボタンを押すことにより、
+            =link_to "利用規約", "", class: "link-for-user"
+            に同意したものとみなします
+        =link_to"" do
+          =f.button "次へ進む", class: "go-ahead"
+        =link_to "", class: "link-for-user-info" do
+          本人情報の登録について
+          =fa_icon'chevron-right'
+  =render "footer-login"

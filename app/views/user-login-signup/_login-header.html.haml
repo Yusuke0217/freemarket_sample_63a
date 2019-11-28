@@ -1,0 +1,69 @@
+%body
+  .main-content
+    %header.top-content
+      .top-main
+        .top-main-face
+          = link_to image_tag("SVG/fmarket_logo_red.svg", alt: "", class: "top-main-face__logo"),"https://www.mercari.com/jp/"
+          %form.searchbox
+            %input.texts{type: "search", name: "keyword", placeholder: "Do you serach for anything?", value: ""}
+            %button.glass
+              %i.fas.fa-search
+
+        .top-main-leg
+          %nav.bottom-left
+            %ul.item-nav
+              %li
+                %h2
+                  = link_to "https://www.mercari.com/jp/category/", class: "category" do
+                    %i.fas.fa-list
+                    %span カテゴリーから探す
+                  -# %ul先の実装に必要なため、コメントアウト
+                  -#   %li
+                  -#     %h3
+                  -#       = link_to ""
+                  -#     %ul
+                  -#       %li
+                  -#         = link_to ""
+              %li
+                %h2
+                  = link_to "https://www.mercari.com/jp/brand/", class: "brand" do
+                    %i.fab.fa-cc-amex
+                    %span ブランドから探す
+
+          
+          .bottom-right
+            %ul.user-nav
+              %li.like-list
+                = link_to "https://www.mercari.com/jp/mypage/like/history/", class: "menu-link" do
+                  %i.far.fa-heart
+                  %span いいね！一覧
+
+              %li.like-list
+                = link_to "https://www.mercari.com/jp/mypage/notification/", class: "menu-link" do
+                  %i.far.fa-bell
+                  %span お知らせ
+                  .count
+                -# %ul先の実装に必要なため、コメントアウト
+                -#   %li
+                -#     = link_to "", class: ""
+                -#       %figure
+                -#         = image_tag ""
+
+              %li.like-list
+                = link_to "https://www.mercari.com/jp/mypage/todo/", class: "menu-link" do
+                  %i.fas.fa-check
+                  %span ToDoリスト
+                  .count
+
+              %li.like-list
+                = link_to "", class: "menu-link" do
+                  %figure
+                    .peace
+                      = image_tag "SVG/logo_gray.svg"
+                  %span マイページ
+
+                -# .mypage-box先の実装に必要なため、コメントアウト
+                -#   .mypage-text
+                -#     %figure
+                -#       %div
+                -#         = image_tag "", class: ""
