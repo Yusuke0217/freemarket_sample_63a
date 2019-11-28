@@ -1,0 +1,62 @@
+%body
+  .main-content
+    %header.main-header
+      %h1
+        = link_to image_tag("SVG/fmarket_logo_red.svg", alt: "ギャゾー", class: "mercari-logo")
+    %main.pay-main
+      %section.pay-item-content
+        %h2.pay-head 購入内容確認
+        %section.pay-item
+          .pay-content-info
+            %h3.pay-item__image
+              = image_tag "SVG/dogu.jpg", alt: "画像はあくまでもイメージです", class: "item-gyazo"
+            %p.item-text Made in 三国ヶ丘ァ!! 土偶業界の異端児 D&G
+            %form.pay-form
+              %p.pay-price 
+                ¥1,500
+                -# %span.method-of-paymentこの先の実装で必要なのでコメントアウト
+                %span.mop
+                  着払い
+              %ul.pay-point
+                %li.point-many
+                  .point-text ポイント is empty
+              -# if you don't have point then this actionこの先の実装で必要なのでコメントアウト
+              -# %ul.pay-point have
+              -#   %li.point-many
+              -#     .point-text
+
+              %ul.price-table
+                %li.price-breakdown
+                  .breakdown お買い上げ金額
+                  .breakdown
+                    %span{"value":"15000"} ¥15,000
+              %input{name: "seller_id", type: "hidden", value: "722674558"}/
+
+        %section.pay-user-info
+          .pay-content-info
+            %h3 お届け先
+            %address.user-info-text 〒533-0041 愛知県 名古屋市 栄
+            %br
+            %p.user-info-text
+            = link_to "変更する >", "", class: "user-info-fix"
+            .dammy
+        %section.pay-user-info
+          .pay-content-info
+            %h3 支払い方法
+            %p.user-info-text
+            %figure
+              = image_tag ""
+            %p
+            = link_to "変更する >", "#", class: "user-info-fix"
+            .dammy
+    %footer.pain-footer
+      %nav
+        %ul.script
+          %li
+            = link_to "プライバシーポリシー", "#"
+          %li
+            = link_to "メルカリ利用規約", "#"
+          %li
+            = link_to "特定商取引に関する表記", "#"
+      = link_to image_tag("SVG/fmarket_logo_red.svg", target: "_blank", alt: "mercari", class: "footer-logo"), "#"
+      %p.copyright ©︎ ⅡOⅠⅨ Mercari
