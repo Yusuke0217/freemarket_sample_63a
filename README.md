@@ -54,6 +54,7 @@ Things you may want to cover:
 |earnings|integer||  売上金
 |purchase_history_id|integer|null: false|  買い手id
 |sales_history_id|integer|null: false|  売り手id
+|profile|text||  プロフィール
 
 ### Association
 - has_many :products, through: :purchase-history

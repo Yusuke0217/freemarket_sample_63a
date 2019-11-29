@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_101530) do
     t.integer "earnings"
     t.integer "purchase_history_id", null: false
     t.integer "sales_history_id", null: false
+    t.text "profile"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
