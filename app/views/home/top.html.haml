@@ -1,7 +1,7 @@
 = render 'layouts/header'
 .main
   .slide
-  .nav
+  .top-nav
     .Category
       人気のカテゴリー
     %ul.Categorys
@@ -13,7 +13,7 @@
         =link_to "家電・スマホ・カメラ", class: "Categorys__list--item"
       %li
         =link_to "おもちゃ・ホビー・グッズ", class: "Categorys__list--item"
-  .main-content
+  .main-body
     .main-contents
       .main-contents__top
         .main-contents__header--name
@@ -111,7 +111,117 @@
                 .contents-item__index
                   .contents-item__index--name 
                     %span テスト
-
+  .top-nav
+    .Category
+      人気のブランド
+    %ul.Categorys
+      %li
+        =link_to "タグ・ホイヤー", class: "Categorys__list--item"
+      %li
+        =link_to "PRADA", class: "Categorys__list--item"
+      %li
+        =link_to "Hamilton", class: "Categorys__list--item"
+      %li
+        =link_to "FENDI", class: "Categorys__list--item"
+  .main-body
+    .main-contents
+      .main-contents__top
+        .main-contents__header--name
+          タグ・ホイヤー新着アイテム
+        =link_to "もっと見る ＞", class: "main-contents__header--more"
+      .main-contents__goods
+        %ul
+          %li
+            .main-contents-box
+              %a.contents-item{href: "#"}
+                .contents-item__image
+                  .contents-item__image--price
+                    %span ¥1,000
+                .contents-item__index
+                  .contents-item__index--name 
+                    %span 粉雪舞う季節はいつもすれ違い人混みに紛れても同じ空見てるのに。風に吹かれて似たように凍えるのに。些細な言い合いもなくてララライララライ
+          %li
+            .main-contents-box
+              %a.contents-item{href: "#"}
+                .contents-item__image
+                  .contents-item__image--price
+                    %span ¥1,000
+                .contents-item__index
+                  .contents-item__index--name 
+                    %span テスト
+          %li
+            .main-contents-box
+              %a.contents-item{href: "#"}
+                .contents-item__image
+                  .contents-item__image--price
+                    %span ¥1,000
+                .contents-item__index
+                  .contents-item__index--name 
+                    %span テスト
+          %li
+            .main-contents-box
+              %a.contents-item{href: "#"}
+                .contents-item__image
+                  .contents-item__image--price
+                    %span ¥1,000
+                .contents-item__index
+                  .contents-item__index--name 
+                    %span テスト
+          %li
+            .main-contents-box
+              %a.contents-item{href: "#"}
+                .contents-item__image
+                  .contents-item__image--price
+                    %span ¥1,000
+                .contents-item__index
+                  .contents-item__index--name 
+                    %span テスト
+      .main-contents__header
+        .main-contents__header--name
+          PRADA新着アイテム
+        =link_to "もっと見る ＞", class: "main-contents__header--more"
+      .main-contents__goods
+        %ul
+          %li
+            .main-contents-box
+              %a.contents-item{href: "#"}
+                .contents-item__image
+                  .contents-item__image--price
+                    %span ¥1,000
+                .contents-item__index
+                  .contents-item__index--name 
+                    %span テスト
+      .main-contents__header
+        .main-contents__header--name
+          Hamilton新着アイテム
+        =link_to "もっと見る ＞", class: "main-contents__header--more"
+      .main-contents__goods
+        %ul
+          %li
+            .main-contents-box
+              %a.contents-item{href: "#"}
+                .contents-item__image
+                  .contents-item__image--price
+                    %span ¥1,000
+                .contents-item__index
+                  .contents-item__index--name 
+                    %span テスト
+      .main-contents__header
+        .main-contents__header--name
+          FENDI新着アイテム
+        =link_to "もっと見る ＞", class: "main-contents__header--more"
+      .main-contents__goods
+        %ul
+          %li
+            .main-contents-box
+              %a.contents-item{href: "#"}
+                .contents-item__image
+                  .contents-item__image--price
+                    %span ¥1,000
+                .contents-item__index
+                  .contents-item__index--name 
+                    %span テスト
+= render 'layouts/footer'
 
 
 
