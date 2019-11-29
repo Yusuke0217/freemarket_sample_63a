@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # スプリントレビュー用ルート
+  get '/mypage/profile', to: 'mypage#profile'
   devise_for :users
   root to: "home#top"
   resources :users, only: [:edit, :update, :delete]

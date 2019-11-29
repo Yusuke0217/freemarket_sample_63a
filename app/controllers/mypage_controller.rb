@@ -1,5 +1,4 @@
 class MypageController < ApplicationController
-  def index
-    root_to 
+  def profile
   end
 end
