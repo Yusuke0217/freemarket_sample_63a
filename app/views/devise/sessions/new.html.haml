@@ -1,8 +1,26 @@
+-# %h2 Log in
+-# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     %br/
+-#     = f.password_field :password, autocomplete: "current-password"
+-#   - if devise_mapping.rememberable?
+-#     .field
+-#       = f.check_box :remember_me
+-#       = f.label :remember_me
+-#   .actions
+-#     = f.submit "Log in"
+-# = render "devise/shared/links"
+
 .body
   .header
     .header-logo
       =link_to '' do
-        =image_tag 'fmarket_logo_red.svg'
+        =image_tag '/fmarket_logo_red.svg'
   .container
     .login-panel
       .register
@@ -39,7 +57,7 @@
                     = link_to "利用規約", "https://policies.google.com/terms?hl=ja", class: "link"
           %button.submit{type: "submit"} ログイン
           .forgot-password
-            = link_to "パスワードをお忘れの方", "https://www.mercari.com/jp/password/reset/start/", class: "resetting"
+            = link_to "パスワードをお忘れの方", new_user_password_path, class: "resetting"
   .body-foot
     .footer
       .text-box

@@ -78,7 +78,7 @@
           %span.must-content
             必須
           .select-parrent
-            =render "option-birthYear"
+            //=render "option-birthYear"
           %p.must-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .robot
           私はロボットではありません
@@ -87,9 +87,9 @@
             「次へ進む」のボタンを押すことにより、
             =link_to "利用規約", "", class: "link-for-user"
             に同意したものとみなします
-        =link_to"" do
+        =link_to signup3_signup_index_path do
           =f.button "次へ進む", class: "go-ahead"
         =link_to "", class: "link-for-user-info" do
           本人情報の登録について
           =fa_icon'chevron-right'
-  =render "footer-login"
+  //=render "footer-login"

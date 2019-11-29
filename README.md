@@ -27,11 +27,11 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
-|name|string|null: false, unique: true|  名前
+|name|string|null: false|  名前
+|nickname|string|null: false|  ニックネーム
 |password|string|null: false, unique: true|  パスワード
-|mail|string|null: false, unique: true|
-|phone-number|integer|null: false, unique: true|  電話番号
+|email|string|null: false, unique: true|  メールアドレス
+|phone-number|integer|null: false|  電話番号
 |prefectures|string|null: false|  都道府県
 |city|string|null: false|  市区町村
 |address|integer|null: false|  番地
@@ -46,14 +46,15 @@ Things you may want to cover:
 |last-name-kana|string|null: false, foreign_key: true|  名（仮名）
 |exhibit-product|string||  出品した商品
 |exhibit-number|integer||  出品数
-|exhibit-now|string||  出品中
-|exhibit-trading|string||  取引中(出品)
-|exhibit-sold|string||  売却済み
+<!-- |exhibit-now|string||  出品中  -->
+<!-- |exhibit-trading|string||  取引中(出品) -->
+<!-- |exhibit-sold|string||  売却済み -->
 |points|integer||  ポイント
 |like|integer||  いいね！
 |earnings|integer||  売上金
-|buyer_id|integer|null: false|買い手id
-|seller_id|integer|null: false|売り手id
+|purchase_history_id|integer|null: false|  買い手id
+|sales_history_id|integer|null: false|  売り手id
+|profile|text||  プロフィール
 
 ### Association
 - has_many :products, through: :purchase-history
