@@ -14,12 +14,6 @@ class UsersController < ApplicationController
   def delete
   end
 
-  def signup2
-  end
-
-  def signup3
-  end
-
   private
 
   def user_params
