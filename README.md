@@ -27,11 +27,11 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
-|name|string|null: false, unique: true|  名前
+|name|string|null: false|  名前
+|nickname|string|null: false|  ニックネーム
 |password|string|null: false, unique: true|  パスワード
-|mail|string|null: false, unique: true|
-|phone-number|integer|null: false, unique: true|  電話番号
+|email|string|null: false, unique: true|  メールアドレス
+|phone-number|integer|null: false|  電話番号
 |prefectures|string|null: false|  都道府県
 |city|string|null: false|  市区町村
 |address|integer|null: false|  番地
