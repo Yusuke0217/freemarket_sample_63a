@@ -5,6 +5,9 @@
   font-size: inherit;
   text-rendering: auto;
 }
+@mixin tomato {
+  color: #ea352d;
+}
 header.top-content {
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.18)0px 2px 4px;
@@ -95,9 +98,9 @@ header.top-content {
                 color: black;
                 i.fas.fa-list {
                   content: "\f03a";
-                  color: #ea352d;
                   margin-right: 4px;
                   @include awesome;
+                  @include tomato;
                 }
                 span {
                   vertical-align: middle;
@@ -109,9 +112,9 @@ header.top-content {
                 color: black;
                 i.fab.fa-cc-amex {
                   content: "\f1f3";
-                  color: #ea352d;
                   margin-right: 4px;
                   @include awesome;
+                  @include tomato;
                 }
                 span {
                   vertical-align: middle;
@@ -140,23 +143,23 @@ header.top-content {
               text-decoration: none;
               i.far.fa-heart {
                 content: "\f834";
-                color: tomato;
                 @include awesome;
+                @include tomato;
               }
               span {
                 vertical-align: middle;
               }
               i.far.fa-bell {
                 content: "\f0f3";
-                color: tomato;
                 @include awesome;
+                @include tomato;
               }
               .count {
               }
               i.fas.fa-check {
                 content: "\f00c";
-                color: tomato;
                 @include awesome;
+                @include tomato;
               }
               figure {
                 margin: 0;
