@@ -6,21 +6,36 @@
           =image_tag 'SVG/fmarket_logo_red.svg'
       %nav.signupBar
         %ol.signupList
-          %li.signupInfo.marker
-            会員情報
-            .mark
+          %li.signupInfo.marker.marker2
+            .mark-name1
+              会員情報
+            .marking
+              .mark
+              .mark-line
           %li.signupTell.marker.now-point
-            電話番号認証
-            .mark
+            .mark-name2
+              電話番号認証
+            .marking
+              .mark
+              .mark-line
           %li.signupAdd
-            お届け先住所入力
-            .mark
+            .mark-name3
+              お届け先住所入力
+            .marking
+              .mark
+              .mark-line
           %li.signupHowToPay
-            支払い方法
-            .mark
+            .mark-name4
+              支払い方法
+            .marking
+              .mark
+              .mark-line
           %li.signupComplete
-            完了
-            .mark
+            .mark-name5
+              完了
+            .marking
+              .mark
+              .mark-line
   .tell-box
     .tell-box__title
       %h2 電話番号の確認
@@ -39,4 +54,4 @@
             =link_to "", class: "link-for-user-info" do
               電話番号の確認が必要な理由
               =fa_icon'chevron-right'
-  //=render "footer-login"
+  =render "deviseGo/footer-login"
