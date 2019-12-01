@@ -47,6 +47,7 @@
           background-color: #0099e8;
           height: 40px;
           width: 328px;
+          min-width: 328px;
           line-height: 40px;
           margin: 8px 0 0;
           font-size: 14px;
@@ -59,6 +60,7 @@
         .facebook {
           height: 50px;
           width: 328px;
+          min-width: 328px;
           color: fff;
           background-color: #385185;
           &-logo {
@@ -78,6 +80,7 @@
         .google {
           height: 50px;
           width: 328px;
+          min-width: 328px;
           margin: 16px 0 0;
           border: 1px solid #979797;
           color: #333;
