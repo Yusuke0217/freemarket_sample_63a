@@ -1,10 +1,9 @@
-.body
-.main
+.sidebar-body
   .side-bar-box
-    %ul.nav-list
+    %ul.sidebar-list-1
       %li
         .text
-          マイページ
+          = link_to 'マイページ', mypage_profile_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li
@@ -63,22 +62,22 @@
       メルペイ
     %ul.merpay-list
       %li
-        売上・振込申請
+        = link_to '売上・振込申請', mypage_profile_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li
-        ポイント
+        = link_to 'ポイント', mypage_profile_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
     %h3
       設定
     %ul.information-list
       %li
-        プロフィール
+        = link_to 'プロフィール', mypage_profile_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li
-        発送元・お届け先住所変更
+        = link_to '発送元・お届け先住所変更', mypage_user_info_register_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li
@@ -86,18 +85,18 @@
         .icon
           =fa_icon'chevron-right'
       %li
-        メール/パスワード
+        = link_to 'メール/パスワード', mypage_user_info_register_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li
-        本人情報
+        = link_to '本人情報', mypage_user_info_register_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li
-        電話番号の確認
+        = link_to '電話番号の確認', mypage_user_info_register_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li
-        ログアウト
+        = link_to 'ログアウト', mypage_user_info_register_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'

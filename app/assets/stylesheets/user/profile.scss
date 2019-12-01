@@ -1,6 +1,6 @@
 .profile-main{
-  height: 700px;
-  margin: 40px;
+  margin: 40px 0 40px 0;
+  width: 100%;
   .both-content{
     display:inline-block;
     position: relative;
@@ -16,7 +16,7 @@
         padding: 8px 0 8px;
       }
     .setting-profile-icon{
-      background-color: lightgreen;
+      background-color: lightgray;
       padding: 72px 0 24px;
       text-align: center;
       .wrapper{
@@ -65,18 +65,8 @@
     }
   }
 }
-@media screen and (max-width:1140px){
+@media screen and (max-width:1100px){
   .profile-main{
-    height: 568px;
-    margin: 40px;
+    text-align: center;
   }
-  .profile-main__contents{
-    width: 700px;
-    float:left;
-    padding: 40px 16px;
-    background-color: #fff;
-  }
-}
-.body{
-  text-align: center;
 }

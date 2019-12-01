@@ -1,6 +1,6 @@
 .user_info_register{
-  margin: 25px;
-  height:350vh;
+  margin: 40px 0 40px 0;
+  width: 100%;
   .both-content{
     display:inline-block;
     position: relative;
@@ -61,6 +61,7 @@
                 height: 48px;
                 width: 76px;
                 background-color: #fff;
+                font-weight: none;
               }
       span{
         margin: 0 2px;
@@ -88,6 +89,7 @@
       }
         .select-wrap{
           background-color: #fff;
+          margin: 8px 0 0;
         }
 
       .btn-default.btn-red{
@@ -115,15 +117,10 @@
 
 
 @media screen and (max-width:1100px){
-.user_info_register{
-  margin: 25px;
-  height:700vh;
-  .both-content{
-    .info_contents{
-      width: 700px;
-      float:left;
-      background-color: #fff;
-    }
+  .user_info_register{
+    text-align: center;
+    .form-group{
+      text-align:left;
   }
 }
 }
