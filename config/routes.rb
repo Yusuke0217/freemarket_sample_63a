@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   # スプリントレビュー用ルート
+  
+  devise_for :users
   get '/mypage/profile', to: 'mypage#profile'
   get '/mypage/user_info_register', to: 'mypage#user_info_register'
-
-  devise_for :users
   root to: "home#top"
   resources :users, only: [:edit, :update, :delete]
     resources :signup do
