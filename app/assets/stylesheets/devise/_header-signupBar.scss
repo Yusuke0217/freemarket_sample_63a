@@ -34,8 +34,6 @@
               font-weight: bold;
             }
             li.marker{
-              position: relative;
-                z-index: 1000;
               .mark{
                 position: relative;
                 z-index: 1000;
@@ -167,45 +165,63 @@
               .mark{
                 background-color: #ea352d;
               }
-              .mark::after{
+            }
+            li.marker2{
+              .mark-line{
                 background-color: #ea352d;
               }
             }
             li{
               color:gray;
               font-size: 12px;
+              text-align: left;
+              .mark-name1{
+                display: inline;
+                position: relative;
+                //right: 18px;
+              }
+              .mark-name2{
+                display: inline;
+                position: relative;
+                right: 30px;
+              }
+              .mark-name3{
+                display: inline;
+                position: relative;
+                //right: 40px;
+              }
+              .mark-name4{
+                display: inline;
+                position: relative;
+                //right: 24px;
+              }
+              .mark-name5{
+                display: inline;
+                position: relative;
+                //right: 6px;
+              }
             }
             li.signupInfo{
-              padding: 0 50px 0 0;
-              .mark::after{
-                min-width: 120px;
+              .mark-line{
+                width: 115px;
               }
             }
             li.signupTell{
-              padding: 0 50px 0 0;
-              .mark::after{
-                min-width: 140px;
+              .mark-line{
+                width: 115px;
               }
             }
             li.signupAdd{
-              padding: 0 50px 0 0;
-              .mark::after{
-                min-width: 140px;
+              .mark-line{
+                width: 115px;
               }
             }
             li.signupHowToPay{
-              padding: 0 50px 0 0;
-              .mark::after{
-                min-width: 100px;
-              }
-            }
-            li.signupComplete{
-              .mark::after{
-                opacity: 0;
+              .mark-line{
+                width: 115px;
               }
             }
           }
-          
           .mark{
             width: 12px;
             height: 12px;
@@ -213,14 +229,14 @@
             background: #ccc;
             border-radius: 50%;
           }
-          .mark::after{
+          .mark-line{
             position: relative;
             top:5px;
-            margin:3px 0 0 0 ;
             display: block;
             content: '';
             height: 2px;
             background: #ccc;
+            max-width: 50%;
           }
         } 
       }
