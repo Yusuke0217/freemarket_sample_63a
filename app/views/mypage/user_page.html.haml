@@ -9,26 +9,26 @@
           = link_to ""
           .icon
             =image_tag "/ramen.jpg"
-          %h2 SRB
+          %h2.nickname SRB
           .records
-            %div
+            %div.value
               評価
-              %span 0
-            %div
+              %span.number 0
+            %div.value
               出品数
-              %span 0
+              %span.number 0
 
       .info
         %ul.info__tabs
-          %li
+          %li.tabs__name1
             %h3
               お知らせ
-          %li
+          %li.tabs__name1
             %h3
               やることリスト
         .message
           %ul.messages
-            %li
+            %li.links
               = link_to "", class: "link" do
                 .figure
                   = image_tag "/logo_red.svg", class: "box"
@@ -39,7 +39,7 @@
                     %i.fa.fa-clock-o 3日前
                 .chevron
                   %i.fa.fa-chevron-right
-            %li
+            %li.links
               = link_to "", class: "link" do
                 .figure
                   = image_tag "/logo_red.svg", class: "box"
@@ -57,15 +57,15 @@
         .product__header
           %h2 購入した商品
         %ul.product__tabs
-          %li
+          %li.tabs__name2
             %h3
               取引中
-          %li
+          %li.tabs__name2
             %h3
               過去の取引
         .product__messages
           %ul.trades
-            %li
+            %li.trades__name
               取引中の商品がありません
 
     = render "layouts/side-barMypage"

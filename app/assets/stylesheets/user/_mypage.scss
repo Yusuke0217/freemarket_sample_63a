@@ -4,7 +4,6 @@
     height: 100%;
     width: 1060px;
     margin: 40px auto 40px;
-    //padding: 40px 0;
     @include clearfix();
     .main {
       width: 700px;
@@ -32,7 +31,7 @@
             margin: 0 auto;
             border-radius: 50%;
           }
-          h2 {
+          .nickname {
             font-size: 14px;
             font-weight: bold;
             margin-top: 8px;
@@ -40,11 +39,11 @@
           .records {
             font-size: 16px;
             margin-top: 8px;
-            div {
+            .value {
               display: inline-block;
               font-size: 14px;
             }
-            span {
+            .number {
               font-weight: bold;
               margin-left: 8px;
             }
@@ -60,7 +59,7 @@
           background-color: #eee;
           display: flex;
           width: 100%;
-          li {
+          .tabs__name1 {
             text-align: center;
             width: 50%;
             height: 74px;
@@ -80,11 +79,11 @@
       .message {
         padding-bottom: 1px;
         .messages {
-          li {
+          .links {
             position: relative;
             border-bottom: 1px solid #eee;
             padding: 16px;
-          li:hover {
+          .links:hover {
             background-color: #fafafa;
           }
             .link {
@@ -134,7 +133,7 @@
             display: block;
           }
         }
-        .all:hover{
+        .all:hover {
           background-color: #fafafa;
         }
       }
@@ -151,7 +150,7 @@
           background-color: #eee;
           display: flex;
           width: 100%;
-          li {
+          .tabs__name2 {
             text-align: center;
             width: 50%;
             height: 74px;
@@ -169,7 +168,7 @@
         }
         &__messages {
           .trades {
-            li {
+            .trades__name {
               color: #ccc;
               font-size: 16px;
               text-align: center;
