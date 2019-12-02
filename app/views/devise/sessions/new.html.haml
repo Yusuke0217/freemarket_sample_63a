@@ -1,26 +1,5 @@
--# %h2 Log in
--# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
--#   .field
--#     = f.label :email
--#     %br/
--#     = f.email_field :email, autofocus: true, autocomplete: "email"
--#   .field
--#     = f.label :password
--#     %br/
--#     = f.password_field :password, autocomplete: "current-password"
--#   - if devise_mapping.rememberable?
--#     .field
--#       = f.check_box :remember_me
--#       = f.label :remember_me
--#   .actions
--#     = f.submit "Log in"
--# = render "devise/shared/links"
-
 .body
-  .header
-    .header-logo
-      =link_to root_path do
-        =image_tag '/fmarket_logo_red.svg'
+  = render "devise/shared/header-login"
   .container
     .login-panel
       .register
@@ -58,28 +37,4 @@
           %button.submit{type: "submit"} ログイン
           .forgot-password
             = link_to "パスワードをお忘れの方", new_user_password_path, class: "resetting"
-  .body-foot
-    .footer
-      .text-box
-        .text-zone
-          .footer-text
-            %ul.footer-text__box
-              .text-in
-                %li.footer-text__box--left
-                  .text
-                    %p.text-left
-                      =link_to 'プライバシーポリシー', ''
-                %li.footer-text__box--center
-                  .text
-                    %p.text-center
-                      =link_to 'メルカリ利用規約', ''
-                %li.footer-text__box--right
-                  .text
-                    %p.text-right
-                      =link_to '特定商取引に関する表記', ''
-          .logo-box
-            .footer-logo
-              =link_to '' do
-                =image_tag 'SVG/logo_gray.svg'
-          .logo-content
-            © 2019 Mercari
+  = render "devise/shared/footer-login"
