@@ -6,7 +6,7 @@
   header.main-header {
     height: 128px;
     text-align: center;
-    h1 {
+    h1.head-logo {
       display: inline-block;
       margin-top: 40px;
       .mercari-logo {
@@ -126,6 +126,7 @@
               cursor: pointer;
               text-align: center;
             }
+
           }
         }
       }
@@ -137,7 +138,7 @@
         .pay-content-info {
           max-width: 320px;
           margin: 0 auto;
-          h3 {
+          h3.deli {
             margin: 0;
             font-size: 14px;
           }
@@ -146,6 +147,7 @@
             font-size: 14px;
             line-height: 1.4;
             font-style: normal;
+            // height: 42px;
           }
           br {
           }
@@ -175,7 +177,7 @@
             img {
             }
           }
-          p {
+          p.change {
             a.user-info-fix {
               span {
               }
@@ -197,11 +199,11 @@
     nav {
       text-align: center;
       ul.script {
-        li {
+        li.manner {
           font-size: 12px;
           display: inline-block;
           margin: 0 0 0 16px;
-          a {
+          a.manual {
             color: black;
             text-decoration: none;
           }
