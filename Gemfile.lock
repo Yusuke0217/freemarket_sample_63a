@@ -314,7 +314,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
-  bundler
+  bundler (= 2.0.2)
   byebug
   capistrano
   capistrano-bundler
@@ -348,8 +348,5 @@ DEPENDENCIES
   unicorn (= 5.4.1)
   web-console (>= 3.3.0)
 
-RUBY VERSION
-   ruby 2.5.1p57
-
 BUNDLED WITH
-   2.1.0.pre.3
+   2.0.2
