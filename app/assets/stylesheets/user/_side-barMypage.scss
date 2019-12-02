@@ -1,22 +1,19 @@
 .sidebar-body{
+  float: left;
+  padding-left: 40px;
   position: relative;
-  min-height: 100%;
   background: #f5f5f5;
-  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   font-size: 14px;
   color: #333;
   line-height: 1;
-  width: 35%;
   .side-bar-box{
     position:relative;
     border-top: 1px solid #eee;
     width: 280px;
     margin: 0 40px 0 0;
     ul.sidebar-list-1{
-      margin: 0;
-      padding: 0;
       display: block;
-      li.side-bar-links{
+      li{
         border-bottom:solid 1px #EEEEEE;
         position: relative;
         display: flex;
@@ -26,10 +23,9 @@
         font-size: 14px;
         color: #333;
         line-height: 28px;
-        cursor: pointer;
-        a.side-link-text {
-          color: #333;
+        .side-link-text{
           text-decoration: none;
+          color: black;
         }
       }
       li:hover{
@@ -37,7 +33,7 @@
         .icon{
           color:black;
           left: 257px;
-          transition: 0.5s;
+          transition: 0.5s ;
         }
       }
       li:active{
@@ -45,27 +41,24 @@
         font-weight: 600;
       }
     }
-    h3{
-      margin: 40px 0 0;
-      font-size: 16px;
-      font-weight: 600;
-    }
-    ul.merpay-list {
-      margin: 0;
-      padding: 0;
-      display: block;
-    }
-    ul.infomation-list {
-      margin: 0;
-      padding: 0;
-      display: block;
-    }
-    .icon{
-      display: block;
-      color: #dddddd;
-      width:20px;
-      position: absolute;
-      left: 250px;
-    }
+  h3{
+    margin: 40px 0 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+  }
+  .icon{
+    display: block;
+    color: #dddddd;
+    width:20px;
+    position: absolute;
+    left: 250px;
+  }
+  }
+}
+
+@media screen and (max-width:1100px){
+  .sidebar-body{
+  display: none;
   }
 }
