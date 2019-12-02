@@ -313,7 +313,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_hash
   bootsnap (>= 1.1.0)
   bundler
   byebug
