@@ -1,19 +1,5 @@
--# %h2 Forgot your password?
--# = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
--#   = render "devise/shared/error_messages", resource: resource
--#   .field
--#     = f.label :email
--#     %br/
--#     = f.email_field :email, autofocus: true, autocomplete: "email"
--#   .actions
--#     = f.submit "Send me reset password instructions"
--# = render "devise/shared/links"
-
 .body
-  .header
-    .header-logo
-      =link_to '' do
-        =image_tag '/fmarket_logo_red.svg'
+  = render "devise/shared/header-login"
   .container
     .main
       %h2.upper-header パスワードをお忘れの方
@@ -38,28 +24,4 @@
                   %li
                     = link_to "利用規約", "https://policies.google.com/terms?hl=ja", class: "link"
         %button.submit{type: "submit"} 送信する
-  .body-foot
-    .footer
-      .text-box
-        .text-zone
-          .footer-text
-            %ul.footer-text__box
-              .text-in
-                %li.footer-text__box--left
-                  .text
-                    %p.text-left
-                      =link_to 'プライバシーポリシー', '', class: "footer-link"
-                %li.footer-text__box--center
-                  .text
-                    %p.text-center
-                      =link_to 'メルカリ利用規約', '', class: "footer-link"
-                %li.footer-text__box--right
-                  .text
-                    %p.text-right
-                      =link_to '特定商取引に関する表記', '', class: "footer-link"
-          .logo-box
-            .footer-logo
-              =link_to '' do
-                =image_tag 'SVG/logo_gray.svg'
-          .logo-content
-            © 2019 Mercari
+= render "devise/shared/footer-login"

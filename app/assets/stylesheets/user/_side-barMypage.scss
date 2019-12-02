@@ -11,7 +11,7 @@
     border-top: 1px solid #eee;
     width: 280px;
     margin: 0 40px 0 0;
-    ul{
+    ul.sidebar-list-1{
       display: block;
       li{
         border-bottom:solid 1px #EEEEEE;
@@ -45,6 +45,7 @@
     margin: 40px 0 8px;
     font-size: 16px;
     font-weight: 600;
+    text-align: left;
   }
   .icon{
     display: block;

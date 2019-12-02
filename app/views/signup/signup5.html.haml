@@ -2,7 +2,7 @@
   .signup-header
     .signup-header__box
       .signup-header-logo
-        =link_to '' do
+        =link_to root_path do
           =image_tag 'SVG/fmarket_logo_red.svg'
       %nav.signupBar
         %ol.signupList
@@ -71,4 +71,4 @@
             =link_to "", class: "link-for-user-info" do
               カード裏面の番号とは？
               =fa_icon'chevron-right'
-  =render "deviseGo/footer-login"
+  =render "devise/shared/footer-login"

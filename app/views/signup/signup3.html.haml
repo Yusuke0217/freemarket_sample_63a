@@ -2,7 +2,7 @@
   .signup-header
     .signup-header__box
       .signup-header-logo
-        =link_to '' do
+        =link_to root_path do
           =image_tag 'SVG/fmarket_logo_red.svg'
       %nav.signupBar
         %ol.signupList
@@ -54,4 +54,4 @@
             =link_to "", class: "link-for-user-info" do
               電話番号の確認が必要な理由
               =fa_icon'chevron-right'
-  =render "deviseGo/footer-login"
+  =render "devise/shared/footer-login"
