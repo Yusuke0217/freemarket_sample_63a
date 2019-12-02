@@ -1,0 +1,10 @@
+= render "layouts/header"
+
+.wrapper
+  .content.clearfix
+    %form.logout
+      %button{type: "submit", class: "logout-btn"} ログアウト
+
+    = render "layouts/side-barMypage"
+
+  = render "layouts/footer"
