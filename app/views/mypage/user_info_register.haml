@@ -1,3 +1,5 @@
+= render "layouts/header"
+
 .user_info_register
   .both-content
     .info_contents
@@ -189,10 +191,10 @@
           %span.form-arbitrary 任意
           .select-wrap
             %i.icon-arrow-bottom
-            = f.collection_select :todouhuken_id, Todouhuken.all
+            -# = f.collection_select :todouhuken_id, Todouhuken.all
             -# active hashが動くか確認できるまで仮置
-            -# %select.select-default{name: "prefecture"}
-            -#   %option{selected: "selected"} --
+            %select.select-default{name: "prefecture"}
+              %option{selected: "selected"} --
             -#   %option 北海道
             -#   %option 青森県
             -#   %option 岩手県
@@ -257,4 +259,5 @@
           %p
             =link_to "本人情報の登録について","https://www.mercari.com/jp/help_center/article/423/",class: "info_link"
             %i.icon-arrow-right
-    =render 'side-barMypage'
+    = render "layouts/side-barMypage"
+= render "layouts/footer"
