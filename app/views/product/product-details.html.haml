@@ -107,15 +107,15 @@
   .sns
     %ul.media-box
       %li.facebook-box
-        = link_to "https://www.facebook.com", class: "facebook-icon" do
+        = link_to "https://www.facebook.com", root_path, class: "facebook-icon" do
           %i.fa.fa-facebook-official.fa-2x
       %li.twitter-icon
-        = link_to "http://twitter.com", class: "twitter-icon" do
+        = link_to "http://twitter.com", root_path, class: "twitter-icon" do
           %i.fa.fa-twitter.fa-2x
       %li.line-icon
-        = link_to "LINE", "https://access.line.me", class: "line-icon"
+        = link_to "LINE", "https://access.line.me", root_path, class: "line-icon"
       %li.pinterest-icon
-        = link_to "https://www.pinterest.jp/", class: "pinterest-icon" do
+        = link_to "https://www.pinterest.jp/", root_path, class: "pinterest-icon" do
           %i.fa.fa-pinterest.fa-2x
   .items
     .item-box
