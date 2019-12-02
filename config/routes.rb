@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get '/mypage/user_info_register', to: 'mypage#user_info_register'
   get '/sessions/logout', to: 'sessions#logout'
   get '/mypage/user_page', to: 'mypage#user_page'
-  root to: "home#top"
+  root to: "products#index"
+  resources :products, only: [:index, :new, :create]
   resources :users, only: [:edit, :update, :delete]
     resources :signup do
       collection do
