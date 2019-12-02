@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/mypage/user_info_register', to: 'mypage#user_info_register'
 
   devise_for :users
-  root to: "home#top"
+  root to: "mypage#mypage"
   resources :users, only: [:edit, :update, :delete]
     resources :signup do
       collection do
