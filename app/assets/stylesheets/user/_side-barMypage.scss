@@ -12,7 +12,7 @@
     border-top: 1px solid #eee;
     width: 280px;
     margin: 0 40px 0 0;
-    ul{
+    ul.sidebar-list-1{
       margin: 0;
       padding: 0;
       display: block;
@@ -49,6 +49,16 @@
       margin: 40px 0 0;
       font-size: 16px;
       font-weight: 600;
+    }
+    ul.merpay-list {
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+    ul.infomation-list {
+      margin: 0;
+      padding: 0;
+      display: block;
     }
     .icon{
       display: block;
