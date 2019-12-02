@@ -30,13 +30,15 @@
                   .breakdown お買い上げ金額
                   .breakdown
                     %span{"value":"15000"} ¥15,000
+              %button.pay-btn{disabled: "", type: "submit"} 購入する
               %input{name: "seller_id", type: "hidden", value: "722674558"}/
 
         %section.pay-user-info
           .pay-content-info
             %h3 お届け先
-            %address.user-info-text 〒533-0041 愛知県 名古屋市 栄
-            %br
+            %address.user-info-text
+              %br 〒533-0041
+              愛知県 名古屋市 栄
             %p.user-info-text
             = link_to "変更する >", "", class: "user-info-fix"
             .dammy
