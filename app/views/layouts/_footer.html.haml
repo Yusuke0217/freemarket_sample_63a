@@ -6,10 +6,10 @@
         %h1.bottom-text 今すぐ無料ダウンロード！
         .upper-footer__middle-bottom
           = image_tag "/logo_red.svg", alt: "", class: "mercarilogo"
-          = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2177740229", height: "40", class: "gotoappstore"), "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
-          = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2177740229", height: "40", class: "gotogoogleplay"),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
+          = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2177740229", height: "40", class: "appstore-link"), "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
+          = link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2177740229", height: "40", class: "googleplay-link"),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
       .upper-footer__right-photo
-        = image_tag "/phoneman.jpeg", alt: "", class: "right-photo"
+        = image_tag "phoneman.jpg", alt: "", class: "right-photo"
   .bottom-footer
     .bottom-footer__content
       .bottom-footer__about
@@ -79,5 +79,5 @@
           %li.outer-links
             = link_to "United States", "https://www.mercari.com/"
     .bottom-footer__copyright
-      = link_to "◆ mercari", "https://www.mercari.com/jp/", class: "logo"
+      = link_to "◆ mercari", root_path, class: "logo"
       .mercari__copyright © 2019 Mercari
