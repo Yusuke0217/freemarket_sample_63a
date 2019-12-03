@@ -26,6 +26,7 @@
               .main-contents-box
                 =link_to root_path, class: "contents-item" do
                   .contents-item__image
+                    = product.image
                     .contents-item__image--price
                       %span= product.price
                   .contents-item__index
