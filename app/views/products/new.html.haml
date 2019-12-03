@@ -27,14 +27,14 @@
                 -# ↑追加
                 %label 商品名
                 .require 必須
-              %input.product-name__defauld{name: "product-name", placeholder: "商品名（必須40文字まで）", type: "product-name", value: ""}
+              = f.text_field :name, class: "product-name__defauld", placeholder: "商品名（必須40文字まで）"
             .product-description
               .product-description-header
                 -# ↑追加
                 %label 商品の説明
                 .require 必須
               .description
-                %textarea.description__box{placeholder: "商品の説明（必須1,000字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+                = f.text_area :text, class: "description__box", placeholder: "商品の説明（必須1,000字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
             .product-details
               %h3.sub-header 商品の詳細
               .product-detail
@@ -44,15 +44,15 @@
                     %label カテゴリー
                     .require 必須
                   .select-box
-                    %i.fas.fa-republican
-                    %select.select-default{name: "category"}
+                    = f.select class: "select-default" do
                       %option{selected: "selected"} --
+                    %i.fas.fa-republican
                 .condition
                   .condition__nav
                     %label 商品の状態
                     .require 必須
                   %i.fas.fa-republican
-                    %select.select-default{name: "condition"}
+                    = f.select :condition, class: "select-default" do
                       %option{selected: "selected"} --
                     .product-details
             .product-transportation
@@ -97,7 +97,7 @@
                       .require 必須
                   .product-price__box
                     %label.right ¥
-                    %input.product-price__default{name: "product-price", placeholder: "例）300", type: "product-price", value: ""}/
+                    = f.text_field :price, class: "product-price__default", placeholder: "例）300"
                 .comission
                   .left 販売手数料 (10%)
                   .right -
@@ -122,7 +122,7 @@
                   = link_to "加盟店規約", "https://www.mercari.com/jp/seller_terms/"
                   に同意したことになります。
               .sell-btn
-                %button{type: "submit", class: "submit-button"} 出品する
+                = f.submit "出品する", class: "submit-button"
               = link_to "もどる", root_path, class: "back-btn"
     .p-footer 
       .p-links
