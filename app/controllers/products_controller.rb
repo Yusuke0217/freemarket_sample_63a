@@ -9,6 +9,16 @@ class ProductsController < ApplicationController
   end
 
   def create
-    
+    #Product.create (product_params)
   end
+
+  # private
+
+  # def product_params
+  #   params.permit(:name, :price, :text)
+  # end
 end
+
+
+
+  
