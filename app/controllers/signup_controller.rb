@@ -49,7 +49,13 @@ class SignupController < ApplicationController
       first_name_kana: session[:first_name_kana],
       birth_day: session[:birth_day],
       birth_year: session[:birth_year],
-      birth_month: session[:birth_month]
+      birth_month: session[:birth_month],
+
+      phone_number: session[:phone_number],
+      first_name_delivery: session[:first_name_delivery],
+      first_name_kana_delivery: session[:first_name_kana_delivery],
+      last_name_delivery: session[:last_name_delivery],
+      last_name_kana_delivery: session[:last_name_kana_delivery]
     )
     if @user.save # ログインするための情報を保管
       session[:id] = @user.id
@@ -59,17 +65,12 @@ class SignupController < ApplicationController
     end
   end
 
-  def signup6
-  end
-
   private
 
   def user_params
     params.require(:user).permit(
       :encrypted_password, :email, :nickname,
       :last_name, :first_name, :last_name_kana, :first_name_kana,
-      :birth_day, :birth_year, :birth_month
-      )
-      #  :profile, :phone_number,:prefecture, :city, :address, :postal_code, :building_name)
+      :birth_day, :birth_year, :birth_month,:profile, :phone_number,:prefecture, :city, :address, :postal_code, :building_name)
   end
 end

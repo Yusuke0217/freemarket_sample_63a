@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/mypage/logout', to: 'mypage#logout'
   get '/mypage/user_page', to: 'mypage#user_page'
   root to: "home#top"
-  resources :users, only: [:edit, :update, :delete]
+  resources :users, only: [:edit, :update, :delete, :create]
     resources :signup do
       collection do
         get "signup2"
