@@ -2,12 +2,10 @@ class SignupController < ApplicationController
 
   def signup2
     @user = User.new # 新規インスタンス作成
-    # binding.pry
   end
 
   def signup3
     # signup2で入力された値をsessionに保存
-    # binding.pry
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
     session[:encrypted_password] = user_params[:encrypted_password]
@@ -19,7 +17,6 @@ class SignupController < ApplicationController
     session[:birth_year] = user_params[:birth_year]
     session[:birth_month] = user_params[:birth_month]
     @user = User.new # 新規インスタンス作成
-    binding.pry
   end
 
   def signup4
