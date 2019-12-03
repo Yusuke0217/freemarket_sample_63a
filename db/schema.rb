@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_112135) do
     t.integer "shipping_date", null: false
     t.integer "price", null: false
     t.string "text"
+    t.text "image"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

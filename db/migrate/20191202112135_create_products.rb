@@ -13,6 +13,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer  :shipping_date,   null:false
       t.integer  :price,           null:false, foreign_key: true
       t.string   :text
+      t.text     :image
     end
   end
 end
