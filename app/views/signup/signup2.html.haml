@@ -43,26 +43,26 @@
     .info-top
       %h2
         会員情報入力
-    =form_with model: @post, local: true do |f| 
+    =form_with model: @user, local: true do |f| 
       .formbox
         .form-group
           %label.nickname-new
             ニックネーム
           %span.must-content
             必須
-          %input.nickname-info{placeholder: "例) メルカリ太郎", value: ""}/
+          = f.text_field :nickname, class:"nickname-info", placeholder: "例) メルカリ太郎"
         .form-group
           %label.mailAddless-new
             メールアドレス
           %span.must-content
             必須
-          %input.mailAddless-info{placeholder: "PC・携帯どちらでも可", value: ""}/
+          = f.text_field :email, class:"mailAddless-info", placeholder: "PC・携帯どちらでも可"
         .form-group
           %label.password-new
             パスワード
           %span.must-content
             必須
-          %input.password-info{placeholder: "7文字以上", value: ""}/
+          = f.text_field :password, class:"password-info", placeholder: "7文字以上"
           .check-box
             %label.checkbox
               %input.password-check{type: "checkbox"}
@@ -78,16 +78,16 @@
           %span.must-content
             必須
           .input-parrent
-            %input.kanji1stName-info{placeholder: "例) 山田", value: ""}
-            %input.kanji2ndName-info{placeholder: "例) 彩", value: ""}
+            = f.text_field :last_name, class: "kanji1stName-info", placeholder: "例) 山田"
+            = f.text_field :first_name, class: "kanji2ndName-info", placeholder: "例) 彩"
         .form-group
           %label.kanaName-new
             お名前(全角) 
           %span.must-content
             必須
           .input-parrent
-            %input.kana1stName-info{placeholder: "例) ヤマダ", value: ""}
-            %input.kana2ndName-info{placeholder: "例) アヤ", value: ""}
+            = f.text_field :last_name_kana, class: "kana1stName-info", placeholder: "例) ヤマダ"
+            = f.text_field :first_name_kana, class: "kana2ndName-info", placeholder: "例) アヤ"
         .form-group
           %label.birthday-new
             生年月日 

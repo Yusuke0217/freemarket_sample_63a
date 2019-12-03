@@ -37,6 +37,7 @@ Things you may want to cover:
 |address|integer|null: false|  番地
 |postal-code|integer|null: false|  郵便番号
 |building-name|string||  建物名
+|phone_number_delivery|integer|null: false|  電話番号 届け先
 |birthday-year|integer|null: false|  誕生年
 |birthday-month|integer|null: false|  月
 |birthday-day|integer|null: false|  日
@@ -44,6 +45,10 @@ Things you may want to cover:
 |first-name-kana|string|null: false, foreign_key: true|  姓（仮名）
 |last-name|string|null: false, foreign_key: true|  名（漢字）
 |last-name-kana|string|null: false, foreign_key: true|  名（仮名）
+|first_name_delivery|string|null: false, foreign_key: true|  姓（漢字）届け先
+|first_name_kana_delivery|string|null: false, foreign_key: true|  姓（仮名）届け先
+|last_name_delivery|string|null: false, foreign_key: true|  名（漢字）届け先
+|last_name_kana_delivery|string|null: false, foreign_key: true|  名（仮名）届け先
 |exhibit-product|string||  出品した商品
 |exhibit-number|integer||  出品数
 <!-- |exhibit-now|string||  出品中  -->
