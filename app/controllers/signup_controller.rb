@@ -26,7 +26,8 @@ class SignupController < ApplicationController
 
   def signup5
     # signup4で入力された値をsessionに保存
-    session[:last_name] = user_params[:last_name]
+    session[:postal_code] = user_params[:postal_code]
+    @user = User.new # 新規インスタンス作成
   end
 
   def signup6 # 完了画面
