@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(version: 2019_11_28_101530) do
     t.string "first_name_kana", null: false
     t.string "last_name", null: false
     t.string "last_name_kana", null: false
+    t.string "first_name_delivery", null: false
+    t.string "first_name_kana_delivery", null: false
+    t.string "last_name_delivery", null: false
+    t.string "last_name_kana_delivery", null: false
+    t.integer "phone_number_delivery", null: false
     t.string "exhibit_product"
     t.integer "exhibit_number"
     t.integer "points"

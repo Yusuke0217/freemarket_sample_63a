@@ -26,11 +26,14 @@ class SignupController < ApplicationController
 
   def signup5
     # signup4で入力された値をsessionに保存
-    session[:postal_code] = user_params[:postal_code]
-    @user = User.new # 新規インスタンス作成
+    session[:first_name_delivery] = user_params[:first_name_delivery]
+    session[:first_name_kana_delivery] = user_params[:first_name_kana_delivery]
+    session[:last_name_delivery] = user_params[:last_name_delivery]
+    session[:last_name_kana_delivery] = user_params[:last_name_kana_delivery]
   end
 
-  def signup6 # 完了画面
+  def done
+    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
 
@@ -48,8 +51,7 @@ class SignupController < ApplicationController
       birth_year: session[:birth_year],
       birth_month: session[:birth_month]
     )
-    if @user.save
-　　　# ログインするための情報を保管
+    if @user.save # ログインするための情報を保管
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else

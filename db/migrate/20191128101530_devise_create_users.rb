@@ -21,6 +21,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_name_kana,    null: false, foreign_key: true
       t.string :last_name,          null: false, foreign_key: true
       t.string :last_name_kana,     null: false, foreign_key: true
+      t.string :first_name_delivery,         null: false, foreign_key: true
+      t.string :first_name_kana_delivery,    null: false, foreign_key: true
+      t.string :last_name_delivery,          null: false, foreign_key: true
+      t.string :last_name_kana_delivery,     null: false, foreign_key: true
+      t.integer :phone_number_delivery,      null: false
       t.string :exhibit_product
       t.integer :exhibit_number
       t.integer :points
