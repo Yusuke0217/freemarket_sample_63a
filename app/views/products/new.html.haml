@@ -43,6 +43,7 @@
                     -# ↑dfのため追加
                     %label カテゴリー
                     .require 必須
+                    -# カテゴリーカラムに追加⬇️
                   .select-box
                     = f.select class: "select-default" do
                       %option{selected: "selected"} --
@@ -67,7 +68,7 @@
                     必須
                 .select-box
                   %i.fas.fa-republican
-                  = f.select class: "select-default" do
+                  = f.select :shipping_charge, class: "select-default" do
                     %option{selected: "selected"} --
                 .transportation-name
                   %label 発送元の地域
@@ -75,14 +76,14 @@
                     必須
                 .select-box
                   %i.fas.fa-republican
-                  = f.select class: "select-default" do
+                  = f.select :shipping_place, class: "select-default" do
                     %option{selected: "selected"} --
                 .transportation-name
                   %label 発送までの日数
                   .require
                     必須
                 .select-box
-                  = f.select class: "select-default" do
+                  = f.select :shipping_date, class: "select-default" do
                     %option{selected: "selected"} --
                 -# 合わせてCSSを適応するためクラス名を統一
             .price
