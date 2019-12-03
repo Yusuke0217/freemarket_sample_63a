@@ -9,16 +9,12 @@ class ProductsController < ApplicationController
   end
 
   def create
-    #Product.create (product_params)
+    #Product.create (product_params)ユーザーテーブル完成後使用
   end
 
-  # private
+  # privateユーザーテーブル完成後使用
 
   # def product_params
   #   params.permit(:name, :price, :text)
-  # end
+  # endユーザーテーブル完成後使用
 end
-
-
-
-  
