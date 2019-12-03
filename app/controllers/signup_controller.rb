@@ -20,6 +20,8 @@ class SignupController < ApplicationController
   end
 
   def signup4
+    session[:phone_number] = user_params[:phone_number]
+    @user = User.new # 新規インスタンス作成
   end
 
   def signup5
