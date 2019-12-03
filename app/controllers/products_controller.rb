@@ -9,12 +9,18 @@ class ProductsController < ApplicationController
   end
 
   def create
-    #Product.create (product_params)ユーザーテーブル完成後使用
+    @product = Product.new (product_params)
+    redirect_to root_path
+    # if @product.save
+    #   redirect_to root_path, notice: 'OK'
+    # else
+    #   render :new
+    # end
   end
 
-  # privateユーザーテーブル完成後使用
+  private
 
-  # def product_params
-  #   params.permit(:name, :price, :text)
-  # endユーザーテーブル完成後使用
+  def product_params
+    params.require(:product).permit(:name, :condition, :shipping_charge, :shipping_how, :shipping_place, :shipping_date, :price, :text)
+  end
 end

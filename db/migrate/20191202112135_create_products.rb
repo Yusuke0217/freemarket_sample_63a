@@ -3,7 +3,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
     create_table :products do |t|
 
       t.timestamps
-      t.integer  :user_id,         null:false, foreign_key: true
+      t.integer  :user_id
       t.string   :name,            null:false
       t.integer  :size,            null:true
       t.string   :condition,       null:false
@@ -11,7 +11,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string   :shipping_how,    null:false
       t.string   :shipping_place,  null:false
       t.integer  :shipping_date,   null:false
-      t.integer  :price,           null:false, foreign_key: true
+      t.integer  :price,           null:false
       t.string   :text
       t.text     :image
     end
