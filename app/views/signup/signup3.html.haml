@@ -41,7 +41,7 @@
       %h2 電話番号の確認
     .tell-box__body
       .push-box
-        =form_with model: @user, local: true do |f| 
+        = form_for @user, url: signup4_signup_index_path, method: :get do |f|
           .formbox
             .form-group
               %label.tellNumber-new
