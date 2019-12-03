@@ -7,7 +7,7 @@
       .info-container
         %h2.content-header 
           商品の情報を入力
-        .sell-forms
+        = form_with model: @product, local: true, class: "sell-forms" do |f|
           .product-image
             .product-image-header
               出品画像
@@ -15,19 +15,19 @@
                 必須
             %p 最大10枚までアップロードできます
             .dropbox
-              %input{type: "file", class: "input-box", style: "/* display: none; */"}
-                .texts
-                  %p
-                    ドロッグアンドドロップ
-                  %p
-                    またはクリックしてファイルをアップロード
+              = f.file_field :image, class: "input-box" do
+              .texts
+                %p
+                  ドロッグアンドドロップ
+                %p
+                  またはクリックしてファイルをアップロード
           .product-contents
             .product-name 
               .product-name-header
                 -# ↑追加
                 %label 商品名
                 .require 必須
-              %input.product-name__defauld{name: "product-name", placeholder: "商品名（必須40文字まで）", type: "product-name", value: ""}/
+              %input.product-name__defauld{name: "product-name", placeholder: "商品名（必須40文字まで）", type: "product-name", value: ""}
             .product-description
               .product-description-header
                 -# ↑追加
@@ -123,7 +123,7 @@
                   に同意したことになります。
               .sell-btn
                 %button{type: "submit", class: "submit-button"} 出品する
-              = link_to "もどる", "https://www.mercari.com/jp/", class: "back-btn"
+              = link_to "もどる", root_path, class: "back-btn"
     .p-footer 
       .p-links
         %ul
@@ -135,5 +135,5 @@
             = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
       -# link_to top page
       .bottom-footer__logo
-        = link_to image_tag("SVG/fmarket_logo_white", height: "30", class: "mercari"), "https://www.mercari.com/jp/"
+        = link_to image_tag("SVG/fmarket_logo_white", height: "30", class: "mercari"), root_path
       %p.copyright © 2019 Mercari
