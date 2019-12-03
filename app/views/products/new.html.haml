@@ -1,138 +1,139 @@
-.container
-  .header 
-    = link_to "◆ mercari", "https://www.mercari.com/jp/", class: "mercari-logo"
-    -# adding main content
-  .main 
-    .info-container
-      %h2.content-header 
-        商品の情報を入力
-      .sell-forms
-        .product-image
-          .product-image-header
-            出品画像
-            .require
-              必須
-          %p 最大10枚までアップロードできます
-          .dropbox
-            %input{type: "file", class: "input-box", style: "/* display: none; */"}
-              .texts
-                %p
-                  ドロッグアンドドロップ
-                %p
-                  またはクリックしてファイルをアップロード
-        .product-contents
-          .product-name 
-            .product-name-header
+.body  
+  .container
+    .header 
+      = link_to "◆ mercari", "https://www.mercari.com/jp/", class: "mercari-logo"
+      -# adding main content
+    .main 
+      .info-container
+        %h2.content-header 
+          商品の情報を入力
+        .sell-forms
+          .product-image
+            .product-image-header
+              出品画像
+              .require
+                必須
+            %p 最大10枚までアップロードできます
+            .dropbox
+              %input{type: "file", class: "input-box", style: "/* display: none; */"}
+                .texts
+                  %p
+                    ドロッグアンドドロップ
+                  %p
+                    またはクリックしてファイルをアップロード
+          .product-contents
+            .product-name 
+              .product-name-header
+                -# ↑追加
+                %label 商品名
+                .require 必須
+              %input.product-name__defauld{name: "product-name", placeholder: "商品名（必須40文字まで）", type: "product-name", value: ""}/
+            .product-description
+              .product-description-header
+                -# ↑追加
+                %label 商品の説明
+                .require 必須
+              .description
+                %textarea.description__box{placeholder: "商品の説明（必須1,000字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+            .product-details
+              %h3.sub-header 商品の詳細
+              .product-detail
+                .category
+                  .category__nav
+                    -# ↑dfのため追加
+                    %label カテゴリー
+                    .require 必須
+                  .select-box
+                    %i.fas.fa-republican
+                    %select.select-default{name: "category"}
+                      %option{selected: "selected"} --
+                .condition
+                  .condition__nav
+                    %label 商品の状態
+                    .require 必須
+                  %i.fas.fa-republican
+                    %select.select-default{name: "condition"}
+                      %option{selected: "selected"} --
+                    .product-details
+            .product-transportation
               -# ↑追加
-              %label 商品名
-              .require 必須
-            %input.product-name__defauld{name: "product-name", placeholder: "商品名（必須40文字まで）", type: "product-name", value: ""}/
-          .product-description
-            .product-description-header
-              -# ↑追加
-              %label 商品の説明
-              .require 必須
-            .description
-              %textarea.description__box{placeholder: "商品の説明（必須1,000字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
-          .product-details
-            %h3.sub-header 商品の詳細
-            .product-detail
-              .category
-                .category__nav
-                  -# ↑dfのため追加
-                  %label カテゴリー
-                  .require 必須
+              .product-transportation__nav
+                %h3.sub-header 配送について
+                = link_to "?", "https://www.mercari.com/jp/help_center/article/68/", class: "link"
+              .transportation-detail
+                .transportation-name
+                  %label 配送料の負担
+                  .require
+                    必須
                 .select-box
                   %i.fas.fa-republican
-                  %select.select-default{name: "category"}
+                  %select.select-default{name: "scope"}
                     %option{selected: "selected"} --
-              .condition
-                .condition__nav
-                  %label 商品の状態
-                  .require 必須
-                %i.fas.fa-republican
-                  %select.select-default{name: "condition"}
+                .transportation-name
+                  %label 発送元の地域
+                  .require
+                    必須
+                .select-box
+                  %i.fas.fa-republican
+                  %select.select-default{name: "region"}
                     %option{selected: "selected"} --
-                  .product-details
-          .product-transportation
-            -# ↑追加
-            .product-transportation__nav
-              %h3.sub-header 配送について
-              = link_to "?", "https://www.mercari.com/jp/help_center/article/68/", class: "link"
-            .transportation-detail
-              .transportation-name
-                %label 配送料の負担
-                .require
-                  必須
-              .select-box
-                %i.fas.fa-republican
-                %select.select-default{name: "scope"}
-                  %option{selected: "selected"} --
-              .transportation-name
-                %label 発送元の地域
-                .require
-                  必須
-              .select-box
-                %i.fas.fa-republican
-                %select.select-default{name: "region"}
-                  %option{selected: "selected"} --
-              .transportation-name
-                %label 発送までの日数
-                .require
-                  必須
-              .select-box
-                %select.select-default{name: "delivery time"}
-                  %option{selected: "selected"} --
-              -# 合わせてCSSを適応するためクラス名を統一
-          .price
-            .price__nav
-              %h3.sub-header 販売価格(300〜9,999,999)
-              = link_to "?", "https://www.mercari.com/jp/help_center/article/64/", class: "link"
-            .transportation-detail
-              .product-price
-                .product-price__nav
-                  %label.left 価格
-                  .right
-                    .require 必須
-                .product-price__box
-                  %label.right ¥
-                  %input.product-price__default{name: "product-price", placeholder: "例）300", type: "product-price", value: ""}/
-              .comission
-                .left 販売手数料 (10%)
-                .right -
-              .profit
-                .left 販売利益
-                .right -
-          .btn-box
-            .agreement
-              %p.check-items 
-                = link_to "禁止されている出品", "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/"
-                、
-                = link_to "行為", "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/"
-                を必ずご確認ください。
-              %p.check-items
-                またブランド品でシリアルナンバー等がある場合はご記載ください。
-                = link_to "偽ブランドの販売", "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/"
-                は犯罪であ
-              %p.check-items
-                り処罰される可能性があります。
-              %p.check-items
-                また、出品をもちまして
-                = link_to "加盟店規約", "https://www.mercari.com/jp/seller_terms/"
-                に同意したことになります。
-            .sell-btn
-              %button{type: "submit", class: "submit-button"} 出品する
-            = link_to "もどる", "https://www.mercari.com/jp/", class: "back-btn"
-  .p-footer 
-    .p-links
-      %ul
-        %li.outer-links
-          = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
-        %li.outer-links
-          = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
-        %li.outer-links
-          = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
-    -# link_to top page
-    .bottom-footer__logo
-      = link_to image_tag("SVG/fmarket_logo_white", height: "30", class: "mercari"), "https://www.mercari.com/jp/"
-    %p.copyright © 2019 Mercari
+                .transportation-name
+                  %label 発送までの日数
+                  .require
+                    必須
+                .select-box
+                  %select.select-default{name: "delivery time"}
+                    %option{selected: "selected"} --
+                -# 合わせてCSSを適応するためクラス名を統一
+            .price
+              .price__nav
+                %h3.sub-header 販売価格(300〜9,999,999)
+                = link_to "?", "https://www.mercari.com/jp/help_center/article/64/", class: "link"
+              .transportation-detail
+                .product-price
+                  .product-price__nav
+                    %label.left 価格
+                    .right
+                      .require 必須
+                  .product-price__box
+                    %label.right ¥
+                    %input.product-price__default{name: "product-price", placeholder: "例）300", type: "product-price", value: ""}/
+                .comission
+                  .left 販売手数料 (10%)
+                  .right -
+                .profit
+                  .left 販売利益
+                  .right -
+            .btn-box
+              .agreement
+                %p.check-items 
+                  = link_to "禁止されている出品", "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/"
+                  、
+                  = link_to "行為", "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/"
+                  を必ずご確認ください。
+                %p.check-items
+                  またブランド品でシリアルナンバー等がある場合はご記載ください。
+                  = link_to "偽ブランドの販売", "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/"
+                  は犯罪であ
+                %p.check-items
+                  り処罰される可能性があります。
+                %p.check-items
+                  また、出品をもちまして
+                  = link_to "加盟店規約", "https://www.mercari.com/jp/seller_terms/"
+                  に同意したことになります。
+              .sell-btn
+                %button{type: "submit", class: "submit-button"} 出品する
+              = link_to "もどる", "https://www.mercari.com/jp/", class: "back-btn"
+    .p-footer 
+      .p-links
+        %ul
+          %li.outer-links
+            = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+          %li.outer-links
+            = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+          %li.outer-links
+            = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+      -# link_to top page
+      .bottom-footer__logo
+        = link_to image_tag("SVG/fmarket_logo_white", height: "30", class: "mercari"), "https://www.mercari.com/jp/"
+      %p.copyright © 2019 Mercari
