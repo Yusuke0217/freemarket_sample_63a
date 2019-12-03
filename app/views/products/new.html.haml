@@ -1,8 +1,6 @@
 .body  
+  = render "devise/shared/header-login"
   .container
-    .header 
-      = link_to "◆ mercari", "https://www.mercari.com/jp/", class: "mercari-logo"
-      -# adding main content
     .main 
       .info-container
         %h2.content-header 
@@ -125,16 +123,4 @@
               .sell-btn
                 = f.submit "出品する", class: "submit-button"
               = link_to "もどる", root_path, class: "back-btn"
-    .p-footer 
-      .p-links
-        %ul
-          %li.outer-links
-            = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
-          %li.outer-links
-            = link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
-          %li.outer-links
-            = link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
-      -# link_to top page
-      .bottom-footer__logo
-        = link_to image_tag("SVG/fmarket_logo_white", height: "30", class: "mercari"), root_path
-      %p.copyright © 2019 Mercari
+  = render "devise/shared/footer-login"
