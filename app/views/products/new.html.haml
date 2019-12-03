@@ -67,7 +67,7 @@
                     必須
                 .select-box
                   %i.fas.fa-republican
-                  %select.select-default{name: "scope"}
+                  = f.select class: "select-default" do
                     %option{selected: "selected"} --
                 .transportation-name
                   %label 発送元の地域
@@ -75,14 +75,14 @@
                     必須
                 .select-box
                   %i.fas.fa-republican
-                  %select.select-default{name: "region"}
+                  = f.select class: "select-default" do
                     %option{selected: "selected"} --
                 .transportation-name
                   %label 発送までの日数
                   .require
                     必須
                 .select-box
-                  %select.select-default{name: "delivery time"}
+                  = f.select class: "select-default" do
                     %option{selected: "selected"} --
                 -# 合わせてCSSを適応するためクラス名を統一
             .price
