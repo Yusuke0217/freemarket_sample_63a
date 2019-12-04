@@ -6,11 +6,9 @@ class SignupController < ApplicationController
 
   def signup2
     @user = User.new # 新規インスタンス作成
-    # session[:user_id] = user_params[:id]
   end
 
-  def signup3
-    # signup2で入力された値をsessionに保存
+  def validates_signup2
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
@@ -21,7 +19,31 @@ class SignupController < ApplicationController
     session[:birth_day] = user_params[:birth_day]
     session[:birth_year] = user_params[:birth_year]
     session[:birth_month] = user_params[:birth_month]
-    @user = User.new # 新規インスタンス作成
+      @user = User.new(
+        nickname: session[:nickname], 
+        email: session[:email],
+        password: session[:password],
+        last_name: session[:last_name],
+        first_name: session[:first_name],
+        last_name_kana: session[:last_name_kana],
+        first_name_kana: session[:first_name_kana],
+        birth_day: session[:birth_day],
+        birth_year: session[:birth_year],
+        birth_month: session[:birth_month],
+        phone_number: "09012345678",
+        first_name_delivery: "津江",
+        first_name_kana_delivery: "ツエ",
+        last_name_delivery: "秋山",
+        last_name_kana_delivery: "アキヤマ"
+      )
+      render 'devise/registrations/new' unless @user.valid?
+  end
+
+  
+
+
+  def signup3
+      @user = User.new
   end
 
   def signup4

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  extend ActiveHash::ActiveRecordExtensions
+  extend ActiveHash::Associations::ActiveRecordExtensions
 
   devise :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable
 
@@ -11,22 +11,24 @@ class User < ApplicationRecord
   postal = /\A\d{3}-\d{4}\z/
 
 # signup2入力項目
-  validates :nickname,                presence: true, length: {maximum: 20}
-  validates :email,                   presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
-  validates :password,                presence: true, length: {minimum: 7, maximum: 30}
-  validates :last_name,               presence: true, length: {maximum: 20}
-  validates :first_name,              presence: true, length: {maximum: 20}
-  validates :last_name_kana,          presence: true, length: {maximum: 20}
-  validates :first_name_kana,         presence: true, length: {maximum: 20}
+ 
+    validates :nickname,                presence: true, length: {maximum: 20}, on: :validates_signup2
+    validates :email,                   presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }, on: :validates_signup2
+    validates :password,                presence: true, length: {minimum: 7, maximum: 30}, on: :validates_signup2
+    validates :last_name,               presence: true, length: {maximum: 20}, on: :validates_signup2
+    validates :first_name,              presence: true, length: {maximum: 20}, on: :validates_signup2
+    validates :last_name_kana,          presence: true, length: {maximum: 20}, on: :validates_signup2
+    validates :first_name_kana,         presence: true, length: {maximum: 20}, on: :validates_signup2
+  
 
   # signup3入力項目 ハイフン有りの場合はエラーメッセージ
-  validates :phone_number,            presence: true, format: { with: VALID_PHONE_REGEX }
+  validates :phone_number,            presence: true, format: { with: VALID_PHONE_REGEX }, on: :validates_signup3
 
   # signup4入力項目
-  validates :first_name_delivery,               presence: true, length: {maximum: 20}, format: { with: kanji }
-  validates :first_name_kana_delivery,               presence: true, length: {maximum: 20}, format: { with: kana }
-  validates :last_name_delivery,               presence: true, length: {maximum: 20}, format: { with: kanji }
-  validates :last_name_kana_delivery,               presence: true, length: {maximum: 20}, format: { with: kana }
+  validates :first_name_delivery,               presence: true, length: {maximum: 20}, format: { with: kanji }, on: :validates_signup4
+  validates :first_name_kana_delivery,               presence: true, length: {maximum: 20}, format: { with: kana }, on: :validates_signup4
+  validates :last_name_delivery,               presence: true, length: {maximum: 20}, format: { with: kanji }, on: :validates_signup4
+  validates :last_name_kana_delivery,               presence: true, length: {maximum: 20}, format: { with: kana }, on: :validates_signup4
   validates :postal_code,         presence: true, format: { with: postal}
 
 
