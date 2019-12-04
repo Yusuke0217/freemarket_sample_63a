@@ -24,7 +24,7 @@
           - @products.each do |product|
             %li
               .main-contents-box
-                =link_to root_path, class: "contents-item" do
+                =link_to product, class: "contents-item" do
                   .contents-item__image
                     = image_tag product.image_url 
                     .contents-item__image--price
