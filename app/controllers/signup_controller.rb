@@ -31,12 +31,12 @@ class SignupController < ApplicationController
     session[:last_name_delivery] = user_params[:last_name_delivery]
     session[:last_name_kana_delivery] = user_params[:last_name_kana_delivery]
     @user = User.new # 新規インスタンス作成
+    # binding.pry
   end
 
   def done
     sign_in User.find(session[:id]) unless user_signed_in?
   end
-
 
   def create
     @user = User.new(
@@ -58,6 +58,7 @@ class SignupController < ApplicationController
       last_name_delivery: session[:last_name_delivery],
       last_name_kana_delivery: session[:last_name_kana_delivery]
     )
+    binding.pry
     if @user.save # ログインするための情報を保管
       session[:id] = @user.id
       redirect_to done_signup_index_path
@@ -67,11 +68,11 @@ class SignupController < ApplicationController
   end
 
   private
-
   def user_params
     params.require(:user).permit(
       :encrypted_password, :email, :nickname,
       :last_name, :first_name, :last_name_kana, :first_name_kana,
-      :birth_day, :birth_year, :birth_month,:profile, :phone_number,:prefecture, :city, :address, :postal_code, :building_name)
+      :birth_day, :birth_year, :birth_month,:profile, :phone_number,:prefecture, :city, :address, :postal_code, :building_name,
+      :first_name_delivery, :first_name_kana_delivery, :last_name_delivery, :last_name_kana_delivery,:phone_number_delivery)
   end
 end

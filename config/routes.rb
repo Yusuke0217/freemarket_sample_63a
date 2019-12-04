@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update, :delete, :create]
     resources :signup, only: [:create] do
       collection do
+        post "signup"
         get "signup2"
         get "signup3"
         get "signup4"
