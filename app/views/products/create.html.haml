@@ -1,0 +1,14 @@
+.notification
+  .main-notice
+    %h3.notice-head
+    .notice-body
+      あなたが出品した商品は『出品した商品一覧』からいつでも見ることができます"
+      = link_to root_path, class: "red-btn"
+        続けて出品する
+      %p.shere-btn 商品ページへ行ってシェアする
+        = link_to root_path
+  - flash.each do |key, value|
+    = content_tag (:div, value, class: key)
+
+
+    コード書き終わりました！あとはrenderです！

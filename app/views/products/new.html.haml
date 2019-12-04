@@ -43,7 +43,7 @@
                     .require 必須
                     -# カテゴリーカラムに追加⬇️
                   .select-box
-                    = f.select class: "select-default" do
+                    = f.select :category, class: "select-default" do
                       %option{selected: "selected"} --
                       %option{selected: "selected"} レディース
                       %option{selected: "selected"} メンズ
@@ -97,9 +97,9 @@
                     必須
                 .select-box
                   %i.fas.fa-republican
+                  -# 後ほどactive_hashを利用、現在仮置き
                   = f.select :shipping_place, class: "select-default" do
                     %option{selected: "selected"} --
-                    %option{selected: "selected"} 仏悠介
                     %option{selected: "selected"} 北海道
                     %option{selected: "selected"} 青森県
                     %option{selected: "selected"} 岩手県
