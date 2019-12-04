@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_101530) do
     t.string "prefectures"
     t.string "city"
     t.integer "address"
-    t.integer "postal_code"
+    t.string "postal_code"
     t.string "building_name"
     t.integer "birth_year"
     t.integer "birth_month"

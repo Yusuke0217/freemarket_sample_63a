@@ -2,9 +2,21 @@ class SignupController < ApplicationController
   before_action :validates_signup2, only: :signup3 # signup2のバリデーション
   before_action :validates_signup3, only: :signup4 # signup3のバリデーション
   before_action :validates_signup4, only: :signup5 # signup4のバリデーション
-  before_action :validates_signup5, only: :create # signup5のバリデーション
+  # before_action :validates_signup5, only: :create # signup5のバリデーション
 
   def signup2
+    @user = User.new # 新規インスタンス作成
+  end
+
+  def signup3
+    @user = User.new
+  end
+
+  def signup4
+    @user = User.new
+  end
+
+  def signup5
     @user = User.new # 新規インスタンス作成
   end
 
@@ -19,53 +31,86 @@ class SignupController < ApplicationController
     session[:birth_day] = user_params[:birth_day]
     session[:birth_year] = user_params[:birth_year]
     session[:birth_month] = user_params[:birth_month]
-      @user = User.new(
-        nickname: session[:nickname], 
-        email: session[:email],
-        password: session[:password],
-        last_name: session[:last_name],
-        first_name: session[:first_name],
-        last_name_kana: session[:last_name_kana],
-        first_name_kana: session[:first_name_kana],
-        birth_day: session[:birth_day],
-        birth_year: session[:birth_year],
-        birth_month: session[:birth_month],
-        phone_number: "09012345678",
-        first_name_delivery: "津江",
-        first_name_kana_delivery: "ツエ",
-        last_name_delivery: "秋山",
-        last_name_kana_delivery: "アキヤマ"
-      )
-      render 'devise/registrations/new' unless @user.valid?
+    @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      last_name: session[:last_name],
+      first_name: session[:first_name],
+      last_name_kana: session[:last_name_kana],
+      first_name_kana: session[:first_name_kana],
+      birth_day: session[:birth_day],
+      birth_year: session[:birth_year],
+      birth_month: session[:birth_month],
+      phone_number: "09012345678",
+      first_name_delivery: "名字",
+      first_name_kana_delivery: "みょうじ",
+      last_name_delivery: "名前",
+      last_name_kana_delivery: "なまえ",
+      postal_code: "123-4567"
+    )
+    render 'devise/registrations/new' unless @user.valid?
   end
 
-  
-
-
-  def signup3
-      @user = User.new
-  end
-
-  def signup4
+  def validates_signup3
     session[:phone_number] = user_params[:phone_number]
-    @user = User.new # 新規インスタンス作成
+    @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      last_name: session[:last_name],
+      first_name: session[:first_name],
+      last_name_kana: session[:last_name_kana],
+      first_name_kana: session[:first_name_kana],
+      birth_day: session[:birth_day],
+      birth_year: session[:birth_year],
+      birth_month: session[:birth_month],
+      phone_number: session[:phone_number],
+      first_name_delivery: "名字",
+      first_name_kana_delivery: "みょうじ",
+      last_name_delivery: "名前",
+      last_name_kana_delivery: "なまえ",
+      postal_code: "123-4567"
+    )
+    render 'devise/registrations/new' unless @user.valid?
   end
 
-  def signup5
-    # signup4で入力された値をsessionに保存
+  def validates_signup4
     session[:first_name_delivery] = user_params[:first_name_delivery]
     session[:first_name_kana_delivery] = user_params[:first_name_kana_delivery]
     session[:last_name_delivery] = user_params[:last_name_delivery]
     session[:last_name_kana_delivery] = user_params[:last_name_kana_delivery]
     session[:postal_code] = user_params[:postal_code]
-    # session[:prefecture] = user_params[:prefecture]
-    session[:city] = user_params[:city]
     session[:address] = user_params[:address]
+    session[:city] = user_params[:city]
     session[:building_name] = user_params[:building_name]
     session[:phone_number_delivery] = user_params[:phone_number_delivery]
-    @user = User.new # 新規インスタンス作成
-    # binding.pry
+
+
+
+    @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      last_name: session[:last_name],
+      first_name: session[:first_name],
+      last_name_kana: session[:last_name_kana],
+      first_name_kana: session[:first_name_kana],
+      birth_day: session[:birth_day],
+      birth_year: session[:birth_year],
+      birth_month: session[:birth_month],
+      phone_number: session[:phone_number],
+      first_name_delivery: session[:first_name_delivery],
+      first_name_kana_delivery: session[:first_name_kana_delivery],
+      last_name_delivery: session[:last_name_delivery],
+      last_name_kana_delivery: session[:last_name_kana_delivery],
+      postal_code: session[:postal_code]
+    )
+    binding.pry
+    render 'devise/registrations/new' unless @user.valid?
   end
+
+
 
   def done
     sign_in User.find(session[:id]) unless user_signed_in?

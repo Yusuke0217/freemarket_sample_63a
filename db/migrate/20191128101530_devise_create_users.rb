@@ -11,19 +11,19 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :phone_number,      null: false
       t.string :prefectures
       t.string :city
-      t.integer :address      
-      t.integer :postal_code  
+      t.integer :address
+      t.string :postal_code
       t.string :building_name
-      t.integer :birth_year   
-      t.integer :birth_month  
-      t.integer :birth_day    
-      t.string :first_name    
+      t.integer :birth_year
+      t.integer :birth_month
+      t.integer :birth_day
+      t.string :first_name
       t.string :first_name_kana
-      t.string :last_name     
+      t.string :last_name
       t.string :last_name_kana
-      t.string :first_name_delivery    
+      t.string :first_name_delivery
       t.string :first_name_kana_delivery
-      t.string :last_name_delivery  
+      t.string :last_name_delivery
       t.string :last_name_kana_delivery
       t.integer :phone_number_delivery
       t.string :exhibit_product
