@@ -2,13 +2,14 @@ class SignupController < ApplicationController
 
   def signup2
     @user = User.new # 新規インスタンス作成
+    # session[:user_id] = user_params[:id]
   end
 
   def signup3
     # signup2で入力された値をsessionに保存
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
-    session[:encrypted_password] = user_params[:encrypted_password]
+    session[:password] = user_params[:password]
     session[:last_name] = user_params[:last_name]
     session[:first_name] = user_params[:first_name]
     session[:last_name_kana] = user_params[:last_name_kana]
@@ -42,7 +43,7 @@ class SignupController < ApplicationController
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
       email: session[:email],
-      encrypted_password: session[:encrypted_password],
+      password: session[:password],
       # password_confirmation: session[:password_confirmation],
       last_name: session[:last_name],
       first_name: session[:first_name],
@@ -58,7 +59,7 @@ class SignupController < ApplicationController
       last_name_delivery: session[:last_name_delivery],
       last_name_kana_delivery: session[:last_name_kana_delivery]
     )
-    binding.pry
+
     if @user.save # ログインするための情報を保管
       session[:id] = @user.id
       redirect_to done_signup_index_path
@@ -70,9 +71,9 @@ class SignupController < ApplicationController
   private
   def user_params
     params.require(:user).permit(
-      :encrypted_password, :email, :nickname,
+      :password, :email, :nickname,
       :last_name, :first_name, :last_name_kana, :first_name_kana,
-      :birth_day, :birth_year, :birth_month,:profile, :phone_number,:prefecture, :city, :address, :postal_code, :building_name,
+      :birth_day, :birth_year, :birth_month,:profile, :phone_number, :city, :address, :postal_code, :building_name,
       :first_name_delivery, :first_name_kana_delivery, :last_name_delivery, :last_name_kana_delivery,:phone_number_delivery)
   end
 end
