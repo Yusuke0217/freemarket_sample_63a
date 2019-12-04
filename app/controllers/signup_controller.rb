@@ -64,7 +64,7 @@ class SignupController < ApplicationController
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else
-      render 'layouts/signup1'
+      render 'devise/registrations/new'
     end
   end
 

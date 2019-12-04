@@ -5,6 +5,10 @@
   font-size: inherit;
   text-rendering: auto;
 }
+
+@mixin tomato {
+  color: #ea352d;
+}
 header.top-content {
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.18)0px 2px 4px;
@@ -63,6 +67,112 @@ header.top-content {
           i.fas.fa-search {
             content: "\f002";
             @include awesome;
+          }
+        }
+      }
+    }
+    .top-main-leg {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      &__left {
+        display: block;
+        margin-left: -3px;
+        ul.item-nav {
+          list-style: none;
+          height: 44px;
+          display: flex;
+          li {
+            padding: 0 11px;
+            cursor: not-allowed;
+            display: block;
+            h2 {
+              font-size: 14px;
+              line-height: 1.4;
+              margin-block-start: 0.83em;
+              margin-block-end: 0.83em;
+              font-weight: bold;
+              a.category {
+                text-decoration: none;
+                color: black;
+                i.fas.fa-list {
+                  content: "\f03a";
+                  margin-right: 4px;
+                  @include awesome;
+                  @include tomato;
+                }
+                span {
+                  vertical-align: middle;
+                }
+              }
+              a.brand {
+                text-decoration: none;
+                display: block;
+                color: black;
+                i.fab.fa-cc-amex {
+                  content: "\f1f3";
+                  margin-right: 4px;
+                  @include awesome;
+                  @include tomato;
+                }
+                span {
+                  vertical-align: middle;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__right {
+        float: right;
+        display: flex;
+        ul.user-nav {
+          text-decoration: none;
+          display: flex;
+          li.like-list {
+            height: 44px;
+            padding: 0px 7px;
+            a.menu-link {
+              align-items: center;
+              display: flex;
+              font-size: 14px;
+              height: 32px;
+              // atag{}
+              color: black;
+              text-decoration: none;
+              i.far.fa-heart {
+                content: "\f834";
+                @include awesome;
+                @include tomato;
+              }
+              span {
+                vertical-align: middle;
+              }
+              i.far.fa-bell {
+                content: "\f0f3";
+                @include awesome;
+                @include tomato;
+              }
+              .count {
+              }
+              i.fas.fa-check {
+                content: "\f00c";
+                @include awesome;
+                @include tomato;
+              }
+              figure {
+                margin: 0;
+                .peace {
+                  img {
+                    margin-right: 10px;
+                    width: 32px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    vertical-align: middle;
+                  }
+                }
+              }
+            }
           }
         }
       }

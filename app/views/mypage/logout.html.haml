@@ -2,8 +2,8 @@
 
 .wrapper
   .content.clearfix
-    %form.logout
-      %button{type: "submit", class: "logout-btn"} ログアウト
+    %form
+      =link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn" 
 
     = render "layouts/side-barMypage"
 
