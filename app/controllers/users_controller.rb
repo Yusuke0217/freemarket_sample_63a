@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  before_action :move_to_index
 
-  def edit
+def edit
   end
 
   def update
@@ -21,6 +22,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:password, :email, :nickname, :profile, :phone_number, :prefecture, :city, :address, :postal_code, :building_name)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 
 end
