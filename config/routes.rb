@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/sessions/logout', to: 'sessions#logout'
   get '/mypage/user_page', to: 'mypage#user_page'
   root to: "products#index"
-  resources :products, only: [:index, :new, :create]
+  resources :products, only: [:index, :new, :create, :show]
   resources :users, only: [:edit, :update, :delete]
     resources :signup do
       collection do
