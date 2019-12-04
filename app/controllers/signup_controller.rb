@@ -30,6 +30,7 @@ class SignupController < ApplicationController
     session[:first_name_kana_delivery] = user_params[:first_name_kana_delivery]
     session[:last_name_delivery] = user_params[:last_name_delivery]
     session[:last_name_kana_delivery] = user_params[:last_name_kana_delivery]
+    @user = User.new # 新規インスタンス作成
   end
 
   def done
