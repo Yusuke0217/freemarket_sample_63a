@@ -26,7 +26,7 @@
               .main-contents-box
                 =link_to product_path(product.id), class: "contents-item" do
                   .contents-item__image
-                    = image_tag product.image_url 
+                    = image_tag product.image_url if product.image.present?
                     .contents-item__image--price
                       %span= product.price
                   .contents-item__index
