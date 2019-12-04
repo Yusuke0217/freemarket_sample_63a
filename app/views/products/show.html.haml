@@ -48,23 +48,23 @@
           .tr
             .th
               .th__name 商品の状態
-            .td 未使用に近い
+            %span.td= @product.condition
           .tr
             .th
               .th__name 配送料の負担
-            .td 送料込み(出品者負担)
+            %span.td= @product.shipping_charge
           .tr
             .th
               .th__name 配送の方法
-            .td らくらくメルカリ便
+            %span.td= @product.shipping_how
           .tr
             .th
               .th__name 配送元地域
-            .td 未定
+            %span.td= @product.shipping_place
           .tr
             .th
               .th__name 発送日の目安
-            .td 1~2日で発送
+            %span.td= @product.shipping_date
 
     .item__price
       .price-box
