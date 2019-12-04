@@ -1,4 +1,8 @@
 class SignupController < ApplicationController
+  before_action :validates_signup2, only: :signup3 # signup2のバリデーション
+  before_action :validates_signup3, only: :signup4 # signup3のバリデーション
+  before_action :validates_signup4, only: :signup5 # signup4のバリデーション
+  before_action :validates_signup5, only: :create # signup5のバリデーション
 
   def signup2
     @user = User.new # 新規インスタンス作成
@@ -31,6 +35,12 @@ class SignupController < ApplicationController
     session[:first_name_kana_delivery] = user_params[:first_name_kana_delivery]
     session[:last_name_delivery] = user_params[:last_name_delivery]
     session[:last_name_kana_delivery] = user_params[:last_name_kana_delivery]
+    session[:postal_code] = user_params[:postal_code]
+    # session[:prefecture] = user_params[:prefecture]
+    session[:city] = user_params[:city]
+    session[:address] = user_params[:address]
+    session[:building_name] = user_params[:building_name]
+    session[:phone_number_delivery] = user_params[:phone_number_delivery]
     @user = User.new # 新規インスタンス作成
     # binding.pry
   end
