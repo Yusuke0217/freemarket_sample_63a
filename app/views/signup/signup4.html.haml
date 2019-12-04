@@ -49,16 +49,16 @@
               %span.must-content
                 必須
               .input-parrent
-                = f.text_field :last_name_delivery, class: "kanji1stName-info", value: "", placeholder: "例) 山田"
-                = f.text_field :first_name_delivery, class: "kanji2ndName-info", value: "", placeholder: "例) 彩"
+                = f.text_field :last_name_delivery, class: "kanji1stName-info", value: "", placeholder: "例) 山田", maxlength: "20"
+                = f.text_field :first_name_delivery, class: "kanji2ndName-info", value: "", placeholder: "例) 彩", maxlength: "20"
             .form-group
               %label.kanaName-new
                 お名前(全角) 
               %span.must-content
                 必須
               .input-parrent
-                = f.text_field :last_name_kana_delivery, class: "kana1stName-info", value: "", placeholder: "例) ヤマダ"
-                = f.text_field :first_name_kana_delivery, class: "kana2ndName-info", value: "", placeholder: "例) アヤ"
+                = f.text_field :last_name_kana_delivery, class: "kana1stName-info", value: "", placeholder: "例) ヤマダ", maxlength: "20"
+                = f.text_field :first_name_kana_delivery, class: "kana2ndName-info", value: "", placeholder: "例) アヤ", maxlength: "20"
             .form-group
               %label.yubinNum-new
                 郵便番号
