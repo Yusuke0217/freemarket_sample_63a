@@ -1,25 +1,25 @@
 .main-product
   .item
     .item__name
-      テスト１
+      %span= @product.name
     .item__content
       .content-photo
         .content-photo__top
-          = image_tag "SVG/copy.jpg", class: "main-image"
+          = image_tag @product.image_url class: "main-image"
         .content-photo__detail
           .content-photo-box
-            = image_tag "SVG/2010", class: "image1"
+            = image_tag @product.image_url class: "image1"
           .content-photo-box
-            = image_tag "SVG/2011.jpg", class: "image2"
+            = image_tag @product.image_url class: "image2"
           .content-photo-box
-            = image_tag "SVG/2012.jpg", class: "image3"
+            = image_tag @product.image_url class: "image3"
       .content-table
         .table
           .tr
             .th
               .th__name 出品者
             .td
-              = link_to "user-nmae", root_path
+              = link_to "user-name", root_path
               .user-evaluation
                 .item-user-ratings
                   %i.fa.fa-smile-o
@@ -68,7 +68,8 @@
 
     .item__price
       .price-box
-        ¥1,300
+        ¥
+        %span= @product.price
       .price-tax
         .price-tax__content (税込)
       .price-fee
@@ -76,7 +77,7 @@
     = link_to "購入画面に進む", root_path, class: "item__buy-btn"
     %p.allowed-message
     .item__description
-      商品の説明です
+      %span= @product.text
     .item__botton
       .botton-left
         %button.botton-left__icon
@@ -124,13 +125,13 @@
       .item-box__contents
         = link_to root_path, class: "content-box" do
           .content-box__photo
-            画像
+            = image_tag @product.image_url
           .content-box__body
             .box-name
-              出品物の名前
+              -# %span= user.name
             .box-info
               .box-info__price
-                ¥500
+                %span= @product.price
               .box-info__action
                 %i.far.fa-heart
                 .span 1
