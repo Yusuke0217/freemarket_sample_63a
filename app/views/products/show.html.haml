@@ -1,0 +1,159 @@
+.main-product
+  .item
+    .item__name
+      テスト１
+    .item__content
+      .content-photo
+        .content-photo__top
+          = image_tag "SVG/copy.jpg", class: "main-image"
+        .content-photo__detail
+          .content-photo-box
+            = image_tag "SVG/2010", class: "image1"
+          .content-photo-box
+            = image_tag "SVG/2011.jpg", class: "image2"
+          .content-photo-box
+            = image_tag "SVG/2012.jpg", class: "image3"
+      .content-table
+        .table
+          .tr
+            .th
+              .th__name 出品者
+            .td
+              = link_to "user-nmae", root_path
+              .user-evaluation
+                .item-user-ratings
+                  %i.fa.fa-smile-o
+                  %span 23
+                .item-user-ratings
+                  %i.fa.fa-meh-o
+                  %span 0
+                .item-user-ratings
+                  %i.fa.fa-frown-o
+                  %span 0
+          .tr
+            .th
+              .th__name カテゴリー
+            .td
+              %li
+                =link_to "レディース", root_path
+              %li
+                =link_to "> バッグ", root_path, class: "item-detail-table-sub-category"
+              %li
+                =link_to "> ブランド袋", root_path, class: "item-detail-table-sub-category"
+          .tr
+            .th
+              .th__name ブランド
+            .td
+              =link_to "クリスチャン ルブタン", root_path
+          .tr
+            .th
+              .th__name 商品の状態
+            .td 未使用に近い
+          .tr
+            .th
+              .th__name 配送料の負担
+            .td 送料込み(出品者負担)
+          .tr
+            .th
+              .th__name 配送の方法
+            .td らくらくメルカリ便
+          .tr
+            .th
+              .th__name 配送元地域
+            .td 未定
+          .tr
+            .th
+              .th__name 発送日の目安
+            .td 1~2日で発送
+
+    .item__price
+      .price-box
+        ¥1,300
+      .price-tax
+        .price-tax__content (税込)
+      .price-fee
+        .price-fee__content 送料込み
+    = link_to "購入画面に進む", root_path, class: "item__buy-btn"
+    %p.allowed-message
+    .item__description
+      商品の説明です
+    .item__botton
+      .botton-left
+        %button.botton-left__icon
+          %i.far.fa-heart
+          %span いいね!
+          %span.fade-in-down 0
+        %button.botton-left__icon
+          %i.far.fa-flag
+          %span 報告
+      .botton-right
+        =link_to  root_path do
+          %i.fas.fa-key
+          %span 安心・安全への取り組み
+  .message
+    .message__contents
+      .message-items
+    .message__contents
+      %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.message-textarea{name: "body", type: "text", value: ""}
+      %button.message-submit{type: "submit"}
+        %span コメントする
+
+  %ul.nav
+    %li
+      = link_to "< テスト2", root_path
+    %li
+      = link_to "テスト4 >", root_path
+  .sns
+    %ul.media-box
+      %li.facebook-box
+        = link_to "https://www.facebook.com", root_path, class: "facebook-icon" do
+          %i.fa.fa-facebook-official.fa-2x
+      %li.twitter-icon
+        = link_to "http://twitter.com", root_path, class: "twitter-icon" do
+          %i.fa.fa-twitter.fa-2x
+      %li.line-icon
+        = link_to "LINE", "https://access.line.me", root_path, class: "line-icon"
+      %li.pinterest-icon
+        = link_to "https://www.pinterest.jp/", root_path, class: "pinterest-icon" do
+          %i.fa.fa-pinterest.fa-2x
+  .items
+    .item-box
+      .item-box__name
+        = link_to "user-nameのその他の出品物", root_path
+      .item-box__contents
+        = link_to root_path, class: "content-box" do
+          .content-box__photo
+            画像
+          .content-box__body
+            .box-name
+              出品物の名前
+            .box-info
+              .box-info__price
+                ¥500
+              .box-info__action
+                %i.far.fa-heart
+                .span 1
+        .content-box
+        .content-box
+    .item-box
+      .item-box__name
+        = link_to "その他の出品物", root_path
+      .item-box__contents
+        = link_to root_path, class: "content-box" do
+          .content-box__photo
+            画像
+          .content-box__body
+            .box-name
+              出品物の名前
+            .box-info
+              .box-info__price
+                ¥500
+        .content-box
+        .content-box
+  .bottom-nav
+    %ul
+      %li
+        = link_to "メルカリ > ", root_path
+      %li
+        テスト１
