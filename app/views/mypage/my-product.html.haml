@@ -7,21 +7,25 @@
       .item__content
         .content-photo
           .content-photo__top
-            = image_tag "SVG/copy.jpg", class: "main-image"
+            -# = image_tag "SVG/copy.jpg", class: "main-image"
+            = image_tag @product.image_url class: "main-image"
           .content-photo__detail
             .content-photo-box
-              = image_tag "SVG/2010", class: "image1"
+              -# = image_tag "SVG/2010", class: "image1"
+              = image_tag @product.image_url class: "image1"
             .content-photo-box
-              = image_tag "SVG/2011.jpg", class: "image2"
+              -# = image_tag "SVG/2011.jpg", class: "image2"
+              = image_tag @product.image_url class: "image2"
             .content-photo-box
-              = image_tag "SVG/2012.jpg", class: "image3"
+              -# = image_tag "SVG/2012.jpg", class: "image3"
+              = image_tag @product.image_url class: "image3"
         .content-table
           .table
             .tr
               .th
                 .th__name 出品者
               .td
-                = link_to "user-nmae", root_path
+                = link_to @product.user.nickname, root_path
                 .user-evaluation
                   .item-user-ratings
             .tr
