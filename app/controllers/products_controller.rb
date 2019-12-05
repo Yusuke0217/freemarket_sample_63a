@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
   end
 
   def myproduct
-    @products = Product.all
+    @products = current_user.products
   end
 
   private
