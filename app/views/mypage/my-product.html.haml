@@ -1,0 +1,93 @@
+= render "layouts/header"
+.main-product
+  .sequel
+    .item
+      .item__name
+        テスト１
+      .item__content
+        .content-photo
+          .content-photo__top
+            = image_tag "SVG/copy.jpg", class: "main-image"
+          .content-photo__detail
+            .content-photo-box
+              = image_tag "SVG/2010", class: "image1"
+            .content-photo-box
+              = image_tag "SVG/2011.jpg", class: "image2"
+            .content-photo-box
+              = image_tag "SVG/2012.jpg", class: "image3"
+        .content-table
+          .table
+            .tr
+              .th
+                .th__name 出品者
+              .td
+                = link_to "user-nmae", root_path
+                .user-evaluation
+                  .item-user-ratings
+            .tr
+              .th
+                .th__name カテゴリー
+              .td
+                %li
+                  =link_to "レディース", root_path
+                %li
+                  =link_to "> バッグ", root_path, class: "item-detail-table-sub-category"
+                %li
+                  =link_to "> ブランド袋", root_path, class: "item-detail-table-sub-category"
+            .tr
+              .th
+                .th__name ブランド
+              .td
+                =link_to "クリスチャン ルブタン", root_path
+            .tr
+              .th
+                .th__name 商品の状態
+              .td 未使用に近い
+            .tr
+              .th
+                .th__name 配送料の負担
+              .td 送料込み(出品者負担)
+            .tr
+              .th
+                .th__name 配送の方法
+              .td らくらくメルカリ便
+            .tr
+              .th
+                .th__name 配送元地域
+              .td 未定
+            .tr
+              .th
+                .th__name 発送日の目安
+              .td 1~2日で発送
+
+      .item__price
+        .price-box
+          ¥1,300
+        .price-tax
+          .price-tax__content (税込)
+        .price-fee
+          .price-fee__content 送料込み
+      -# = link_to "購入画面に進む", root_path, class: "item__buy-btn"
+      %p.allowed-message
+      .item__description
+        商品の説明です
+
+    .product-rails
+      = link_to root_path, class: "btn-default edit-btn" do
+        商品の編集
+      %p.text-align-center or
+      = form_with model: @product, local: true, class: "just-wait" do |f|
+        %input{name: "value", type: "hidden", value: ""}/
+        %button.btn-default.stop{type: "submit"} 出品の一旦停止
+      %button.btn-default.delete-item 商品を削除する
+
+
+    .message
+      .message__contents
+        .message-items
+      .message__contents
+        %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %textarea.message-textarea{name: "body", type: "text", value: ""}
+        %button.message-submit{type: "submit"}
+          %span コメントする
+= render "layouts/footer"

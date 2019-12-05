@@ -6,16 +6,20 @@
   text-align: center;
   border-radius: 50%;
   float: right;
-  right: 20px;
-  bottom: 20px;
-  h1 {
+  bottom: 25px;
+  right: 25px;
+  position: fixed;
+  .placing {
     font-size: 22px;
     color: rgb(255, 255, 255);
   }
-  svg {
+  i.fa.fa-camera {
     margin: 8px 50px 0;
     width: 60px;
     height: 54px;
     color: rgb(255, 255, 255);
   }
+}
+a.red-btn {
+  text-decoration: none;
 }
