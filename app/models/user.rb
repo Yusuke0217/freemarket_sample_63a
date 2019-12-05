@@ -1,6 +1,17 @@
 class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
+  has_many :comments
+  has_many :products
+  # has_many :products, through: :purchase-history
+  # has_many :products, through: :sales-history
+  # has_many :comment-report コメントの報告
+  # has_many :products, through: :like-product商品へのいいね
+  # has_many :products, through: :product-report商品の報告
+  # has_many :comments, through: :comment-report
+  # belongs_to :credit
+
+
   devise :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable
 
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
