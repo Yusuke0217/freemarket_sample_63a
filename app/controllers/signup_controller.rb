@@ -112,7 +112,7 @@ class SignupController < ApplicationController
   end
 
   def create
-    binding.pry
+
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
       email: session[:email],

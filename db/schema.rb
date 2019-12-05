@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_101530) do
     t.string "phone_number", null: false
     t.string "prefectures"
     t.string "city"
-    t.integer "address"
+    t.string "address"
     t.string "postal_code"
     t.string "building_name"
     t.integer "birth_year"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_101530) do
     t.string "first_name_kana_delivery"
     t.string "last_name_delivery"
     t.string "last_name_kana_delivery"
-    t.integer "phone_number_delivery"
+    t.string "phone_number_delivery"
     t.string "exhibit_product"
     t.integer "exhibit_number"
     t.integer "points"
