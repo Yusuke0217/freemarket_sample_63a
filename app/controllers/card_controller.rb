@@ -36,7 +36,6 @@ class CardController < ApplicationController
     @card = Card.new
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
-      binding.pry
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
