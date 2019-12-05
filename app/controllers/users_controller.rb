@@ -1,9 +1,17 @@
 class UsersController < ApplicationController
   before_action :move_to_index
 
-def edit
+  def create
   end
-
+  
+  def show
+    @user = User.find(params[:id])
+    @nickname = current_user.nickname
+  end
+  
+  def edit
+  end
+  
   def update
     if current_user.update(user_params)
       redirect_to root_path
@@ -11,11 +19,8 @@ def edit
       render :edit
     end
   end
-
-  def delete
-  end
   
-  def create
+  def delete
   end
 
   private
