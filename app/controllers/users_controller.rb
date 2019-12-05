@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   before_action :move_to_index
+  
+  def index
+    @products = current_user.products
+  end
 
   def create
   end

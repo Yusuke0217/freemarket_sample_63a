@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # get '/mypage/user_page', to: 'mypage#user_page'
   root to: "products#index"
   resources :products, only: [:index, :new, :create, :show]
-  resources :users, only: [:edit, :update, :delete, :create, :show]
+  resources :users, only: [:index, :edit, :update, :delete, :create, :show]
     resources :signup, only: [:create] do
       collection do
         post "signup"
