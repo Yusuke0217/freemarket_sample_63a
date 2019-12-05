@@ -1,5 +1,6 @@
 class CardController < ApplicationController
   require "payjp"
+  #before_action :set_card
 
   def new
     card = Card.where(user_id: current_user.id)
@@ -35,6 +36,7 @@ class CardController < ApplicationController
     @card = Card.new
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
+       binding.pry
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
@@ -50,5 +52,12 @@ class CardController < ApplicationController
         redirect_to action: "pay"
       end
     end
+  end
+
+
+  private
+
+  def set_card
+    @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
   end
 end

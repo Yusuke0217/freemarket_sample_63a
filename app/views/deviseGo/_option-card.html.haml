@@ -1,5 +1,5 @@
 = form_with url: pay_card_index_path, local: true do |f|
-  =f.select  class: "cardMonth-info", name: "exp_month", type: "text", id: "exp_month" do
+  =f.select :exp_month, class: "cardMonth-info", name: "exp_month", type: "text" do
     %option{:value => ""} --
     %option{:value => "01"} 01
     %option{:value => "02"} 02
@@ -14,7 +14,7 @@
     %option{:value => "11"} 11
     %option{:value => "12"} 12
   %p 月/
-  =f.select class: "cardYear-info", name: "exp_year", type: "text", id: "exp_year" do
+  =f.select :exp_year, class: "cardYear-info", name: "exp_year", type: "text" do
     %option{:value => ""} --
     %option{:value => "20"} 20
     %option{:value => "21"} 21
