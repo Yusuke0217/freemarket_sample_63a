@@ -41,7 +41,7 @@
       %h2 支払い方法
     .credit-box__body
       .push-box
-        =form_with model: @user, local: true do |f| 
+        = form_for @user, url: signup_index_path, method: :post do |f|
           .formbox
             .form-group-credit
               %label.yubinNum-new
@@ -49,11 +49,11 @@
               %span.must-content
                 必須
               //クレジット番号のカラム名を商品購入実装の際に追加してください
-              = f.text_field class:"yubinNum-info", placeholder: "半角数字のみ"
-              =image_tag "credit/iconfinder_visa-straight_38613.png"
-              =image_tag "credit/iconfinder_mastercard-straight_38603.png"
-              =image_tag "credit/iconfinder_american-express-straight_38591.png"
-              =image_tag "credit/iconfinder_discover-straight_38599.png"
+              -# = f.text_field class:"yubinNum-info", value: "", placeholder: "半角数字のみ"
+              -# =image_tag "credit/iconfinder_visa-straight_38613.png"
+              -# =image_tag "credit/iconfinder_mastercard-straight_38603.png"
+              -# =image_tag "credit/iconfinder_american-express-straight_38591.png"
+              -# =image_tag "credit/iconfinder_discover-straight_38599.png"
             .form-group-credit
               %label.prefecture-new
                 有効期限
@@ -66,9 +66,9 @@
                 セキュリティコード
               %span.must-content
                 必須
-              = f.text_field class: "password-info", placeholder: "カード背面4桁もしくは3桁の番号"
-            =link_to signup6_signup_index_path do
-              =f.button "次へ進む", class: "go-ahead"
+              -# = f.text_field class: "password-info", placeholder: "カード背面4桁もしくは3桁の番号"
+            -# =link_to signup6_signup_index_path do
+            = f.submit "次へ進む", class: "go-ahead"
             =link_to "", class: "link-for-user-info" do
               カード裏面の番号とは？
               =fa_icon'chevron-right'

@@ -30,29 +30,34 @@ ActiveRecord::Schema.define(version: 2019_12_02_112135) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
     t.string "name", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "nickname", default: "", null: false
-    t.integer "phone_number", null: false
-    t.string "prefectures", null: false
-    t.string "city", null: false
-    t.integer "address", null: false
-    t.integer "postal_code", null: false
+    t.string "phone_number", null: false
+    t.string "prefectures"
+    t.string "city"
+    t.string "address"
+    t.string "postal_code"
     t.string "building_name"
-    t.integer "birth_year", null: false
-    t.integer "birth_month", null: false
-    t.integer "birth_day", null: false
-    t.string "first_name", null: false
-    t.string "first_name_kana", null: false
-    t.string "last_name", null: false
-    t.string "last_name_kana", null: false
+    t.integer "birth_year"
+    t.integer "birth_month"
+    t.integer "birth_day"
+    t.string "first_name"
+    t.string "first_name_kana"
+    t.string "last_name"
+    t.string "last_name_kana"
+    t.string "first_name_delivery"
+    t.string "first_name_kana_delivery"
+    t.string "last_name_delivery"
+    t.string "last_name_kana_delivery"
+    t.string "phone_number_delivery"
     t.string "exhibit_product"
     t.integer "exhibit_number"
     t.integer "points"
     t.integer "like"
     t.integer "earnings"
-    t.integer "purchase_history_id", null: false
-    t.integer "sales_history_id", null: false
+    t.integer "purchase_history_id"
+    t.integer "sales_history_id"
     t.text "profile"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

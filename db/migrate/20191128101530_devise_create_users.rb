@@ -4,30 +4,35 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: "", unique: true
-      t.string :encrypted_password, null: false, default: "", unique: true
+      t.string :email,              null: false, default: ""
       t.string :name,               null: false, default: ""
+      t.string :encrypted_password, null: false, default: ""
       t.string :nickname,           null: false, default: ""
-      t.integer :phone_number,      null: false
-      t.string :prefectures,        null: false
-      t.string :city,               null: false
-      t.integer :address,           null: false
-      t.integer :postal_code,       null: false
+      t.string :phone_number,      null: false
+      t.string :prefectures
+      t.string :city
+      t.string :address
+      t.string :postal_code
       t.string :building_name
-      t.integer :birth_year,        null: false
-      t.integer :birth_month,       null: false
-      t.integer :birth_day,         null: false
-      t.string :first_name,         null: false, foreign_key: true
-      t.string :first_name_kana,    null: false, foreign_key: true
-      t.string :last_name,          null: false, foreign_key: true
-      t.string :last_name_kana,     null: false, foreign_key: true
+      t.integer :birth_year
+      t.integer :birth_month
+      t.integer :birth_day
+      t.string :first_name
+      t.string :first_name_kana
+      t.string :last_name
+      t.string :last_name_kana
+      t.string :first_name_delivery
+      t.string :first_name_kana_delivery
+      t.string :last_name_delivery
+      t.string :last_name_kana_delivery
+      t.string :phone_number_delivery
       t.string :exhibit_product
       t.integer :exhibit_number
       t.integer :points
       t.integer :like
       t.integer :earnings
-      t.integer :purchase_history_id, null: false
-      t.integer :sales_history_id,    null: false
+      t.integer :purchase_history_id
+      t.integer :sales_history_id
       t.text :profile
 
       ## Recoverable

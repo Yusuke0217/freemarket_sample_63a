@@ -41,15 +41,15 @@
       %h2 電話番号の確認
     .tell-box__body
       .push-box
-        =form_with model: @user, local: true do |f| 
+        = form_for @user, url: signup4_signup_index_path, method: :get do |f|
           .formbox
             .form-group
               %label.tellNumber-new
                 携帯電話の番号
-              = f.text_field :phone_number, class: "tellNumber-info", placeholder: "携帯電話の番号を入力"
+              = f.text_field :phone_number, class: "tellNumber-info", value: "", placeholder: "携帯電話の番号を入力"
               %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-            =link_to signup4_signup_index_path do
-              =f.button "SMSを送信する", class: "go-ahead"
+            -# =link_to signup4_signup_index_path do
+            = f.submit "SMSを送信する", class: "go-ahead"
             %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
             =link_to "", class: "link-for-user-info" do
               電話番号の確認が必要な理由
