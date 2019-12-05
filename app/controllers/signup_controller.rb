@@ -101,7 +101,9 @@ class SignupController < ApplicationController
       first_name_kana_delivery: session[:first_name_kana_delivery],
       last_name_delivery: session[:last_name_delivery],
       last_name_kana_delivery: session[:last_name_kana_delivery],
-      postal_code: session[:postal_code]
+      postal_code: session[:postal_code],
+      city: session[:city],
+      address: session[:address]
     )
     binding.pry
     render 'devise/registrations/new' unless @user.valid?
@@ -123,13 +125,16 @@ class SignupController < ApplicationController
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
       birth_day: session[:birth_day],
+      postal_code: session[:postal_code],
       birth_year: session[:birth_year],
       birth_month: session[:birth_month],
       phone_number: session[:phone_number],
       first_name_delivery: session[:first_name_delivery],
       first_name_kana_delivery: session[:first_name_kana_delivery],
       last_name_delivery: session[:last_name_delivery],
-      last_name_kana_delivery: session[:last_name_kana_delivery]
+      last_name_kana_delivery: session[:last_name_kana_delivery],
+      city: session[:city],
+      address: session[:address]
     )
     binding.pry
 
