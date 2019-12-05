@@ -105,7 +105,6 @@ class SignupController < ApplicationController
       city: session[:city],
       address: session[:address]
     )
-    binding.pry
     render 'devise/registrations/new' unless @user.valid?
   end
 
@@ -136,11 +135,9 @@ class SignupController < ApplicationController
       city: session[:city],
       address: session[:address]
     )
-    binding.pry
 
     if @user.save # ログインするための情報を保管
       session[:id] = @user.id
-      binding.pry
       redirect_to done_signup_index_path
     else
       render 'devise/registrations/new'
