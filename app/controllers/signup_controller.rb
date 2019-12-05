@@ -17,7 +17,7 @@ class SignupController < ApplicationController
   end
 
   def signup5
-    @user = User.new # 新規インスタンス作成
+    @user = User.new
   end
 
   def validates_signup2
@@ -85,9 +85,6 @@ class SignupController < ApplicationController
     session[:city] = user_params[:city]
     session[:building_name] = user_params[:building_name]
     session[:phone_number_delivery] = user_params[:phone_number_delivery]
-
-
-
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -110,13 +107,12 @@ class SignupController < ApplicationController
     render 'devise/registrations/new' unless @user.valid?
   end
 
-
-
   def done
     sign_in User.find(session[:id]) unless user_signed_in?
   end
 
   def create
+    binding.pry
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
       email: session[:email],
@@ -129,16 +125,17 @@ class SignupController < ApplicationController
       birth_day: session[:birth_day],
       birth_year: session[:birth_year],
       birth_month: session[:birth_month],
-
       phone_number: session[:phone_number],
       first_name_delivery: session[:first_name_delivery],
       first_name_kana_delivery: session[:first_name_kana_delivery],
       last_name_delivery: session[:last_name_delivery],
       last_name_kana_delivery: session[:last_name_kana_delivery]
     )
+    binding.pry
 
     if @user.save # ログインするための情報を保管
       session[:id] = @user.id
+      binding.pry
       redirect_to done_signup_index_path
     else
       render 'devise/registrations/new'

@@ -5,9 +5,9 @@ class User < ApplicationRecord
 
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PHONE = /\A\d{10,11}\z/
-  VALID_kanji = /\A[一-龥]+\z/
+  VALID_kanji = /\A[一-龥\ァ-ン\ぁ-ん]+\z/
   VALID_kana = /\A([ァ-ン\ぁ-ん]|ー)+\z/
-  VALID_postal = /\A\d{3}-\d{4}\z/
+  VALID_postal = /\A[0-9]{3}-[0-9]{4}\z/
 
 # signup2入力項目
   validates :nickname,                presence: true, length: {maximum: 20}
