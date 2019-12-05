@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @products = Product.all
@@ -26,4 +27,9 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :condition, :shipping_charge, :shipping_how, :shipping_place, :shipping_date, :price, :text, :image, :category).merge(user_id: current_user.id)
   end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
+  
 end
