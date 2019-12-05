@@ -1,9 +1,8 @@
 class SignupController < ApplicationController
   before_action :validates_signup2, only: :signup3 # signup2のバリデーション
   before_action :validates_signup3, only: :signup4 # signup3のバリデーション
-  before_action :validates_signup4, only: :signup5 # signup4のバリデーション
-  # before_action :validates_signup5, only: :create # signup5のバリデーション
-
+  before_action :validates_signup4, only: :create # signup4のバリデーション
+  
   def signup2
     @user = User.new # 新規インスタンス作成
   end
@@ -13,10 +12,6 @@ class SignupController < ApplicationController
   end
 
   def signup4
-    @user = User.new
-  end
-
-  def signup5
     @user = User.new
   end
 
@@ -108,10 +103,6 @@ class SignupController < ApplicationController
     render 'devise/registrations/new' unless @user.valid?
   end
 
-  def done
-    sign_in User.find(session[:id]) unless user_signed_in?
-  end
-
   def create
 
     @user = User.new(
@@ -138,10 +129,14 @@ class SignupController < ApplicationController
 
     if @user.save # ログインするための情報を保管
       session[:id] = @user.id
-      redirect_to done_signup_index_path
+      # redirect_to done_signup_index_path
     else
       render 'devise/registrations/new'
     end
+  end
+
+  def done
+    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
   private

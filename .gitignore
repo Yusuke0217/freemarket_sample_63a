@@ -28,3 +28,4 @@
 # 消さないで
 # config/secrets.yml
 /public/uploads
+/.env

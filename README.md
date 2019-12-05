@@ -138,7 +138,7 @@ Things you may want to cover:
 - belongs_to :comment
 
 
-## credit テーブル
+## card テーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true| ユーザー情報を外部キーとして所有
@@ -147,7 +147,7 @@ Things you may want to cover:
 - belongs_to :user
 
 
-### purchase-history テーブル
+### customer テーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|

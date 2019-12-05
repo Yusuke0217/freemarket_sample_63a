@@ -41,7 +41,7 @@
       %h2 住所入力
     .addless-box__body
       .push-box
-        = form_for @user, url: signup5_signup_index_path, method: :get do |f|
+        = form_for @user, url: signup_index_path, method: :post do |f|
           .formbox
             .form-group
               %label.kanjiName-new
