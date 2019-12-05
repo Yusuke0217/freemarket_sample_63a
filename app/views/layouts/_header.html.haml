@@ -24,40 +24,41 @@
                 %span ブランドから探す
           .open-brand
 
-      .top-main-leg__right
-        %ul.user-nav
-        - if user_signed_in?
-          %li.like-list
-            = link_to "https://www.mercari.com/jp/mypage/like/history/", class: "menu-link" do
-              %i.far.fa-heart
-              %span いいね！一覧
+      - if user_signed_in?
+        .top-main-leg__right
+          %ul.user-nav
+            %li.like-list
+              = link_to "https://www.mercari.com/jp/mypage/like/history/", class: "menu-link" do
+                %i.far.fa-heart
+                %span いいね！一覧
 
-          %li.like-list
-            = link_to "https://www.mercari.com/jp/mypage/notification/", class: "menu-link" do
-              %i.far.fa-bell
-              %span お知らせ
-              .count
-            -# %ul先の実装に必要なため、コメントアウト
-            -#   %li
-            -#     = link_to "", class: ""
-            -#       %figure
-            -#         = image_tag ""
+            %li.like-list
+              = link_to "https://www.mercari.com/jp/mypage/notification/", class: "menu-link" do
+                %i.far.fa-bell
+                %span お知らせ
+                .count
+              -# %ul先の実装に必要なため、コメントアウト
+              -#   %li
+              -#     = link_to "", class: ""
+              -#       %figure
+              -#         = image_tag ""
 
-          %li.like-list
-            = link_to "https://www.mercari.com/jp/mypage/todo/", class: "menu-link" do
-              %i.fas.fa-check
-              %span ToDoリスト
-              .count
+            %li.like-list
+              = link_to "https://www.mercari.com/jp/mypage/todo/", class: "menu-link" do
+                %i.fas.fa-check
+                %span ToDoリスト
+                .count
 
-          %li.like-list
-            = link_to mypage_user_page_path, class: "menu-link" do
-              %figure
-                .peace
-                  = image_tag "SVG/logo_gray.svg"
-              %span マイページ
-            
-        -else
-          %li
-            = link_to "新規会員登録", new_user_registration_path, class: "new-acount"
-          %li
-            = link_to "ログイン",  new_user_session_path, class: "login-acount"
+            %li.like-list
+              = link_to mypage_user_page_path, class: "menu-link" do
+                %figure
+                  .peace
+                    = image_tag "SVG/logo_gray.svg"
+                %span マイページ
+      -else
+        .top-main-leg__right
+          %ul.user-nav
+            %li.like-list
+              = link_to "新規会員登録", new_user_registration_path, class: "new-acount"
+            %li.like-list
+              = link_to "ログイン",  new_user_session_path, class: "login-acount"
