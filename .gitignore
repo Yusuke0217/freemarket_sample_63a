@@ -27,3 +27,4 @@
 /config/master.key
 # 消さないで
 # config/secrets.yml
+/public/uploads

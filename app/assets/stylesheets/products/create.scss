@@ -1,0 +1,35 @@
+.notification {
+  width: 600px;
+  margin: 20px auto;
+  max-width: none;
+  position: relative;
+  background-color: #fff;
+  .main-notice {
+    h3.notice-head {
+      text-align: center;
+      line-height: 80px;
+      font-size: 16px;
+    }
+    .notice-body {
+      border-top: 1px solid #eee;
+      padding: 40px;
+      a.red-btn {
+        margin: 40px auto 0;
+        cursor: pointer;
+      }
+      p.shere-btn {
+        margin: 8px 0 0;
+        text-align: center;
+        a {
+          color: #0099e8;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .notice {
+    background-color: gray;
+    opacity: 0.5;
+    // 親要素内にいれる
+  }
+}
