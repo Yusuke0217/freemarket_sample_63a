@@ -22,6 +22,20 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    product = Product.find(params[:id])
+    product.update
+  end
+
   def myproduct
     @products = current_user.products
   end
