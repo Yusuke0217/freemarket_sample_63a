@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :move_to_index
-  
+
+  # 仮置き
   def index
     @products = current_user.products
   end
