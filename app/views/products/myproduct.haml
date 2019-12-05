@@ -3,7 +3,7 @@
     - @products.each do |product|
       %li
         .main-contents-box
-          =link_to product_path(product.id), class: "contents-item" do
+          =link_to my_product_detail_product_path, class: "contents-item" do
             .contents-item__image
               .contents-item__image--price
                 ¥

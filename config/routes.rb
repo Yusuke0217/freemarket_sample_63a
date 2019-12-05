@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :create, :show] do
     member do
       get :myproduct
+      get :my_product_detail
     end
   end
   resources :users, only: [:edit, :update, :delete, :create, :show]
