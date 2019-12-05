@@ -35,7 +35,7 @@
               .th__name カテゴリー
             .td
               %li
-                =link_to "レディース", root_path
+                =link_to @product.category, root_path 
               %li
                 =link_to "> バッグ", root_path, class: "item-detail-table-sub-category"
               %li
