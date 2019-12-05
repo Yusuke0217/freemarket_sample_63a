@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_051556) do
     t.integer "user_id"
     t.string "customer_id"
     t.string "card_id"
+    t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_051556) do
     t.integer "purchase_history_id"
     t.integer "sales_history_id"
     t.text "profile"
+    t.string "card_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

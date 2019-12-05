@@ -60,6 +60,7 @@ Things you may want to cover:
 |purchase_history_id|integer|null: false|  買い手id
 |sales_history_id|integer|null: false|  売り手id
 |profile|text||  プロフィール
+|payjp_id|integer|null: false, foreign_key: true| payjpのid
 
 ### Association
 - has_many :products, through: :purchase-history
@@ -144,10 +145,14 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true| ユーザー情報を外部キーとして所有
 |payjp_id|integer|null: false, foreign_key: true| payjpのid
 
+<!-- 後で追記
+|payjp_id|integer|null: false, foreign_key: true| payjpのid
+|payjp_id|integer|null: false, foreign_key: true| payjpのid -->
+
 - belongs_to :user
 
 
-### customer テーブル
+### purchase-history テーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|

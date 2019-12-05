@@ -41,14 +41,14 @@
       %h2 支払い方法
     .credit-box__body
       .push-box
-        = form_for @card, url: pay_card_index, method: :post do |f|
+        = form_for @card, url: pay_card_index_path, method: :post do |f|
           .formbox
             .form-group-credit
               %label.yubinNum-new
                 カード番号
               %span.must-content
                 必須
-               = f.text_field "number", "", maxlength: "16", type: "text", id: "card_number", value: "", placeholder: "半角数字のみ"
+              = f.text_field "number", "", maxlength: "16", type: "text", id: "card_number", value: "", placeholder: "半角数字のみ"
               =image_tag "credit/iconfinder_visa-straight_38613.png"
               =image_tag "credit/iconfinder_mastercard-straight_38603.png"
               =image_tag "credit/iconfinder_american-express-straight_38591.png"

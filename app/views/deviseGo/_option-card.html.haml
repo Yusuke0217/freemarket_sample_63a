@@ -1,4 +1,4 @@
-= form_for @card, url: pay_card_index, method: :post do |f|
+= form_for @card, url: pay_card_index_path, method: :post do |f|
   =f.select  class: "cardMonth-info", name: "exp_month", type: "text", id: "exp_month" do
     %option{:value => ""} --
     %option{:value => "01"} 01
