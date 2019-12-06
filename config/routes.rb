@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'credit/new'
+  get 'credit/show'
   # スプリントレビュー用ルート
   
   devise_for :users
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   get '/mypage/user_page', to: 'mypage#user_page'
   root to: "products#index"
   resources :products, only: [:index, :new, :create, :show]
-  resources :users, only: [:edit, :update, :delete, :create]
+  resources :users, only: [:edit, :update, :delete, :create, :show]
     resources :signup, only: [:create] do
       collection do
         post "signup"
@@ -19,4 +21,12 @@ Rails.application.routes.draw do
         get "done"
       end
     end
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+
+  end
 end

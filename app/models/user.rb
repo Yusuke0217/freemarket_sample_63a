@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   has_many :comments
   has_many :products
+  has_one :card
+
   # has_many :products, through: :purchase-history
   # has_many :products, through: :sales-history
   # has_many :comment-report コメントの報告
