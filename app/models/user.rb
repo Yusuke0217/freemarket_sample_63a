@@ -50,7 +50,7 @@ class User < ApplicationRecord
     user = User.where(uid: auth.uid, provider: auth.provider).first
 
     unless user
-      binding.pry
+
       user = User.create(
         uid:      auth.uid,
         provider: auth.provider,
