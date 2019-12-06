@@ -1,8 +1,7 @@
 class SignupController < ApplicationController
   before_action :validates_signup2, only: :signup3 # signup2のバリデーション
   before_action :validates_signup3, only: :signup4 # signup3のバリデーション
-  before_action :validates_signup4, only: :signup5 # signup4のバリデーション
-  # before_action :validates_signup5, only: :create # signup5のバリデーション
+  before_action :validates_signup4, only: :create # signup4のバリデーション
 
   def signup2
     @user = User.new # 新規インスタンス作成
@@ -17,7 +16,7 @@ class SignupController < ApplicationController
   end
 
   def signup5
-    @user = User.new
+    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
   def validates_signup2
@@ -42,6 +41,7 @@ class SignupController < ApplicationController
       birth_day: session[:birth_day],
       birth_year: session[:birth_year],
       birth_month: session[:birth_month],
+      prefectures: "北海道",
       phone_number: "09012345678",
       first_name_delivery: "名字",
       first_name_kana_delivery: "みょうじ",
@@ -66,6 +66,7 @@ class SignupController < ApplicationController
       birth_year: session[:birth_year],
       birth_month: session[:birth_month],
       phone_number: session[:phone_number],
+      prefectures: "北海道",
       first_name_delivery: "名字",
       first_name_kana_delivery: "みょうじ",
       last_name_delivery: "名前",
@@ -85,6 +86,7 @@ class SignupController < ApplicationController
     session[:city] = user_params[:city]
     session[:building_name] = user_params[:building_name]
     session[:phone_number_delivery] = user_params[:phone_number_delivery]
+    session[:prefectures] = user_params[:prefectures]
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -101,6 +103,7 @@ class SignupController < ApplicationController
       first_name_kana_delivery: session[:first_name_kana_delivery],
       last_name_delivery: session[:last_name_delivery],
       last_name_kana_delivery: session[:last_name_kana_delivery],
+      prefectures: session[:prefectures],
       postal_code: session[:postal_code],
       city: session[:city],
       address: session[:address]
@@ -108,12 +111,7 @@ class SignupController < ApplicationController
     render 'devise/registrations/new' unless @user.valid?
   end
 
-  def done
-    sign_in User.find(session[:id]) unless user_signed_in?
-  end
-
   def create
-
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
       email: session[:email],
@@ -133,23 +131,28 @@ class SignupController < ApplicationController
       last_name_delivery: session[:last_name_delivery],
       last_name_kana_delivery: session[:last_name_kana_delivery],
       city: session[:city],
-      address: session[:address]
+      address: session[:address],
+      prefectures: session[:prefectures]
     )
 
     if @user.save # ログインするための情報を保管
       session[:id] = @user.id
-      redirect_to done_signup_index_path
+      redirect_to signup5_signup_index_path
     else
       render 'devise/registrations/new'
     end
   end
+
+  # def done
+  #   sign_in User.find(session[:id]) unless user_signed_in?
+  # end
 
   private
   def user_params
     params.require(:user).permit(
       :password, :email, :nickname,
       :last_name, :first_name, :last_name_kana, :first_name_kana,
-      :birth_day, :birth_year, :birth_month,:profile, :phone_number, :city, :address, :postal_code, :building_name,
+      :birth_day, :birth_year, :birth_month,:profile, :phone_number, :city, :address, :postal_code, :building_name, :prefectures,
       :first_name_delivery, :first_name_kana_delivery, :last_name_delivery, :last_name_kana_delivery,:phone_number_delivery)
   end
 end

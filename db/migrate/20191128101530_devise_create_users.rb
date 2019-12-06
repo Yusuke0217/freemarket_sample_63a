@@ -34,6 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :purchase_history_id
       t.integer :sales_history_id
       t.text :profile
+      t.string :card_id
 
       ## Recoverable
       t.string   :reset_password_token

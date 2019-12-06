@@ -191,7 +191,7 @@
           %span.form-arbitrary 任意
           .select-wrap
             %i.icon-arrow-bottom
-            -# = f.collection_select :todouhuken_id, Todouhuken.all
+            -# = f.collection_select :prefecture_id, Prefecture.all
             -# active hashが動くか確認できるまで仮置
             %select.select-default{name: "prefecture"}
               %option{selected: "selected"} --
