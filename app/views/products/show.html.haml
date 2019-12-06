@@ -19,7 +19,7 @@
             .th
               .th__name 出品者
             .td
-              = link_to "user-name", root_path
+              = link_to @product.user.nickname, user_path
               .user-evaluation
                 .item-user-ratings
                   %i.fa.fa-smile-o
@@ -35,7 +35,7 @@
               .th__name カテゴリー
             .td
               %li
-                =link_to "レディース", root_path
+                =link_to @product.category, root_path 
               %li
                 =link_to "> バッグ", root_path, class: "item-detail-table-sub-category"
               %li

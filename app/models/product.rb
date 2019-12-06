@@ -3,6 +3,15 @@ class Product < ApplicationRecord
   has_many :comments
   has_many :images
   
-  validates :text, :name, :price, :condition, :shipping_charge, :shipping_how, :shipping_date, :shipping_place, presence: true, unless: :image?
+  with_options presence: true do
+    validates :name
+    validates :text
+    validates :price
+    validates :condition
+    validates :shipping_charge
+    validates :shipping_place
+    validates :shipping_date
+    validates :image, unless: :image?
+  end
   mount_uploader :image, ImageUploader
 end

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_12_06_081620) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.string "name", null: false
     t.string "category"
     t.integer "size"
@@ -68,7 +69,6 @@ ActiveRecord::Schema.define(version: 2019_12_06_081620) do
     t.integer "purchase_history_id"
     t.integer "sales_history_id"
     t.text "profile"
-    t.string "card_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

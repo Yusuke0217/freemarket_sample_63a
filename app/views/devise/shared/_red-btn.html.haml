@@ -1,3 +1,9 @@
-= link_to new_product_path, class: "red-btn" do
-  %p.placing 出品
-  %i.fa.fa-camera.fa-3x
+- if user_signed_in?
+  = link_to new_product_path, class: "red-btn" do
+    %p.placing 出品
+    %i.fa.fa-camera.fa-3x
+
+- else 
+  = link_to new_user_registration_path, class: "red-btn" do
+    %p.placing 出品
+    %i.fa.fa-camera.fa-3x
