@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_product, only: [:show, :edit, :update]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
     @products = Product.all
@@ -23,9 +23,8 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product = Product.find(params[:id])
-    if product.destroy
-      redirect_to myproduct_product_path
+    if @product.destroy
+      redirect_to myproduct_product_path if user_signed_in? && current_user.id == @product.user_id
     else
       render :my_product_detail
     end
@@ -36,7 +35,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to my_product_detail_product_path
+      redirect_to my_product_detail_product_path if user_signed_in? && current_user.id == @product.user_id
     else
       render :my_product_detail
     end
