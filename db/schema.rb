@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_12_06_081620) do
     t.integer "shipping_date", null: false
     t.integer "price", null: false
     t.string "text", null: false
-    t.text "image"
+    t.text "image", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
