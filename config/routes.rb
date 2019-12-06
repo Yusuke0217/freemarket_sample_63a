@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/mypage/profile', to: 'mypage#profile'
   get '/mypage/user_info_register', to: 'mypage#user_info_register'
   get '/mypage/logout', to: 'mypage#logout'
+  # Userチームと確認後、削除（現在仮置き）
   # get '/mypage/user_page', to: 'mypage#user_page'
   root to: "products#index"  
   resources :products do

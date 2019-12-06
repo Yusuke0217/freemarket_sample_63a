@@ -32,6 +32,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    # user_signed_in? && current_user.id == @product.user_id
     @product = Product.find(params[:id])
   end
 
@@ -49,6 +50,7 @@ class ProductsController < ApplicationController
   end
 
   def my_product_detail
+    # user_signed_in? && current_user.id == @product.user_id
     @product = Product.find(params[:id])
   end
 
