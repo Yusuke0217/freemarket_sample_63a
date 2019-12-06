@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
   def destroy
     product = Product.find(params[:id])
     product.destroy
+    redirect_to myproduct_product_path
   end
 
   def edit
@@ -33,7 +34,8 @@ class ProductsController < ApplicationController
 
   def update
     product = Product.find(params[:id])
-    product.update
+    product.update(product_params)
+    redirect_to my_product_detail_product_path
   end
 
   def myproduct

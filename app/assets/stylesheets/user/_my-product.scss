@@ -157,14 +157,16 @@
         font-size: 16px;
       }
       form.just-wait {
-        button.stop {
+        a.stop {
           background-color: gray;
           border: 1px solid gray;
+          text-decoration: none;
         }
       }
-      button.delete-item {
+      a.delete-item {
         background-color: gray;
         border: 1px solid gray;
+        text-decoration: none;
       }
     }
   }
