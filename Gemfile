@@ -84,3 +84,6 @@ gem 'bundler', '2.0.2'
 gem 'active_hash'
 gem 'pry-rails'
 gem 'payjp'
+gem 'dotenv-rails'
+gem 'jquery-rails'
+
