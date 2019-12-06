@@ -1,3 +1,11 @@
+- if @product.errors.any?
+  #error_explanation
+    %h2
+      = @product.errors.count
+      件のエラーがあります。
+    %ul
+      - @product.errors.full_messages.each do |msg|
+        %li= msg
 = render "layouts/header"
 .main-product
   .sequel
@@ -7,17 +15,13 @@
       .item__content
         .content-photo
           .content-photo__top
-            -# = image_tag “SVG/copy.jpg”, class: “main-image”
             = image_tag @product.image_url class: "main-image"
           .content-photo__detail
             .content-photo-box
-              -# = image_tag “SVG/2010”, class: “image1"
               = image_tag @product.image_url class: "image1"
             .content-photo-box
-              -# = image_tag “SVG/2011.jpg”, class: “image2”
               = image_tag @product.image_url class: "image2"
             .content-photo-box
-              -# = image_tag “SVG/2012.jpg”, class: “image3"
               = image_tag @product.image_url class: "image3"
         .content-table
           .table

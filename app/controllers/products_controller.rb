@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_product, only: [:show, :edit, :my_product_detail]
+  before_action :set_product, only: [:show, :edit]
 
   def index
     @products = Product.all
@@ -32,11 +32,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id])
   end
 
   def update
-    product = Product.find(params[:id])
-    if product.update(product_params)
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
       redirect_to my_product_detail_product_path
     else
       render :my_product_detail
@@ -48,6 +49,7 @@ class ProductsController < ApplicationController
   end
 
   def my_product_detail
+    @product = Product.find(params[:id])
   end
 
   private
