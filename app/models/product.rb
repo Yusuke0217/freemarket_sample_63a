@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :images
-  
+
   with_options presence: true do
     validates :name
     validates :text
