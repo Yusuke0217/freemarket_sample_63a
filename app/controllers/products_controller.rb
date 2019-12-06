@@ -47,6 +47,7 @@ class ProductsController < ApplicationController
   end
 
   def my_product_detail
+    @product = Product.find(params[:id])
   end
 
   private
