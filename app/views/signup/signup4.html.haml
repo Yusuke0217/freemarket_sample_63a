@@ -45,7 +45,7 @@
           .formbox
             .form-group
               %label.kanjiName-new
-                お名前(全角) 
+                お名前(全角)
               %span.must-content
                 必須
               .input-parrent
@@ -53,7 +53,7 @@
                 = f.text_field :first_name_delivery, class: "kanji2ndName-info", value: "", placeholder: "例) 彩", maxlength: "20"
             .form-group
               %label.kanaName-new
-                お名前(全角) 
+                お名前(全角)
               %span.must-content
                 必須
               .input-parrent
@@ -71,7 +71,7 @@
               %span.must-content
                 必須
               .select-prefectures
-                //=render "option-prefectures"
+                = f.collection_select :prefectures, Prefecture.all, :id, :name
             .form-group
               %label.municipality-new
                 市町村
