@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_product, only: [:show, :edit]
+  before_action :set_product, only: [:show, :edit, :update]
 
   def index
     @products = Product.all
@@ -32,12 +32,9 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    # user_signed_in? && current_user.id == @product.user_id
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to my_product_detail_product_path
     else
