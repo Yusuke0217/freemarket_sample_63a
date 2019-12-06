@@ -3,7 +3,7 @@
   .sequel
     .item
       .item__name
-        テスト１
+        %span= @product.name
       .item__content
         .content-photo
           .content-photo__top
@@ -65,6 +65,7 @@
               .td= @product.shipping_date
       .item__price
         .price-box
+          ¥
           %span= @product.price
         .price-tax
           .price-tax__content (税込)

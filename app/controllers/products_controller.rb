@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
+  before_action :set_product, only: [:show, :edit, :my_product_detail]
 
   def index
     @products = Product.all
@@ -19,23 +20,27 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
   end
 
   def destroy
     product = Product.find(params[:id])
-    product.destroy
-    redirect_to myproduct_product_path
+    if product.destroy
+      redirect_to myproduct_product_path
+    else
+      render :my_product_detail
+    end
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
     product = Product.find(params[:id])
-    product.update(product_params)
-    redirect_to my_product_detail_product_path
+    if product.update(product_params)
+      redirect_to my_product_detail_product_path
+    else
+      render :my_product_detail
+    end
   end
 
   def myproduct
@@ -43,7 +48,6 @@ class ProductsController < ApplicationController
   end
 
   def my_product_detail
-    @product = Product.find(params[:id])
   end
 
   private
@@ -54,6 +58,10 @@ class ProductsController < ApplicationController
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
   
 end
