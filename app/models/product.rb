@@ -11,7 +11,7 @@ class Product < ApplicationRecord
     validates :shipping_charge
     validates :shipping_place
     validates :shipping_date
-    validates :image, unless: :image?
+    # validates :image, unless: :image?
   end
   mount_uploader :image, ImageUploader
 end
