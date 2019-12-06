@@ -23,6 +23,15 @@ class UsersController < ApplicationController
   def delete
   end
 
+  def profile
+  end
+  def user_info_register
+  end
+  def user_page
+  end
+  def logout
+  end
+
   private
 
   def user_params
