@@ -3,59 +3,59 @@
     %ul.sidebar-list-1
       %li.side-bar-links
         .text
-          = link_to 'マイページ', mypage_user_page_path, class: "side-link-text"
+          = link_to 'マイページ', user_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        お知らせ
+        = link_to  "お知らせ", root_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        やることリスト
+        = link_to  "やることリスト", root_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        いいね！一覧
+        = link_to "いいね！一覧", root_path, class: "side-link-text" 
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        出品する
+        = link_to "出品する", new_product_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        出品した商品-出品中
+        = link_to "出品した商品-出品中", myproduct_product_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        出品した商品-取引中
+        = link_to  "出品した商品-取引中", root_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        出品した商品-売却済
+        = link_to "出品した商品-売却済", root_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        購入した商品-取引中
+        = link_to "購入した商品-取引中", root_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        購入した商品-過去の取引
+        = link_to "購入した商品-過去の取引", root_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        ニュース一覧
+        = link_to "ニュース一覧", root_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        評価一覧
+        = link_to "評価一覧", root_path,  class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        ガイド
+        = link_to "ガイド", root_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
       %li.side-bar-links
-        お問い合わせ
+        = link_to "お問い合わせ", root_path, class: "side-link-text"
         .icon
           =fa_icon'chevron-right'
     %h3
