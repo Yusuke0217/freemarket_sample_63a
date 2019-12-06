@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   get 'credit/new'
   get 'credit/show'
   # スプリントレビュー用ルート
-  
-  devise_for :users
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get '/mypage/profile', to: 'mypage#profile'
   get '/mypage/user_info_register', to: 'mypage#user_info_register'
   get '/mypage/logout', to: 'mypage#logout'
@@ -32,6 +32,6 @@ Rails.application.routes.draw do
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete'
     end
-
   end
+
 end
