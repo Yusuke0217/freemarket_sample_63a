@@ -86,4 +86,7 @@ gem 'pry-rails'
 gem 'payjp'
 gem 'dotenv-rails'
 gem 'jquery-rails'
-
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'ancestry'
+gem 'gretel'

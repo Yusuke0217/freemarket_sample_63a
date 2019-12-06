@@ -1,6 +1,9 @@
 .body{
   background-color: rgb(245, 245, 245);
   font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 .main {
   width: 100%;
@@ -79,12 +82,15 @@
         width: 100%;
         display: flex;
         list-style: none;
+        flex-wrap: wrap;
+        flex-direction: row;
       }
       li {
         width: 20%;
         padding: 10px;
         white-space: nowrap;
         text-align: left;
+        box-sizing: border-box;
         .main-contents-box {
           height: 252px;
           .contents-item {

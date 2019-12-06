@@ -28,3 +28,5 @@
 # 消さないで
 # config/secrets.yml
 /public/uploads
+#消したら多額の請求来ます
+.env

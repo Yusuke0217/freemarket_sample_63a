@@ -1,0 +1,57 @@
+.main-contents__goods{
+  ul {
+    width: 100%;
+    display: flex;
+    list-style: none;
+  }
+  li {
+    width: 20%;
+    padding: 10px;
+    white-space: nowrap;
+    text-align: left;
+    .main-contents-box {
+      height: 252px;
+      .contents-item {
+        &__image {
+          height: 188px;
+          position: relative;
+          &--price {
+            position: absolute;
+            bottom: 8px;
+            padding: 0 12px;
+            align-items: center;
+            background: rgba(0,0,0,.3);
+            border-radius: 0 14px 14px 0;
+            color: #fff;
+            font-size: 17px;
+            height: 28px;
+            text-align: center;
+            line-height: 28px;
+            display: inline-block;
+          }
+        }
+        &__index {
+          box-sizing: border-box;
+          background-color: #fff;
+          color: #222;
+          font-size: 14px;
+          height: 64px;
+          padding: 12px;
+          white-space: normal;
+          word-break: break-word;
+          overflow: hidden;
+          &--name {
+            display: inline-block;
+            height: 2.8em;
+            overflow: hidden;
+            // line-height: 64px;
+            // overflow: scroll;ビュー崩れの為、一旦コメントアウト
+          }
+        }
+      }
+    }
+    .main-contents-box:hover {
+      border: solid 1px rgb(0, 149, 238);
+    }
+  }
+}
