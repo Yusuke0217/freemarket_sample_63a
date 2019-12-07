@@ -12,6 +12,8 @@
     .item
       .item__name
         %span= @product.name
+      - if @product.status == 2
+        出品停止中
       .item__content
         .content-photo
           .content-photo__top
@@ -83,10 +85,14 @@
         = link_to edit_product_path, class: "btn-default edit-btn" do
           商品の編集
         %p.text-align-center or
-        = form_with model: @product, local: true, class: "just-wait" do |f|
-          %input{name: "value", type: "hidden", value: ""}/
-          = link_to product_path, class: "btn-default stop" do
-            出品の一旦停止
+        - if @product.status == 1
+          = form_with model: @product, local: true, class: "just-wait" do |f|
+            = f.text_field :status, type: "hidden", value: 2
+            = f.submit "出品の一旦停止", class: "btn-default stop"
+        - elsif @product.status == 2
+          = form_with model: @product, local: true, class: "just-wait" do |f|
+            = f.text_field :status, type: "hidden", value: 1
+            = f.submit "出品を再開する", class: "btn-default restart"
         = link_to product_path, class: "btn-default delete-item", method: :delete do
           商品を削除する
     .message
