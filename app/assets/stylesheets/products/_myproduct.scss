@@ -1,0 +1,59 @@
+.mine-content {
+  margin: 40px auto 0;
+  width: 1020px;
+  &__bar {
+    .mine-product {
+      &__list {
+        h2.mine-product__head {
+        }
+        ul.tabs {
+          li.tab-list {
+            a {
+            }
+          }
+          .tab-now {
+          }
+        }
+        .tab-content {
+          ul.mine-item-list {
+            li.product {
+              a.mine-item {
+                figure {
+                  img.mine-item-image {
+                  }
+                }
+                .mine-item-summary {
+                  &__text {
+                  }
+                  &__accsesory {
+                    span.liking-count {
+                      i {
+                        font-weight: bold;
+                        display: inline-block;
+                        font: normal 14px/1 FontAwesome;
+                        font-size: inherit;
+                        text-rendering: auto;
+                      }
+                      span.many {
+                      }
+                    }
+                    .mode {
+                    }
+                  }
+                  i.fas {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      ul.mypage-kaminari {
+        li {
+          a.read-more {
+          }
+        }
+      }
+    }
+  }
+}
