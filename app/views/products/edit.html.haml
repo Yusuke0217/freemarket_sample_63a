@@ -1,11 +1,11 @@
-- if @product.errors.any?
-  #error_explanation
-    %h2
-      = @product.errors.count
-      件のエラーがあります。
-    %ul
-      - @product.errors.full_messages.each do |msg|
-        %li= msg
+-# - if @product.errors.any?
+-#   #error_explanation
+-#     %h2
+-#       = @product.errors.count
+-#       件のエラーがあります。
+-#     %ul
+-#       - @product.errors.full_messages.each do |msg|
+-#         %li= msg
 .body  
   = render "devise/shared/header-login"
   .container
@@ -27,29 +27,31 @@
                   ドロッグアンドドロップ
                 %p
                   またはクリックしてファイルをアップロード
+              - if @product.errors.any?
+                %p.error-message 画像がありません。
           .product-contents
             .product-name
               .product-name-header
-                -# ↑追加
                 %label 商品名
                 .require 必須
               = f.text_field :name, class: "product-name__defauld", placeholder: "商品名（必須40文字まで）"
+              - if @product.errors.any?
+                %p.error-message 入力してください
             .product-description
               .product-description-header
-                -# ↑追加
                 %label 商品の説明
                 .require 必須
               .description
                 = f.text_area :text, class: "description__box", placeholder: "商品の説明（必須1,000字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"
+              - if @product.errors.any?
+                %p.error-message 入力してください
             .product-details
               %h3.sub-header 商品の詳細
               .product-detail
                 .category
                   .category__nav
-                    -# ↑dfのため追加
                     %label カテゴリー
                     .require 必須
-                    -# カテゴリーカラムに追加⬇️
                   .select-box
                     = f.select :category, class: "select-default" do
                       %option{selected: "selected"} --
@@ -67,6 +69,8 @@
                       %option{selected: "selected"} 自動車・オートバイ
                       %option{selected: "selected"} その他
                     %i.fas.fa-republican
+                    - if @product.errors.any?
+                      %p.error-message 選択してください
                 .condition
                   .condition__nav
                     %label 商品の状態
@@ -80,9 +84,10 @@
                       %option{selected: "selected"} やや傷や汚れあり
                       %option{selected: "selected"} 傷や汚れあり
                       %option{selected: "selected"} 全体的に状態が悪い
+                      - if @product.errors.any?
+                        %p.error-message 選択してください
                     .product-details
             .product-transportation
-              -# ↑追加
               .product-transportation__nav
                 %h3.sub-header 配送について
                 = link_to "?", "https://www.mercari.com/jp/help_center/article/68/", class: "link"
@@ -99,6 +104,8 @@
                     %option{selected: "selected"} 着払い(購入者負担)
                     %option{selected: "selected"} Me
                     %option{selected: "selected"} You
+                    - if @product.errors.any?
+                      %p.error-message 選択してください
                 .transportation-name
                   %label 発送元の地域
                   .require
@@ -155,7 +162,8 @@
                     %option{selected: "selected"} 宮崎県
                     %option{selected: "selected"} 鹿児島県
                     %option{selected: "selected"} 沖縄県
-                    
+                    - if @product.errors.any?
+                      %p.error-message 選択してください
                 .transportation-name
                   %label 発送までの日数
                   .require
@@ -166,7 +174,8 @@
                     %option{selected: "selected"} 1~2日で発送
                     %option{selected: "selected"} 2~3日で発送
                     %option{selected: "selected"} 4~7日で発送
-                -# 合わせてCSSを適応するためクラス名を統一
+                    - if @product.errors.any?
+                      %p.error-message 選択してください
             .price
               .price__nav
                 %h3.sub-header 販売価格(300〜9,999,999)
@@ -180,6 +189,8 @@
                   .product-price__box
                     %label.right ¥
                     = f.text_field :price, class: "product-price__default", placeholder: "例）300"
+                    - if @product.errors.any?
+                      %p.error-message 300以上9999999以下で入力してください
                 .comission
                   .left 販売手数料 (10%)
                   .right -
