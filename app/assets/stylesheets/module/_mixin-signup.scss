@@ -47,6 +47,20 @@
     transition: 1.0s;
   }
 }
+@mixin submit-btn-long{
+  margin-top:40px;
+  background-color: #ea352d;
+  color: white;
+  width: 572px;
+  height: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  &:hover{
+    background-color: rgb(221, 16, 16);
+    transition: 1.0s;
+  }
+}
+
 //青文字リンクのデザイン
 @mixin blue-line{
   color: rgb(0, 162, 255);

@@ -13,6 +13,10 @@
     margin: 0 40px 0 0;
     ul.sidebar-list-1{
       display: block;
+      .side-link-text{
+        text-decoration: none;
+        color: black;
+      }
       li{
         border-bottom:solid 1px #EEEEEE;
         position: relative;
@@ -23,10 +27,6 @@
         font-size: 14px;
         color: #333;
         line-height: 28px;
-        .side-link-text{
-          text-decoration: none;
-          color: black;
-        }
       }
       li:hover{
         background-color: #f5f5f5f5;
