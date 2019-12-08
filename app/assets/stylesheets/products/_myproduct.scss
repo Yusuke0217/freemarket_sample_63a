@@ -88,14 +88,16 @@ body {
                       max-height: 4.4em;
                       line-height: 1.5;
                     }
-                    &__accsesory {
+                    &__accesory {
                       span.liking-count {
                         vertical-align: 2px;
                         margin: 0 6px 0 0;
                         i.far.fa-heart {
+                          color: gainsboro;
                           @include awesome;
                         }
                         i.far.fa-comment {
+                          color: gainsboro;
                           @include awesome;
                         }
                         span.many {
@@ -105,7 +107,7 @@ body {
                           color: #888;
                         }
                       }
-                      .mode {
+                      .product-mode {
                         background: #0099e8;
                         display: inline;
                         margin: 8px 0 0 0;
@@ -157,7 +159,7 @@ body {
             a.read-more {
               display: block;
               color: #333;
-              i {
+              i.fas {
                 @include awesome;
               }
             }
