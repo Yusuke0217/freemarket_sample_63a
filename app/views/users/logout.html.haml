@@ -1,10 +1,10 @@
 = render "layouts/header"
 
-.wrapper
-  .content.clearfix
-    %form
-      =link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn" 
+.logout-main
+  .both-content-log
+    .logout-body
+      %form.logout-btn
+        =link_to "ログアウト", destroy_user_session_path, method: :delete, class: "text-logout"
 
-    -# = render "layouts/side-barMypage"
-
-  = render "layouts/footer"
+    = render "layouts/side-barMypage"
+= render "layouts/footer"
