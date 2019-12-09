@@ -1,6 +1,6 @@
 .wrapper {
   background-color: #f5f5f5;
-  .content.clearfix {
+  .content {
     width: 1060px;
     margin: 0 auto 40px;
     padding-top: 40px;
@@ -11,7 +11,6 @@
       padding: 64px;
       background-color: #fff;
       text-align: center;
-    
       .logout-btn {
         height: 50px;
         width: 320px;
