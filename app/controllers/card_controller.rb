@@ -2,6 +2,9 @@ class CardController < ApplicationController
   require "payjp"
   #before_action :set_card
 
+ENV["PAYJP_PRIVATE_KEY"] = 'sk_test_9931066098f8c99168e275fa'
+
+
   def new
     card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
