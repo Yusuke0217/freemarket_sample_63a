@@ -15,14 +15,6 @@ port        ENV.fetch("PORT") { 3000 }
 #
 environment ENV.fetch("RAILS_ENV") { "development" }
 
-# if "development" == ENV.fetch("RAILS_ENV") { "development" }
-# ssl_bind "0.0.0.0", 3000, {
-#   key: "example.com-key.pem",
-#   cert: "example.com.pem",
-#   verify_mode: "none"
-# }
-
-
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
 # the concurrency of the application would be max `threads` * `workers`.
@@ -40,3 +32,11 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
+
+if "development" == ENV.fetch("RAILS_ENV") { "development" }
+  ssl_bind '0.0.0.0', '9292', {
+    key: "server.key",
+    cert: "server.crt",
+    verify_mode: "none"
+  }
+end
