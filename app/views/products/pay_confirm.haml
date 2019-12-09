@@ -33,8 +33,10 @@
                   .pay-btn
                   ¥
                   = @product.price
-            %button.pay-btn{disabled: "", type: "submit"} 購入する
-            %input{name: "seller_id", type: "hidden", value: "722674558"}/
+          = form_with model: @product, local: true, class: "purchase-forms", url: purchase_product_path do |f|
+            = f.submit "購入する", class: "pay-btn"
+            %input{name: "seller_id", type: "hidden", value: "722674558"}
+          -# = link_to root_path do
 
       %section.pay-user-info
         .pay-content-info
