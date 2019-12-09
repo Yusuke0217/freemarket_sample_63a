@@ -1,32 +1,8 @@
--# %h2 Sign up
--# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
--#   = render "devise/shared/error_messages", resource: resource
--#   .field
--#     = f.label :email
--#     %br/
--#     = f.email_field :email, autofocus: true, autocomplete: "email"
--#   .field
--#     = f.label :password
--#     - if @minimum_password_length
--#       %em
--#         (#{@minimum_password_length} characters minimum)
--#     %br/
--#     = f.password_field :password, autocomplete: "new-password"
--#   .field
--#     = f.label :password_confirmation
--#     %br/
--#     = f.password_field :password_confirmation, autocomplete: "new-password"
--#   .actions
--#     = f.submit "Sign up"
--# = render "devise/shared/links"
-
 .z
   = render "devise/shared/header-login"
   .main
     .main-box
-      
       .main-box-block
-      
         .main-top-text
           新規会員登録
         .main-bottom
@@ -42,7 +18,7 @@
                 %li.text
                   Facebookで登録する
             %ul.main-bottom-box__textBox-google
-              = link_to 'https://accounts.google.com/signin/oauth/oauthchooseaccount?client_id=238694260676-l0gp5j3hs9p8l2hjmnt126q0b4iin34r.apps.googleusercontent.com&as=Mr9DXJJzs11fRn6hRPYKfw&destination=https%3A%2F%2Fwww.mercari.com&approval_state=!ChRoWFYzOV9XREVvQjdFcWVZalVRShIfdzJHdUNLempXa2tXNEJxcmlYbTVkb215elVQYTZCWQ∙AJDr988AAAAAXdfBLeeD0Ov3cOYX5KKhVGbpOzlqi-Ur&oauthgdpr=1&xsrfsig=ChkAeAh8Ty3MVHPBR5fkd_oGnTc6fCpH9QspEg5hcHByb3ZhbF9zdGF0ZRILZGVzdGluYXRpb24SBXNvYWN1Eg9vYXV0aHJpc2t5c2NvcGU&flowName=GeneralOAuthFlow' do
+              = link_to '' do
                 =fa_icon 'google'
                 %li.text
                   Googleで登録する
