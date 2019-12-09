@@ -45,7 +45,7 @@
                 input{
                   @include inputTemp;
                 }
-                select.prefectures{
+                select#user_prefectures{
                   padding: 10px 16px 8px;
                   width: 343px;
                   margin: 8px 0 0;
