@@ -48,9 +48,13 @@ class CardController < ApplicationController
       if @card.save
         redirect_to action: "show"
       else
-        redirect_to action: "pay"
+        redirect_to done_signup_index_path
       end
     end
+  end
+
+  def done
+    redirect_to done_signup_index_path
   end
 
 
