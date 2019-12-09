@@ -2,6 +2,7 @@ class CardController < ApplicationController
   require "payjp"
   #before_action :set_card
 
+  #後でenvに記載
 ENV["PAYJP_PRIVATE_KEY"] = 'sk_test_9931066098f8c99168e275fa'
 
 
