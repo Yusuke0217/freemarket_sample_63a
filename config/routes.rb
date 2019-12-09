@@ -34,7 +34,7 @@ Rails.application.routes.draw do
         get "done"
       end
     end
-  resources :card, only: [:new, :show] do
+  resources :card, only: [:new, :show, :edit, :update, :destroy] do
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
