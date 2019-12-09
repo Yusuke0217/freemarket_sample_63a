@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to my_product_detail_product_path if user_signed_in? && current_user.id == @product.user_id
     else
-      render :my_product_detail
+      render :edit
     end
   end
 
@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :condition, :shipping_charge, :shipping_how, :shipping_place, :shipping_date, :price, :text, :image, :category).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :condition, :shipping_charge, :shipping_how, :shipping_place, :shipping_date, :price, :text, :image, :category, :status).merge(user_id: current_user.id)
   end
 
   def move_to_index
