@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-  
+
   def delete
   end
 
