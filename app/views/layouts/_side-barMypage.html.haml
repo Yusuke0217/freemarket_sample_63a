@@ -25,7 +25,7 @@
             いいね！一覧
           .icon
             =fa_icon'chevron-right'
-      = link_to new_product_path,class: "side-link-text" do
+      = link_to myproduct_product_path,class: "side-link-text" do
         %li.side-bar-links
           .side-link-text
             出品する
@@ -37,13 +37,13 @@
             出品した商品-出品中
           .icon
             =fa_icon'chevron-right'
-      = link_to user_path,class: "side-link-text" do
+      = link_to myproduct_product_path,class: "side-link-text" do
         %li.side-bar-links
           .side-link-text
             出品した商品-取引中
           .icon
             =fa_icon'chevron-right'
-      = link_to user_path,class: "side-link-text" do
+      = link_to myproduct_product_path,class: "side-link-text" do
         %li.side-bar-links
           .side-link-text
             出品した商品-売却済
