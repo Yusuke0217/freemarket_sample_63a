@@ -1,7 +1,8 @@
 .wrapper
 
   = render "layouts/header"
-
+  - breadcrumb :show
+  = render "layouts/breadcrumbs"
   .bodyMypage.clearfix
     .main
       .user
