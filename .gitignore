@@ -30,3 +30,4 @@
 /public/uploads
 #消したら多額の請求来ます
 .env
+.bash_profile
