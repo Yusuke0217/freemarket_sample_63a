@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+  require 'payjp'
+
   before_action :move_to_index, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
@@ -51,6 +54,15 @@ class ProductsController < ApplicationController
 
   def pay_confirm
     @product = Product.find(params[:id])
+  end
+
+  def purchase
+    Payjp.api_key = ""
+    Payjp::Charge.create(
+      amount: @product.price,
+      card: params['@cards.token'],
+      currency: 'jpy'
+    )
   end
 
   private
