@@ -41,4 +41,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :purchase do
+    member do
+      get "product#index"
+      get "pay"
+    end
+  end
+
 end
