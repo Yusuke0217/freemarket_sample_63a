@@ -9,13 +9,15 @@
         .pay-content-info
           %h3.pay-item__image
             = image_tag @product.image_url, alt: "画像はあくまでもイメージです", class: "item-gyazo"
-          %p.item-text Made in 三国ヶ丘ァ!! 土偶業界の異端児 D&G
+          %p.item-text
+            = @product.text
           %form.pay-form
-            %p.pay-price 
-              ¥1,500
+            %p.pay-price
+              ¥
+              = @product.price
               -# %span.method-of-paymentこの先の実装で必要なのでコメントアウト
               %span.mop
-                着払い
+                = @product.shipping_charge
             %ul.pay-point
               %li.point-many
                 .point-text ポイント is empty
@@ -28,7 +30,8 @@
               %li.price-breakdown
                 .breakdown お買い上げ金額
                 .breakdown
-                  %span{"value":"15000"} ¥15,000
+                  ¥
+                  = @product.price
             %button.pay-btn{disabled: "", type: "submit"} 購入する
             %input{name: "seller_id", type: "hidden", value: "722674558"}/
 
@@ -36,8 +39,11 @@
         .pay-content-info
           %h3.deli お届け先
           %address.user-info-text
-            %br 〒533-0041
-            愛知県 名古屋市 栄
+            〒
+            = @product.user.postal_code
+            %span
+            = @product.user.city
+            = @product.user.address
           %p.user-info-text
           = link_to "変更する >", root_path, class: "user-info-fix"
           .dammy
