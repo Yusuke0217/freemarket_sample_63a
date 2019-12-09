@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       get :myproduct
       get :my_product_detail
       get :pay_confirm
-      patch :purchase
+      get :purchase
+      post :purchase
+      get :done
     end
   end
 
@@ -36,7 +38,7 @@ Rails.application.routes.draw do
       end
     end
   resources :card, only: [:new, :show, :edit, :update, :destroy] do
-    collection do
+    member do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
       post 'delete', to: 'card#delete'

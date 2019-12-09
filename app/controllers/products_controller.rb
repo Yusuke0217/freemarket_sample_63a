@@ -2,6 +2,9 @@ class ProductsController < ApplicationController
 
   require 'payjp'
 
+    #後でenvに記載
+  ENV["PAYJP_PRIVATE_KEY"] = 'sk_test_9931066098f8c99168e275fa'
+
   before_action :move_to_index, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
@@ -66,6 +69,7 @@ class ProductsController < ApplicationController
       currency: 'jpy',
       customer: @card.customer_id
     )
+    redirect_to done_product_path
   end
 
   private
