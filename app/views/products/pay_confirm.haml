@@ -30,7 +30,7 @@
               %li.price-breakdown
                 .breakdown お買い上げ金額
                 .breakdown
-            = link_to "購入する", root_path, class: "pay-btn"
+                  .pay-btn
                   ¥
                   = @product.price
             %button.pay-btn{disabled: "", type: "submit"} 購入する
