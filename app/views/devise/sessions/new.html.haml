@@ -34,7 +34,7 @@
                   %h3 -
                   %li
                     = link_to "利用規約", "https://policies.google.com/terms?hl=ja", class: "link"
-          = f.submit value: "ログイン", class:"submit"
+          = f.submit new_user_registration_path, value: "ログイン", class:"submit"
             
           .forgot-password
             = link_to "パスワードをお忘れの方", new_user_password_path, class: "resetting"
