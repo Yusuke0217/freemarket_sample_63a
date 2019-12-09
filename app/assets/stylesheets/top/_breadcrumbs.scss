@@ -4,26 +4,33 @@
   position: relative;
   z-index: 3;
   line-height: 50px;
-  margin: 0 auto;
-  ul{display: block;
+  justify-content: center;
+  .content-bread{
+    width: 1020px;
+    margin: 0 auto;
+  }
+  ul{
+    display: block;
     .breadcrumbs-list{
       display: inline;
       font-size: 14px;
       text-decoration: none;
       color: black;
       position: relative;
-      left: 15%;
+      font-size: 14px;
+      line-height: 1.2;
+      .fa-chevron-right:before{
+        margin: 4px;
+        color: #888;
+      }
       a{
         text-decoration: none;
         color: black;
-        &#text{
-
-        }
+        font-weight: 400;
       }
       span{
         font-weight: bold;
       }
-      
     }
   }
 }
