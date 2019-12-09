@@ -1,0 +1,6 @@
+PAYJP_PRIVATE_KEY = ‘sk_test_9931066098f8c99168e275fa’
+PAYJP_KEY = ‘pk_test_a296b9474efc6fddfb3e8943’
+F_ID = ‘1633700600120631’
+F_SECRET = ‘c467710a73a2168b598f92659354ed44’
+G_ID = ‘392041577563-8llcerus7f6s98fbea9pdltali6blg6o.apps.googleusercontent.com’
+G_SECRET = ‘5i5OxEi-1QTWh1AjaF3g2QMR’
