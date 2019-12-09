@@ -3,6 +3,10 @@ class UsersController < ApplicationController
 
   def create
   end
+
+  def index
+    @users = User.all
+  end
   
   def show
     @user = User.find(params[:id])
@@ -10,9 +14,12 @@ class UsersController < ApplicationController
   end
   
   def edit
+    @user = User.find(params[:id])
   end
   
   def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
     if current_user.update(user_params)
       redirect_to root_path
     else
@@ -24,8 +31,11 @@ class UsersController < ApplicationController
   end
 
   def profile
+    @user = User.find(params[:id])
   end
+
   def user_info_register
+    @user = User.find(params[:id])
   end
   def user_page
   end
@@ -35,7 +45,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:password, :email, :nickname, :profile, :phone_number, :prefecture, :city, :address, :postal_code, :building_name)
+    params.require(:user).permit(:password, :email, :nickname, :profile, :phone_number, :prefecture, :city, :address, :postal_code, :building_name, :profile, :last_name, :first_name,:last_name_kana, :first_name_kana)
   end
 
   def move_to_index

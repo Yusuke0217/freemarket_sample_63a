@@ -27,7 +27,7 @@ class User < ApplicationRecord
 # signup2入力項目
   validates :nickname,                presence: true, length: {maximum: 20}
   validates :email,                   presence: true, uniqueness: true, format: { with: VALID_EMAIL }
-  validates :password,                presence: true, length: {minimum: 7, maximum: 30}
+  validates :password,                presence: true, length: {minimum: 7, maximum: 30}, on: :create
   validates :last_name,               presence: true, length: {maximum: 20}
   validates :first_name,              presence: true, length: {maximum: 20}
   validates :last_name_kana,          presence: true, length: {maximum: 20}
