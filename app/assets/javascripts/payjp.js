@@ -23,7 +23,7 @@ document.addEventListener(
             $("#inputForm").submit();
             alert("登録が完了しました"); //確認用
           } else {
-            alert("カード情報が正しくありません。"); //確認用
+            alert("カード情報が正しくありません。4242424242424242 を入力して下さい。"); //確認用
           }
         });
       });

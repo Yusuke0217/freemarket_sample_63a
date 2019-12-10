@@ -51,18 +51,24 @@
           %span.must-content
             必須
           = f.text_field :nickname, class:"nickname-info", value: "", placeholder: "例) メルカリ太郎", maxlength: "20"
+          - if @user.errors.any?
+            %p.error-message ニックネームを入力して下さい
         .form-group
           %label.mailAddless-new
             メールアドレス
           %span.must-content
             必須
           = f.text_field :email, class:"mailAddless-info", value: "", placeholder: "PC・携帯どちらでも可"
+          - if @user.errors.any?
+            %p.error-message メールアドレスを入力して下さい 例)test@test.com
         .form-group
           %label.password-new
             パスワード
           %span.must-content
             必須
           = f.password_field :password, class:"password-info", value: "", placeholder: "7文字以上"
+          - if @user.errors.any?
+            %p.error-message パスワードを入力して下さい
           .check-box
             %label.checkbox
               %input.password-check{type: "checkbox"}
@@ -80,6 +86,8 @@
           .input-parrent
             = f.text_field :last_name, class: "kanji1stName-info", value: "", placeholder: "例) 山田", maxlength: "20"
             = f.text_field :first_name, class: "kanji2ndName-info", value: "" , placeholder: "例) 彩", maxlength: "20"
+          - if @user.errors.any?
+            %p.error-message 氏名を入力して下さい
         .form-group
           %label.kanaName-new
             お名前(全角)
@@ -88,6 +96,8 @@
           .input-parrent
             = f.text_field :last_name_kana, class: "kana1stName-info", value: "" , placeholder: "例) ヤマダ"
             = f.text_field :first_name_kana, class: "kana2ndName-info", value: "" , placeholder: "例) アヤ"
+          - if @user.errors.any?
+            %p.error-message 氏名(フリガナ)を入力して下さい
         .form-group
           %label.birthday-new
             生年月日
@@ -95,17 +105,12 @@
             必須
           .select-parrent
             =render "deviseGo/option-birthYear"
+          - if @user.errors.any?
+            %p.error-message 生年月日を選択して下さい
           %p.must-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .form-robot
-          %button.recaptcha
-            .left-side
-              %input.robot-check{name: "robot", type: "checkbox"}
-              %h2.im-not-a-robot 私はロボットではありません
-            .right-side
-              %svg.svg-inline--fa.fa-robot.fa-w-20{"aria-hidden" => "true", "data-icon" => "robot", "data-prefix" => "fas", focusable: "false", role: "img", viewbox: "0 0 640 512", xmlns: "http://www.w3.org/2000/svg", class: "robot-logo"}
-                %path{d: "M0 256v128c0 17.7 14.3 32 32 32h32V224H32c-17.7 0-32 14.3-32 32zM464 96H352V32c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H176c-44.2 0-80 35.8-80 80v272c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V176c0-44.2-35.8-80-80-80zM256 416h-64v-32h64v32zm-32-120c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm128 120h-64v-32h64v32zm96 0h-64v-32h64v32zm-32-120c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm192-72h-32v192h32c17.7 0 32-14.3 32-32V256c0-17.7-14.3-32-32-32z", fill: "currentColor"}
-                %p.logo-name reCAPTCHA
-                %ul.links
+          .recaptcha
+            = recaptcha_tags
         .form-group
           .center-contents
             「次へ進む」のボタンを押すことにより、

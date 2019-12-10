@@ -50,7 +50,7 @@ class SignupController < ApplicationController
       last_name_kana_delivery: "なまえ",
       postal_code: "123-4567"
     )
-    render 'devise/registrations/new' unless @user.valid?
+    render '/signup/signup2' unless @user.valid?
   end
 
   def validates_signup3
@@ -74,7 +74,7 @@ class SignupController < ApplicationController
       last_name_kana_delivery: "なまえ",
       postal_code: "123-4567"
     )
-    render 'devise/registrations/new' unless @user.valid?
+    render '/signup/signup3' unless @user.valid?
   end
 
   def validates_signup4
@@ -109,7 +109,7 @@ class SignupController < ApplicationController
       city: session[:city],
       address: session[:address]
     )
-    render 'devise/registrations/new' unless @user.valid?
+    render '/signup/signup4' unless @user.valid?
   end
 
   def create
