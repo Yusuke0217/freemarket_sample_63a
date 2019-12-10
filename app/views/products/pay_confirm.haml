@@ -30,7 +30,7 @@
               %li.price-breakdown
                 .breakdown お買い上げ金額
                 .breakdown
-                  .pay-btn
+                  %span.value
                   ¥
                   = @product.price
           = form_with class: "purchase-forms", url: purchase_product_path, local: true do |f|

@@ -112,20 +112,22 @@
                 }
               }
             }
-            button.pay-btn {
-              border: 1px solid #888;
-              background: #888;
-              color: #fff;
-              margin: 8px 0 0;
-              display: block;
-              width: 100%;
-              line-height: 48px;
-              font-size: 14px;
-              transition: all ease-out .3s;
-              cursor: pointer;
-              text-align: center;
-            }
-
+          }
+          input.pay-btn {
+            border: 1px solid #888;
+            background: #888;
+            color: #fff;
+            margin: 8px 0 0;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+            background-color: gray;
+            margin-top: 16px;
+            width: 320px;
           }
         }
       }
