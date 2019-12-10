@@ -50,13 +50,13 @@
             = f.label :ニックネーム
           %span.must-content
             必須
-          = f.text_field :nickname, class:"nickname-info", value: "", placeholder: "例) メルカリ太郎", maxlength: "20"
+          = f.text_field :nickname, class:"nickname-info", placeholder: "例) メルカリ太郎", maxlength: "20"
         .form-group
           %label.mailAddless-new
             メールアドレス
           %span.must-content
             必須
-          = f.text_field :email, class:"mailAddless-info", value: "", placeholder: "PC・携帯どちらでも可"
+          = f.text_field :email, class:"mailAddless-info", placeholder: "PC・携帯どちらでも可"
         .form-group
           %label.password-new
             パスワード
