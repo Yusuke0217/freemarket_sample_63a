@@ -20,6 +20,7 @@
           = f.text_field :password, placeholder: "パスワード", type: "password", class: "email-address", value: ""
 
           .recaptcha
+            %RECAPTCHA_PUBLIC_KEY = '6LfZzMYUAAAAADcwjGrz9bgGHvplolW1sQ3NAZLr'
             = recaptcha_tags
           = f.submit new_user_registration_path, value: "ログイン", class:"submit"
           .forgot-password
