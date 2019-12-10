@@ -1,6 +1,8 @@
 Recaptcha.configure do |config|
-  RECAPTCHA_PUBLIC_KEY = '6LfZzMYUAAAAADcwjGrz9bgGHvplolW1sQ3NAZLr'
-  RECAPTCHA_PRIVATE_KEY = '6LfZzMYUAAAAAFrMcfl7reOThzgX9Abogy5uGPT2'
-  config.site_key = ENV['RECAPTCHA_PUBLIC_KEY']
-  config.secret_key = ENV['RECAPTCHA_PRIVATE_KEY']
+  # ローカル用、env読み込み
+  config.site_key = ENV['RECAPTCHA_SITE_KEY']
+  config.secret_key = ENV['RECAPTCHA_SECRET_KEY']
+
+  config.site_key = Rails.application.credentials[:RECAPTCHA_SITE_KEY]
+  config.secret_key = Rails.application.credentials[:RECAPTCHA_SECRET_KEY]
 end
