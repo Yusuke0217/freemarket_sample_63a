@@ -8,13 +8,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def callback_from(provider) #provider = facebook or google
-    @user = User.find_omniauth(request.env['omniauth.auth']) #SNS側から来る情報であるauth_hash
+    @user = User.find_oauth(request.env['omniauth.auth']) #SNS側から来る情報であるauth_hash
     if @user.persisted? #@userがDBにある場合、ログイン状態にする
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: "#{provider}".capitalize) if is_navigational_format?
     else #＠userがDBにない場合、新規登録ページにリダイレクトする
-      session["devise.#{provider}_id"] = request.env['omniauth.auth'].except("extra") #[:info]
-      redirect_to signup2_signup_index_path
+      render "signup/signup2"
+      # session["devise.#{provider}_data"] = request.env['omniauth.auth'].except("extra")
+      # redirect_to signup2_signup_index_path
     end
   end
 
@@ -23,5 +24,3 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
 end
-
-# session["devise.#{provider}.uid"] = request.env['omniauth.auth'].except("extra") #[:info]
