@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get :pay_confirm
       # get :purchase
       post :purchase
+      patch :purchase
       get :done
     end
   end

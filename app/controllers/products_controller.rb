@@ -69,6 +69,8 @@ class ProductsController < ApplicationController
       currency: 'jpy',
       customer: card.customer_id
     )
+    product.status = 3
+    product.save!
     redirect_to done_product_path
   end
 
