@@ -1,4 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
+  RECAPTCHA_PUBLIC_KEY = '6LfZzMYUAAAAADcwjGrz9bgGHvplolW1sQ3NAZLr'
+  config.site_key = ENV['RECAPTCHA_PUBLIC_KEY']
   prepend_before_action :check_captcha, only: [:create]
   prepend_before_action :customize_sign_up_params, only: [:create]
 
