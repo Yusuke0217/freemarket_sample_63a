@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     member do
       get :myproduct
       get :my_product_detail
+      get :pay_confirm
+      # get :purchase
+      post :purchase
+      patch :purchase
+      get :done
     end
   end
 
@@ -33,7 +38,7 @@ Rails.application.routes.draw do
         get "done"
       end
     end
-  resources :card, only: [:new, :show] do
+  resources :card, only: [:new, :show, :edit, :update, :destroy] do
     collection do
       post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'

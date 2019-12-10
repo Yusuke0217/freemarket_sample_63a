@@ -1,14 +1,14 @@
 .main-content
   %header.main-header
     %h1.head-logo
-      = link_to image_tag("SVG/fmarket_logo_red.svg", alt: "ギャゾー", class: "mercari-logo"),root_path
+      = link_to image_tag @product.image_url, alt: "ギャゾー", class: "mercari-logo"
   %main.pay-main
     %section.pay-item-content
       %h2.pay-head 購入内容確認
       %section.pay-item
         .pay-content-info
           %h3.pay-item__image
-            = image_tag "SVG/dogu.jpg", alt: "画像はあくまでもイメージです", class: "item-gyazo"
+            = image_tag @product.image_url, alt: "画像はあくまでもイメージです", class: "item-gyazo"
           %p.item-text Made in 三国ヶ丘ァ!! 土偶業界の異端児 D&G
           %form.pay-form
             %p.pay-price 

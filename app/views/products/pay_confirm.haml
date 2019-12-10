@@ -1,0 +1,65 @@
+.main-content
+  %header.main-header
+    %h1.head-logo
+      = link_to image_tag("SVG/fmarket_logo_red.svg", alt: "ギャゾー", class: "mercari-logo"),root_path
+  %main.pay-main
+    %section.pay-item-content
+      %h2.pay-head 購入内容確認
+      %section.pay-item
+        .pay-content-info
+          %h3.pay-item__image
+            = image_tag @product.image_url, alt: "画像はあくまでもイメージです", class: "item-gyazo"
+          %p.item-text
+            = @product.text
+          %form.pay-form
+            %p.pay-price
+              ¥
+              = @product.price
+              -# %span.method-of-paymentこの先の実装で必要なのでコメントアウト
+              %span.mop
+                = @product.shipping_charge
+            %ul.pay-point
+              %li.point-many
+                .point-text ポイント is empty
+            -# if you don't have point then this actionこの先の実装で必要なのでコメントアウト
+            -# %ul.pay-point have
+            -#   %li.point-many
+            -#     .point-text
+
+            %ul.price-table
+              %li.price-breakdown
+                .breakdown お買い上げ金額
+                .breakdown
+                  %span.value
+                  ¥
+                  = @product.price
+          = form_with model: @product, class: "purchase-forms", url: purchase_product_path, local: true do |f|
+            = f.submit "購入する", class: "pay-btn"
+          -#   = form_tag(action: :purchase, method: :post) do
+          -#     %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text" => "購入する" ,"data-key" => "sk_test_9931066098f8c99168e275fa"}
+          -# -# :plain
+          -# -# -# %script.payjp-button{"data-key" => 'sk_test_9931066098f8c99168e275fa', src: "https://checkout.pay.jp", type: "text/javascript"}
+          -# -# %script.payjp-button{"data-key" => 'sk_test_9931066098f8c99168e275fa', "data-payjp" => "", :src => "https://checkout.pay.jp/", :type => "text/javascript"}
+
+      %section.pay-user-info
+        .pay-content-info
+          %h3.deli お届け先
+          %address.user-info-text
+            〒
+            = @product.user.postal_code
+            %span
+            = @product.user.city
+            = @product.user.address
+          %p.user-info-text
+          = link_to "変更する >", root_path, class: "user-info-fix"
+          .dammy
+      %section.pay-user-info
+        .pay-content-info
+          %h3.deli 支払い方法
+          %p.user-info-text
+          %figure
+            = image_tag ""
+          %p.change
+          = link_to "変更する >", root_path, class: "user-info-fix"
+          .dammy
+= render "devise/shared/footer-login"

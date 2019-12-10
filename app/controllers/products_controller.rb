@@ -1,4 +1,10 @@
 class ProductsController < ApplicationController
+
+  require 'payjp'
+
+    #後でenvに記載
+  ENV["PAYJP_PRIVATE_KEY"] = 'sk_test_9931066098f8c99168e275fa'
+
   before_action :move_to_index, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
@@ -47,6 +53,25 @@ class ProductsController < ApplicationController
 
   def my_product_detail
     @product = Product.find(params[:id])
+  end
+
+  def pay_confirm
+    @product = Product.find(params[:id])
+  end
+
+  def purchase
+    card = Card.where(user_id: current_user.id).first
+    product = Product.find(params[:id])
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp::Charge.create(
+      amount: product.price,
+      card: params['payjp-token'],
+      currency: 'jpy',
+      customer: card.customer_id
+    )
+    product.status = 3
+    product.save!
+    redirect_to done_product_path
   end
 
   private
