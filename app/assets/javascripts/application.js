@@ -16,3 +16,12 @@
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
+
+
+$(function() {
+  $('.slide').slick({
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+  });
+});
