@@ -74,7 +74,8 @@
         .price-tax__content (税込)
       .price-fee
         .price-fee__content 送料込み
-    = link_to "購入画面に進む", pay_confirm_product_path, class: "item__buy-btn"
+    - unless user_signed_in? && current_user.id == @product.user_id
+      = link_to "購入画面に進む", pay_confirm_product_path, class: "item__buy-btn"
     %p.allowed-message
     .item__description
       %span= @product.text
