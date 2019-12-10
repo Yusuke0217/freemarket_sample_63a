@@ -1,4 +1,8 @@
-購入ありがとう❤️
+= render "devise/shared/header-login"
 
 .link
-  = link_to "トップページに戻る", root_path
+  %h2 ご購入ありがとうございます！
+  = link_to root_path, class: "return" do
+    商品画面に戻る
+
+= render "devise/shared/footer-login"
