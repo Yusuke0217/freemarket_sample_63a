@@ -47,6 +47,8 @@
               %label.tellNumber-new
                 携帯電話の番号
               = f.text_field :phone_number, class: "tellNumber-info", value: "", placeholder: "携帯電話の番号を入力"
+              - if @user.errors.any?
+                %p.error-message 電話番号を入力して下さい（ハイフンは不要です）
               %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
             -# =link_to signup4_signup_index_path do
             = f.submit "SMSを送信する", class: "go-ahead"

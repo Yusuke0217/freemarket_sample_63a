@@ -150,7 +150,16 @@
         background: #ea352d;
         border: 1px solid #ea352d;
         text-decoration: none;
-  
+      }
+      input.btn-default.stop {
+        background: gray;
+        border: 1px solid gray;
+        text-decoration: none;
+      }
+      input.btn-default.restart {
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        text-decoration: none;
       }
       p.text-align-center {
         text-align: center;

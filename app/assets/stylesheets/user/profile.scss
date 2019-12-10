@@ -19,14 +19,14 @@
         padding: 8px 0 8px;
       }
     .setting-profile-icon{
-      background-color: lightgray;
+      background-color: #FEECD0;
       padding: 72px 0 24px;
       text-align: center;
       .wrapper{
         width: 100%;
         display: inline-flex;
         justify-content: center;
-        background-color: lightgray;
+        background-color: #FEECD0;
         .icon-image{
           .prof-photo{
             border-radius: 50%;
@@ -56,14 +56,8 @@
         background: #fff;
         font-size: 16px;
     }
-    button{
-      margin: 16px 0 0;
-      width: 100%;
-      line-height: 48px;
-      font-size: 14px;
-      background: #ea352d;
-      color: #fff;
-      text-align: center;
+    .button{
+      @include submit-btn-long;
     }
     }
     }
