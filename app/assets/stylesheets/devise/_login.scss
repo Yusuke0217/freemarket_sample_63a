@@ -122,7 +122,7 @@
           .recaptcha {
             width: 304px;
             height: 78px;
-            background: azure;
+           
             border-radius: 2px;
             float: left;
             .left-side {
@@ -371,50 +371,6 @@
               line-height: 1.5;
               background-color: #fff;
               padding-left: 10px;
-            }
-          }
-          .recaptcha {
-            width: 304px;
-            height: 78px;
-            background: azure;
-            border-radius: 2px;
-            float: left;
-            .left-side {
-              float: left;
-              display: flex;
-              margin-top: 15px;
-              .robot-check {
-                width: 30px;
-              }
-              .im-not-a-robot {
-                font-size: 15px;
-                text-align: left;
-                width: 150px;
-              }
-            }
-            .right-side {
-              margin-top: 5px;
-              .robot-logo {
-                height: 40px;
-                width: 40px;
-                text-align: right;
-                color: lightseagreen;
-                margin-left: 40px;
-              }
-              .logo-name {
-                color: #333;
-                font-size: 10px;
-                margin-left: 210px;
-              }
-              .links {
-                display: flex;
-                font-size: smaller;
-                margin-right: 2px;
-                .link {
-                  text-decoration: none;
-                  color: #333;
-                }
-              }
             }
           }
           .submit {

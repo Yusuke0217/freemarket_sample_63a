@@ -24,7 +24,6 @@
           margin:0 auto;
           .form-group{
             padding: 22px 0;
-           
             label{
               font-weight: 600;
             }
@@ -84,59 +83,8 @@
               text-decoration:none;
             }
           }
-          .form-robot{
-            height: 80px;
-            .recaptcha {
-              width: 304px;
-              height: 78px;
-              background: azure;
-              border-radius: 2px;
-              float: left;
-              .left-side {
-                float: left;
-                display: flex;
-                margin-top: 10px;
-                .robot-check {
-                  position: relative;
-                  width: 30px;
-                  top:15px;
-                }
-                .im-not-a-robot {
-                  font-size: 15px;
-                  text-align: left;
-                  width: 150px;
-                }
-              }
-              .right-side {
-                margin-top: 5px;
-                .robot-logo {
-                  height: 40px;
-                  width: 40px;
-                  text-align: right;
-                  color: lightseagreen;
-                  margin-left: 40px;
-                }
-                .logo-name {
-                  color: #333;
-                  font-size: 10px;
-                  margin-left: 210px;
-                }
-                .links {
-                  display: flex;
-                  font-size: smaller;
-                  margin-right: 2px;
-                  margin-left: 180px;
-                  .link {
-                    text-decoration: none;
-                    color: #333;
-                  }
-                }
-              }
-            }
-          }
           .go-ahead{
             @include submit-btn;
-          
           }
           .link-for-user-info{
             @include blue-line;
