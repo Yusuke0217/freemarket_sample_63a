@@ -16,19 +16,12 @@
     }
     .slick-dots {
       li {
-        font-size: 20px !important;
+        font-size: 20px ;
         button:before {
-          content: "●" !important;
-          font-size: 14px !important;
-          color: #f5f5f5 !important;
+          content: "●" ;
+          font-size: 14px ;
+          color: #f5f5f5 ;
         }
-      }
-    }
-    .slick-prev{
-        font-size: 80px !important;
-        button:before {
-          font-size: 60px !important;
-          color: #f5f5f5 !important;
       }
     }
   }
