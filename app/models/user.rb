@@ -52,14 +52,14 @@ class User < ApplicationRecord
     uid = auth.uid
     snscredential = SnsCredential.where(provider: provider, uid: uid)
     user = User.where(email: auth.info.email).first
-    if user.present? #userが存在する場合
-      unless sns_credential.present? #SNS認証済みでない場合、SNS認証用データを作成・保存
+    if user.present?
+      unless sns_credential.present?
         SnsCredential.create(
           provider: auth.provider,
           uid: auth.uid,
         )
       end
-    elsif #userが存在しない場合、ユーザー情報およびSNS認証用データを作成・保存
+    elsif
       user = User.create(
         nickname: auth.info.name,
         email: auth.info.email,
@@ -70,6 +70,6 @@ class User < ApplicationRecord
         uid: auth.uid,
       )
     end
-    user #userを返す
+    user
   end
 end
