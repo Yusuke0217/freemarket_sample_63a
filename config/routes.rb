@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get :myproduct
       get :my_product_detail
       get :pay_confirm
-      get :purchase
+      # get :purchase
       post :purchase
       get :done
     end
