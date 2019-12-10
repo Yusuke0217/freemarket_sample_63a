@@ -1,102 +1,147 @@
 .sidebar-body
   .side-bar-box
     %ul.sidebar-list-1
-      %li.side-bar-links
-        .text
-          = link_to 'マイページ', user_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to  "お知らせ", root_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to  "やることリスト", root_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to "いいね！一覧", root_path, class: "side-link-text" 
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to "出品する", new_product_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to "出品した商品-出品中", myproduct_product_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to  "出品した商品-取引中", root_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to "出品した商品-売却済", root_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to "購入した商品-取引中", root_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to "購入した商品-過去の取引", root_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to "ニュース一覧", root_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to "評価一覧", root_path,  class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to "ガイド", root_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to "お問い合わせ", root_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
+      = link_to user_path,class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            マイページ
+          .icon
+            =fa_icon'chevron-right'
+      = link_to "",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            お知らせ
+          .icon
+            =fa_icon'chevron-right'
+      = link_to "",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            やることリスト
+          .icon
+            =fa_icon'chevron-right'
+      = link_to "",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            いいね！一覧
+          .icon
+            =fa_icon'chevron-right'
+      = link_to myproduct_product_path,class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            出品する
+          .icon
+            =fa_icon'chevron-right'
+      = link_to myproduct_product_path,class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            出品した商品-出品中
+          .icon
+            =fa_icon'chevron-right'
+      = link_to myproduct_product_path,class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            出品した商品-取引中
+          .icon
+            =fa_icon'chevron-right'
+      = link_to myproduct_product_path,class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            出品した商品-売却済
+          .icon
+            =fa_icon'chevron-right'
+      = link_to user_path,class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            購入した商品-取引中
+          .icon
+            =fa_icon'chevron-right'
+      = link_to user_path,class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            購入した商品-過去の取引
+          .icon
+            =fa_icon'chevron-right'
+      = link_to "https://www.mercari.com/jp/mypage/news/",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            ニュース一覧
+          .icon
+            =fa_icon'chevron-right'
+      = link_to "",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            評価一覧
+          .icon
+            =fa_icon'chevron-right'
+      = link_to "https://www.mercari.com/jp/help_center/",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            ガイド
+          .icon
+            =fa_icon'chevron-right'
+      = link_to "https://www.mercari.com/jp/mypage/support/",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            お問い合わせ
+          .icon
+            =fa_icon'chevron-right'
     %h3
       メルペイ
     %ul.sidebar-list-1
-      %li.side-bar-links
-        = link_to '売上・振込申請', profile_user_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to 'ポイント', profile_user_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
+      = link_to "",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            売上・振込申請
+          .icon
+            =fa_icon'chevron-right'
+      = link_to "",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            ポイント
+          .icon
+            =fa_icon'chevron-right'
     %h3
       設定
     %ul.sidebar-list-1
-      %li.side-bar-links
-        = link_to 'プロフィール', profile_user_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to '発送元・お届け先住所変更', user_info_register_user_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        支払い方法
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to 'メール/パスワード', user_info_register_user_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to '本人情報', user_info_register_user_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to '電話番号の確認', user_info_register_user_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
-      %li.side-bar-links
-        = link_to 'ログアウト',  logout_user_path, class: "side-link-text"
-        .icon
-          =fa_icon'chevron-right'
+      = link_to profile_user_path,class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            プロフィール
+          .icon
+            =fa_icon'chevron-right'
+      = link_to "",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            発送元・お届け先住所変更
+          .icon
+            =fa_icon'chevron-right'
+      = link_to "",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            支払い方法
+          .icon
+            =fa_icon'chevron-right'
+      = link_to "",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            メール/パスワード
+          .icon
+            =fa_icon'chevron-right'
+      = link_to user_info_register_user_path,class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            本人情報
+          .icon
+            =fa_icon'chevron-right'
+      = link_to "",class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            電話番号の確認
+          .icon
+            =fa_icon'chevron-right'
+      = link_to logout_user_path,class: "side-link-text" do
+        %li.side-bar-links
+          .side-link-text
+            ログアウト
+          .icon
+            =fa_icon'chevron-right'
