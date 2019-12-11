@@ -14,4 +14,10 @@ class Product < ApplicationRecord
     validates :image, unless: :image?
   end
   mount_uploader :image, ImageUploader
+
+
+  def self.search(search)
+    return Product.all unless search
+    Product.where('text LIKE(?)', "%#{search}%")
+  end
 end
