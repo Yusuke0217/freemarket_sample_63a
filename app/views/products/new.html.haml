@@ -179,8 +179,8 @@
                   .product-price__box
                     %label.right ¥
                     = f.text_field :price, class: "product-price__default", placeholder: "例）300"
-                    - if @product.errors.any?
-                      %p.error-message 300以上9999999以下で入力してください
+                - if @product.errors.any?
+                  %p.error-message 300以上9999999以下で入力してください
                 .comission
                   .left 販売手数料 (10%)
                   .right -
