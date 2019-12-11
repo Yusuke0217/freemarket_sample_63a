@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get '/mypage/profile', to: 'mypage#profile'
   # get '/mypage/user_info_register', to: 'mypage#user_info_register'
   # get '/mypage/logout', to: 'mypage#logout'
-  root to: "products#index"  
+  root to: "products#index"
   resources :products do
     member do
       get :myproduct
