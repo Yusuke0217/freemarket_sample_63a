@@ -14,6 +14,8 @@
         %span= @product.name
       - if @product.status == 2
         出品停止中
+      - elsif @product.status == 3
+        SOLD
       .item__content
         .content-photo
           .content-photo__top
