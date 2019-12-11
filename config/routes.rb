@@ -36,6 +36,7 @@ Rails.application.routes.draw do
         get "signup4"
         get "signup5"
         get "done"
+        post "done"
       end
     end
   resources :card, only: [:new, :show, :edit, :update, :destroy] do

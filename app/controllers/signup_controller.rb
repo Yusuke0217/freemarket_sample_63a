@@ -31,8 +31,6 @@ class SignupController < ApplicationController
     session[:birth_day] = user_params[:birth_day]
     session[:birth_year] = user_params[:birth_year]
     session[:birth_month] = user_params[:birth_month]
-    session[:provider] = user_params[:provider]
-    session[:uid] = user_params[:uid]
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -44,8 +42,6 @@ class SignupController < ApplicationController
       birth_day: session[:birth_day],
       birth_year: session[:birth_year],
       birth_month: session[:birth_month],
-      provider: session[:provider],
-      uid: session[:uid],
       prefectures: "北海道",
       phone_number: "09012345678",
       first_name_delivery: "名字",
@@ -70,8 +66,6 @@ class SignupController < ApplicationController
       birth_day: session[:birth_day],
       birth_year: session[:birth_year],
       birth_month: session[:birth_month],
-      provider: session[:provider],
-      uid: session[:uid],
       phone_number: session[:phone_number],
       prefectures: "北海道",
       first_name_delivery: "名字",
@@ -105,8 +99,6 @@ class SignupController < ApplicationController
       birth_day: session[:birth_day],
       birth_year: session[:birth_year],
       birth_month: session[:birth_month],
-      provider: session[:provider],
-      uid: session[:uid],
       phone_number: session[:phone_number],
       first_name_delivery: session[:first_name_delivery],
       first_name_kana_delivery: session[:first_name_kana_delivery],
@@ -134,8 +126,6 @@ class SignupController < ApplicationController
       postal_code: session[:postal_code],
       birth_year: session[:birth_year],
       birth_month: session[:birth_month],
-      provider: session[:provider],
-      uid: session[:uid],
       phone_number: session[:phone_number],
       first_name_delivery: session[:first_name_delivery],
       first_name_kana_delivery: session[:first_name_kana_delivery],
@@ -156,6 +146,7 @@ class SignupController < ApplicationController
 
   def done
     sign_in User.find(session[:id]) unless user_signed_in?
+    redirect_to root_path
   end
 
   private
@@ -163,7 +154,7 @@ class SignupController < ApplicationController
     params.require(:user).permit(
       :password, :email, :nickname,
       :last_name, :first_name, :last_name_kana, :first_name_kana,
-      :birth_day, :birth_year, :birth_month, :provider, :uid, :profile, :phone_number, :city, :address, :postal_code, :building_name, :prefectures,
+      :birth_day, :birth_year, :birth_month,:profile, :phone_number, :city, :address, :postal_code, :building_name, :prefectures,
       :first_name_delivery, :first_name_kana_delivery, :last_name_delivery, :last_name_kana_delivery,:phone_number_delivery)
   end
 end
