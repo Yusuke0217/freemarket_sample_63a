@@ -168,9 +168,13 @@
           outline: 0;
           cursor: pointer;
           font-size: 14px;
-          i.far.fa-heart {
+          .btn.btn-default.glyphicon.far.fa-heart {
             color: gray;
             @include awesome;
+            &:before{
+            color: gray;
+            @include awesome;
+            }
           }
           i.far.fa-flag {
             color: gray;

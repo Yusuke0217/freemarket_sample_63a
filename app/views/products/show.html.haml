@@ -89,7 +89,8 @@
       %span= @product.text
     .item__botton
       .botton-left
-        = render 'likes/like_links', product: @product
+        %button.botton-left__icon
+          = render 'likes/like_links', product: @product
         %button.botton-left__icon
           %i.far.fa-flag
           %span 報告
