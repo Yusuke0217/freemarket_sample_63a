@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_12_09_110253) do
     t.string "shipping_charge", null: false
     t.string "shipping_how"
     t.string "shipping_place", null: false
-    t.integer "shipping_date", null: false
+    t.string "shipping_date", null: false
     t.integer "price", null: false
     t.string "text", null: false
     t.text "image", null: false
@@ -54,18 +54,18 @@ ActiveRecord::Schema.define(version: 2019_12_09_110253) do
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", default: "", null: false
     t.string "phone_number", null: false
-    t.string "prefectures", null: false
-    t.string "city", null: false
-    t.string "address", null: false
-    t.string "postal_code", null: false
+    t.string "prefectures"
+    t.string "city"
+    t.string "address"
+    t.string "postal_code"
     t.string "building_name"
-    t.integer "birth_year", null: false
-    t.integer "birth_month", null: false
-    t.integer "birth_day", null: false
-    t.string "first_name", null: false
-    t.string "first_name_kana", null: false
-    t.string "last_name", null: false
-    t.string "last_name_kana", null: false
+    t.integer "birth_year"
+    t.integer "birth_month"
+    t.integer "birth_day"
+    t.string "first_name"
+    t.string "first_name_kana"
+    t.string "last_name"
+    t.string "last_name_kana"
     t.string "first_name_delivery"
     t.string "first_name_kana_delivery"
     t.string "last_name_delivery"
@@ -85,8 +85,6 @@ ActiveRecord::Schema.define(version: 2019_12_09_110253) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "uid"
-    t.string "provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
