@@ -154,9 +154,9 @@ class SignupController < ApplicationController
     end
   end
 
-  # def done
-  #   sign_in User.find(session[:id]) unless user_signed_in?
-  # end
+  def done
+    sign_in User.find(session[:id]) unless user_signed_in?
+  end
 
   private
   def user_params
