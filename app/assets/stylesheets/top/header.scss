@@ -41,7 +41,7 @@ header.top-content {
       form.searchbox {
         position: relative;
         width: 100%;
-        input.texts {
+        form.texts {
           background-color: rgb(245, 245, 245);
           font-size: 16px;
           height: 40px;
@@ -51,7 +51,7 @@ header.top-content {
           padding: 0px 50px 0px 10px;
           transition: all 0.3s ease-out 0s;
         }
-        button.glass {
+        .sub-button {
           font-size: 100%;
           background-color: transparent;
           cursor: pointer;
@@ -64,11 +64,12 @@ header.top-content {
           border-radius: 0px 4px 4px 0px;
           padding: 0px;
           font-family: inherit;
-          i.fas.fa-search {
-            content: "\f002";
-            @include awesome;
-          }
+          
         }
+      }
+      i.fas.fa-search {
+        content: "\f002";
+        @include awesome;
       }
     }
     .top-main-leg {
