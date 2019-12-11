@@ -147,7 +147,6 @@
       line-height: 56px;
       text-align: center;
       font-weight: 600;
-      text-decoration: none;
     }
     &__description {
       padding-top: 32px;
@@ -168,13 +167,29 @@
           outline: 0;
           cursor: pointer;
           font-size: 14px;
-          .btn.btn-default.glyphicon.far.fa-heart {
+          .btn.btn-default.glyphicon.far.fa-heart.fa-heart {
             color: gray;
             @include awesome;
-            &:before{
+            &#text:before{
             color: gray;
             @include awesome;
             }
+          }
+          .btn.btn-default.glyphicon.far.fa-heart-empty {
+            color: gray;
+            @include awesome;
+            &#text:before{
+            color: gray;
+            @include awesome;
+            }
+          }
+          .like-link{
+            a{
+            text-decoration: none;
+            }
+          }
+          span{
+            color: black;
           }
           i.far.fa-flag {
             color: gray;
