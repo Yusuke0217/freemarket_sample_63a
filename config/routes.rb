@@ -19,6 +19,9 @@ Rails.application.routes.draw do
       get :done
     end
     resources :comments, only: :create
+    collection do
+      post :search
+    end
   end
 
   resources :users, only: [:edit, :update, :delete, :create, :show] do

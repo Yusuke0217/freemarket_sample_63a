@@ -1,28 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+* Ruby version: 2.5.1
+* Ruby on rails version: 5.2.4
 
 ## usersテーブル
 |Column|Type|Options|
@@ -49,17 +28,13 @@ Things you may want to cover:
 |first_name_kana_delivery|string|null: false, foreign_key: true|  姓（仮名）届け先
 |last_name_delivery|string|null: false, foreign_key: true|  名（漢字）届け先
 |last_name_kana_delivery|string|null: false, foreign_key: true|  名（仮名）届け先
-|exhibit-product|string||  出品した商品
-|exhibit-number|integer||  出品数
-<!-- |exhibit-now|string||  出品中  -->
-<!-- |exhibit-trading|string||  取引中(出品) -->
-<!-- |exhibit-sold|string||  売却済み -->
-|points|integer||  ポイント
 |like|integer||  いいね！
 |earnings|integer||  売上金
+|profile|text||  プロフィール
+|exhibit-product|string||  出品した商品
+|exhibit-number|integer||  出品数
 |purchase_history_id|integer|null: false|  買い手id
 |sales_history_id|integer|null: false|  売り手id
-|profile|text||  プロフィール
 |payjp_id|integer|null: false, foreign_key: true| payjpのid
 
 ### Association
@@ -68,7 +43,6 @@ Things you may want to cover:
 - has_many :comments
 - has_many :comment-report コメントの報告
 - has_many :products, through: :like-product商品へのいいね
-- has_many :products, through: :product-report商品の報告
 - has_many :comments, through: :comment-report
 - belongs_to :credit
 
@@ -118,7 +92,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :product
 
-##  product-report（不適切商品報告）テーブル
+<!-- ##  product-report（不適切商品報告）テーブル
 |Column|Type|Options|
 | ------ | ---- | ----------- |
 | user_id | integer | null：false、foreign_key：true |
@@ -126,9 +100,9 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :product
+- belongs_to :product -->
 
-##  comment-report（不適切コメント報告）テーブル
+<!-- ##  comment-report（不適切コメント報告）テーブル
 |Column|Type|Options|
 | ------ | ---- | ----------- |
 | user_id | integer | null：false、foreign_key：true |
@@ -136,18 +110,16 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :comment
+- belongs_to :comment -->
 
 
 ## card テーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true| ユーザー情報を外部キーとして所有
-|payjp_id|integer|null: false, foreign_key: true| payjpのid
-
-<!-- 後で追記
-|payjp_id|integer|null: false, foreign_key: true| payjpのid
-|payjp_id|integer|null: false, foreign_key: true| payjpのid -->
+|card_id|integer|null: false, foreign_key: true|
+|customer_id|integer|null: false, foreign_key: true|
+|token|integer|null: false, foreign_key: true|
 
 - belongs_to :user
 
@@ -161,6 +133,7 @@ Things you may want to cover:
 |purchase-trading|string||  取引中(購入)
 |points|integer||  ポイント
 
+### Association
 - belongs_to :product
 - belongs_to :user
 
@@ -173,18 +146,6 @@ Things you may want to cover:
 
 - belongs_to :product
 - belongs_to :user
-
-
-
-### photo
-|Column|Type|Options|
-|------|----|-------|
-|product_id|integer|null: false, foreign_key :true|
-|url|integer|null: false|
-|user_id|integer|null: false|
-
-- belongs_to :product
-
 
 ### category
 |Column|Type|Options|

@@ -2,11 +2,10 @@
   .top-main
     .top-main-face
       = link_to image_tag("SVG/fmarket_logo_red.svg", alt: "", class: "top-main-face__logo"), root_path
-      %form.searchbox
-        %input.texts{type: "search", name: "keyword", placeholder: "Do you look for anything?", value: ""}
-        %button.glass
-          %i.fas.fa-search
-
+      = form_with url: search_products_path, class: "searchbox", local: true do |f|
+        = f.text_field :keyword, type: "search", placeholder: "何かお探しですか？", value: "", class: "texts", name: "keyword", id: ""
+        = f.button class: "sub-button" do
+          = fa_icon "search" 
     .top-main-leg
       .top-main-leg__left
         %ul.item-nav
