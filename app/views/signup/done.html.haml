@@ -40,11 +40,10 @@
     .last-box__title
       %h2 会員登録完了
     .last-box__body
-      =form_with model: @post, local: true do |f|
-        %p ありがとうございます。
-        %p 会員登録が完了しました。
-        .formbox
-          =link_to root_path do
-            =f.button "メルカリをはじめる", class: "go-ahead"
-      =image_tag "background/tech.jpg", class: "tech-image"
+      %p ありがとうございます。
+      %p 会員登録が完了しました。
+      .formbox
+        =link_to root_path do
+          %button.go-ahead メルカリをはじめる
+    =image_tag "background/tech.jpg", class: "tech-image"
   =render "devise/shared/footer-login"
