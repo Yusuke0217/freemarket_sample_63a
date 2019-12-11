@@ -18,6 +18,9 @@ Rails.application.routes.draw do
       patch :purchase
       get :done
     end
+    collection do
+      post :search
+    end
   end
 
   resources :users, only: [:edit, :update, :delete, :create, :show] do

@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   ENV["PAYJP_PRIVATE_KEY"] = 'sk_test_9931066098f8c99168e275fa'
 
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy], exept: :search
 
   def index
     @products = Product.all
@@ -72,6 +72,11 @@ class ProductsController < ApplicationController
     product.status = 3
     product.save!
     redirect_to done_product_path
+  end
+
+  def search
+    @products = Product.search(params[:keyword])
+    binding.prybinding.pry
   end
 
   private
