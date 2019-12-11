@@ -80,7 +80,8 @@
     .item__botton
       .botton-left
         %button.botton-left__icon
-          %i.far.fa-heart
+          = render 'likes/like_links', product: product
+          -# %i.far.fa-heart
           %span いいね!
           %span.fade-in-down 0
         %button.botton-left__icon

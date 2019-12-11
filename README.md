@@ -70,6 +70,18 @@
 - has_many :users, through: :purchase-history
 - has_many :users, through: :sales-history
 
+## likesテーブル
+|Column|Type|Options|
+| ------ | ---- | ----------- |
+| user_id | integer | null：false、foreign_key：true |
+| product_id | string| null：false | （商品）
+
+### Association
+- belongs_to :user
+- belongs_to :product
+
+
+
 ##  comments（コメント）テーブル
 |Column|Type|Options|
 | ------ | ---- | ----------- |

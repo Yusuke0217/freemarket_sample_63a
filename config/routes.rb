@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'credit/new'
   get 'credit/show'
-  # スプリントレビュー用ルート
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # get '/mypage/profile', to: 'mypage#profile'
@@ -42,6 +41,11 @@ Rails.application.routes.draw do
         post "done"
       end
     end
+
+    post   '/like/:product_id' => 'likes#like',   as: 'like'
+    delete '/like/:product_id' => 'likes#unlike', as: 'unlike'
+
+
   resources :card, only: [:new, :show, :edit, :update, :destroy] do
     collection do
       post 'show', to: 'card#show'
