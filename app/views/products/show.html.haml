@@ -102,12 +102,24 @@
           %span 安心・安全への取り組み
   .message
     .message__contents
+    - if @comments
+      - @comments.each do |comment|
+        %p
+          %strong
+            = link_to comment.user.nickname, "/users/#{comment.user_id}"
+            ：
+            = comment.comment
       .message-items
     .message__contents
       %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %textarea.message-textarea{name: "body", type: "text", value: ""}
-      %button.message-submit{type: "submit"}
-        %span コメントする
+    - if user_signed_in?
+      = form_with(model: [@product, @comment], local: true) do |f|
+        = f.text_area :comment, rows: "5", class: "message-textarea"
+        = f.submit "コメントする", class: "message-submit"
+    - else
+      %strong
+        %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+        -# %span コメントする
 
   %ul.nav
     %li
