@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_092315) do
     t.string "text", null: false
     t.text "image", null: false
     t.integer "status", default: 1, null: false
+    t.integer "likes_count"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
