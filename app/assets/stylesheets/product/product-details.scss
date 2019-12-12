@@ -7,6 +7,7 @@
 }
 .main-product {
   padding: 24px 40px 40px;
+  position: relative;
   .item {
     width: 700px;
     background: #fff;
@@ -51,6 +52,14 @@
               // transform: translate(0, -50%);必要な記述
             }
           }
+        }
+        #product-status {
+          font-weight: bold;
+          padding: 2px;
+          position: absolute;
+          color: #fff;
+          background-color: #f00;
+          transform: rotate(-45deg);
         }
       }
       .content-table {

@@ -2,12 +2,14 @@
   .item
     .item__name
       %span= @product.name
-    - if @product.status == 2
-      出品停止中
-    - elsif @product.status == 3
-      SOLD
     .item__content
       .content-photo
+        - if @product.status == 2
+          #product-status
+            出品停止中
+        - elsif @product.status == 3
+          #product-status
+            SOLD
         .content-photo__top
           = image_tag @product.image_url class: "main-image"
         .content-photo__detail
