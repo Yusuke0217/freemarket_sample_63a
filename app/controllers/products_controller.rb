@@ -26,6 +26,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @product.comments.includes(:user)
   end
 
   def destroy
@@ -82,7 +84,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :condition, :shipping_charge, :shipping_how, :shipping_place, :shipping_date, :price, :text, :image, :category, :status).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :condition, :shipping_charge, :shipping_how, :shipping_place, :shipping_date, :price, :text, :image, :category, :status, :comment).merge(user_id: current_user.id)
   end
 
   def move_to_index
