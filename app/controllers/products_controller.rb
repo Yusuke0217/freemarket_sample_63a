@@ -56,6 +56,8 @@ class ProductsController < ApplicationController
 
   def my_product_detail
     @product = Product.find(params[:id])
+    @comment = Comment.new
+    @comments = @product.comments.includes(:user)
   end
 
   def pay_confirm
