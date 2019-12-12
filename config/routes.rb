@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       patch :purchase
       get :done
     end
+    resources :comments, only: :create
     collection do
       post :search
     end

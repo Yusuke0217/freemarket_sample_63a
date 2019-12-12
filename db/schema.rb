@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_12_11_092315) do
+
+
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -21,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_092315) do
     t.datetime "updated_at", null: false
   end
 
+
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "product_id", null: false
@@ -28,6 +32,14 @@ ActiveRecord::Schema.define(version: 2019_12_11_092315) do
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_likes_on_product_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "product_id"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -42,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_092315) do
     t.string "shipping_how"
     t.string "shipping_place", null: false
     t.string "shipping_date", null: false
-    t.integer "price", null: false
+    t.string "price", null: false
     t.string "text", null: false
     t.text "image", null: false
     t.integer "status", default: 1, null: false

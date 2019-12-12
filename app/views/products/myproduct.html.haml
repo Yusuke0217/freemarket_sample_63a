@@ -38,7 +38,10 @@
                           %span.many
                             1
                         .product-mode
-                          出品中
+                          - if @product.status == 1
+                            出品中
+                          - elsif @product.status == 2
+                            公開停止中
                       %i.fas.fa-arrow-circle-right
         %ul.mypage-kaminari
           %li.more.more-left
