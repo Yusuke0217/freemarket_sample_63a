@@ -91,10 +91,8 @@
       %span= @product.text
     .item__botton
       .botton-left
-        %button.botton-left__icon
-          %i.far.fa-heart
-          %span いいね!
-          %span.fade-in-down 0
+        %button.botton-left__icon.like-icon
+          = render 'likes/like_links', product: @product
         %button.botton-left__icon
           %i.far.fa-flag
           %span 報告

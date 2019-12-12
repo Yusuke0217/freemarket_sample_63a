@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_one :card
   has_many :sns_credentials, dependent: :destroy
 
+  has_many :likes, dependent: :destroy
+  has_many :like_products, through: :likes, source: :product
+
   # has_many :products, through: :purchase-history
   # has_many :products, through: :sales-history
   # has_many :comment-report コメントの報告

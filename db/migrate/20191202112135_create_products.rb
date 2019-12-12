@@ -16,6 +16,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string   :text,            null: false
       t.text     :image,           null: false
       t.integer  :status,          null: false, default: 1
+      t.integer  :likes_count
     end
   end
 end

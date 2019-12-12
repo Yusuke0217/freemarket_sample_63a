@@ -14,6 +14,9 @@
     margin: 0 auto;
     padding: 24px 40px 40px;
     box-sizing: border-box;
+    a{
+      text-decoration: none;
+    }
     &__name {
       font-size: 24px;
       text-align: center;
@@ -156,7 +159,6 @@
       line-height: 56px;
       text-align: center;
       font-weight: 600;
-      text-decoration: none;
     }
     &__description {
       padding-top: 32px;
@@ -166,6 +168,11 @@
       margin: 16px 0 0;
       display: flex;
       justify-content: space-between;
+      .like-icon{
+        &:active{
+          font-size: 11px;
+        }
+      }
       .botton-left {
         &__icon {
           color: #333;
@@ -177,9 +184,30 @@
           outline: 0;
           cursor: pointer;
           font-size: 14px;
-          i.far.fa-heart {
+          .btn.btn-default.glyphicon.far.fa-heart.fa-heart {
+            color: #ff0083;
+            @include awesome;
+            &:active{
+              font-size: 11px;
+            }
+          }
+          .btn.btn-default.glyphicon.far.fa-heart.fa-heart-empty {
             color: gray;
             @include awesome;
+            &:active{
+              font-size: 11px;
+            }
+          }
+          span{
+            color: black;
+            }
+          .like{
+            color: #ff0083;
+          }
+          .like-link, .unlike-link{
+            a{
+            text-decoration: none;
+            }
           }
           i.far.fa-flag {
             color: gray;
