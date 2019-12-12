@@ -1,8 +1,11 @@
 class CommentsController < ApplicationController
   def create
-    comment = Comment.create(comment_params)
-    redirect_to root_path
-    comment.save
+    comment = Comment.new(comment_params)
+    if comment.save
+      redirect_to product_path(params[:product_id])
+    else
+      render :create
+    end
   end
 
   private
