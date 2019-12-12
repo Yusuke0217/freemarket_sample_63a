@@ -32,8 +32,10 @@ class UsersController < ApplicationController
   def user_info_register
     @user = User.find(params[:id])
   end
+
   def user_page
   end
+  
   def logout
   end
 
