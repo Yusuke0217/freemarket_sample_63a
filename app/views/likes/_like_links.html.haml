@@ -3,9 +3,9 @@
     = link_to unlike_path(@product.id), method: :delete, remote: true do
       .btn.btn-default.glyphicon.far.fa-heart{id: "heart-#{@product.id}"}
         = @product.likes.count.to_s
-      %span いいね
+      %span.like いいね！
   - else
     = link_to like_path(@product.id), method: :post, remote: true do
-      .btn.btn-default.glyphicon.far.fa-heart-empty{id: "heart-#{@product.id}"}
+      .btn.btn-default.glyphicon.far.fa-heart.fa-heart-empty{id: "heart-#{@product.id}"}
         = @product.likes.count.to_s
-      %span いいね
+      %span.unlike いいね！
