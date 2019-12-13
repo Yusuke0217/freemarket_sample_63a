@@ -26,8 +26,7 @@ crumb :logout do
   parent :show
 end
 
-# 実装後記載する
-# crumb : do
-#   link " 支払い方法", _user_path
-#   parent :show
-# end
+crumb :edit do
+  link " 支払い方法", edit_user_path
+  parent :show
+end
