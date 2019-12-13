@@ -2,10 +2,6 @@ class CardController < ApplicationController
   require "payjp"
   #before_action :set_card
 
-  #後でenvに記載
-ENV["PAYJP_PRIVATE_KEY"] = 'sk_test_9931066098f8c99168e275fa'
-
-
   def new
     card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
@@ -47,7 +43,7 @@ ENV["PAYJP_PRIVATE_KEY"] = 'sk_test_9931066098f8c99168e275fa'
       email: current_user.email, #なくてもOK
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
-      ) #念の為metadataにuser_idを入れましたがなくてもOK
+      ) #metadataにuser_idを入れたがなくてもOK
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card, token: params['payjp-token'])
       if @card.save
         redirect_to action: "show"
