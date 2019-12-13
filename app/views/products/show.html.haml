@@ -142,7 +142,7 @@
   .items
     .item-box
       .item-box__name
-        = link_to "user-nameのその他の出品物", root_path
+        = link_to "#{@product.user.nickname}のその他の出品物", root_path
       .item-box__contents
         = link_to root_path, class: "content-box" do
           .content-box__photo
@@ -152,10 +152,11 @@
               -# %span= user.name
             .box-info
               .box-info__price
-                %span= @product.price
+                %span= "¥#{@product.price.to_s(:delimited)}"
               .box-info__action
                 %i.far.fa-heart
-                .span 1
+                %span.span= @product.likes_count
+                  
         .content-box
         .content-box
     .item-box
@@ -176,6 +177,6 @@
   .bottom-nav
     %ul
       %li
-        = link_to "メルカリ > ", root_path
+        = link_to "フリマ > ", root_path
       %li
         テスト１
