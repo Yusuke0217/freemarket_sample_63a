@@ -118,6 +118,5 @@ Pass: 63a
 |user_id|integer|null: false, foreign_key: true| ユーザー情報を外部キーとして所有
 |provider|integer|null: false, foreign_key: true|
 |uid|integer|null: false, foreign_key: true|
-|token|integer|null: false, foreign_key: true|
 
 - belongs_to :user
